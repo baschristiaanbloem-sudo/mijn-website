@@ -1,369 +1,657 @@
+import Image from "next/image";
+
+function LeafIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+    </svg>
+  );
+}
+
+const navLinks = [
+  { label: "Diensten", href: "#diensten" },
+  { label: "Ons team", href: "#team" },
+  { label: "Praktijk", href: "#praktijk" },
+  { label: "Openingstijden", href: "#openingstijden" },
+  { label: "Contact", href: "#contact" },
+];
+
 const services = [
   {
-    title: "Consult & diagnose",
+    title: "Consult & onderzoek",
     description:
-      "Persoonlijke aandacht voor al uw gezondheidsklachten, met tijd voor een zorgvuldige beoordeling.",
+      "Lichamelijk onderzoek en advies bij klachten, op afspraak of via de telefoon.",
     icon: (
-      <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+      <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path d="M11 2v2" /><path d="M5 2v2" /><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1" /><path d="M8 15a6 6 0 0 0 12 0v-3" /><circle cx="20" cy="10" r="2" />
       </svg>
     ),
   },
   {
     title: "Vaccinaties",
     description:
-      "Volledig vaccinatieprogramma voor kinderen en volwassenen, afgestemd op de laatste richtlijnen.",
+      "Griepprik, reizigersvaccinaties en het rijksvaccinatieprogramma voor kinderen.",
     icon: (
-      <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0 1 12 15a9.065 9.065 0 0 0-6.23-.693L5 14.5m14.8.8 1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0 1 12 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+      <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path d="m18 2 4 4" /><path d="m17 7 3-3" /><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5" /><path d="m9 11 4 4" /><path d="m5 19-3 3" /><path d="m14 4 6 6" />
       </svg>
     ),
   },
   {
     title: "Chronische zorg",
-    description:
-      "Begeleiding bij diabetes, hart- en vaatziekten en andere langdurige aandoeningen.",
+    description: "Begeleiding bij diabetes, hart- en vaatziekten, COPD en astma.",
     icon: (
-      <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+      <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path d="M12 6v6h4" /><circle cx="12" cy="12" r="10" />
       </svg>
     ),
   },
   {
-    title: "Jeugdgezondheid",
+    title: "Zorg voor kinderen",
     description:
-      "Controles, groeimonitoring en advies voor baby's, kinderen en jongeren in een vertrouwde omgeving.",
+      "Van het eerste consult tot opgroeien: aandachtige zorg voor de kleinsten.",
     icon: (
-      <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.008h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.008h-.008V9.75Z" />
+      <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.128a4 4 0 0 1 0 7.744" />
       </svg>
     ),
   },
   {
-    title: "Recepten & verwijzingen",
+    title: "Herhaalrecepten",
     description:
-      "Snelle afhandeling van herhaalrecepten en verwijzingen naar specialisten wanneer nodig.",
+      "Eenvoudig uw medicatie herhalen via de assistente of het patiëntenportaal.",
     icon: (
-      <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+      <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 12h4" /><path d="M12 10v4" />
       </svg>
     ),
   },
   {
-    title: "Huisbezoeken",
+    title: "Kleine ingrepen",
     description:
-      "Wanneer een bezoek aan de praktijk niet mogelijk is, komen wij bij u thuis langs.",
+      "Wratten, moedervlekken en wondverzorging in onze eigen behandelkamer.",
     icon: (
-      <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+      <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" /><path d="m9 12 2 2 4-4" />
       </svg>
     ),
   },
 ];
 
-const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Diensten", href: "#diensten" },
-  { label: "Over ons", href: "#over-ons" },
-  { label: "Contact", href: "#contact" },
+const values = [
+  {
+    title: "Aandacht & tijd",
+    description: "We nemen de tijd om écht te luisteren naar uw verhaal en klachten.",
+    icon: (
+      <svg className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
+      </svg>
+    ),
+  },
+  {
+    title: "Zorg voor het gezin",
+    description: "Van baby tot grootouder — wij kennen uw familie en haar geschiedenis.",
+    icon: (
+      <svg className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.128a4 4 0 0 1 0 7.744" />
+      </svg>
+    ),
+  },
+  {
+    title: "Snel terecht",
+    description: "Korte wachttijden en vaak nog dezelfde dag een afspraak mogelijk.",
+    icon: (
+      <svg className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" />
+      </svg>
+    ),
+  },
+  {
+    title: "Toegankelijk",
+    description:
+      "Onze praktijk is rolstoeltoegankelijk met parkeergelegenheid voor de deur.",
+    icon: (
+      <svg className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <circle cx="12" cy="5" r="1" /><path d="m9 20 3-6 3 6" /><path d="M6 8l6 2 6-2" /><path d="M12 10v4" />
+      </svg>
+    ),
+  },
+];
+
+const team = [
+  {
+    name: "Dokter Bas Bloem",
+    role: "Huisarts & praktijkhouder",
+    description: "Gespecialiseerd in kleine chirurgische ingrepen.",
+    image: "/images/bas-bloem.png",
+  },
+  {
+    name: "Dokter Stef Bloem",
+    role: "Huisarts & praktijkhouder",
+    description: "Gespecialiseerd in vrouwenzaken en psychiatrische problemen.",
+    image: "/images/stef-bloem.png",
+  },
+];
+
+const openingHours = [
+  { day: "Maandag", hours: "08:00 – 17:00" },
+  { day: "Dinsdag", hours: "08:00 – 17:00" },
+  { day: "Woensdag", hours: "08:00 – 17:00" },
+  { day: "Donderdag", hours: "08:00 – 17:00" },
+  { day: "Vrijdag", hours: "08:00 – 16:00" },
+  { day: "Weekend", hours: "Gesloten", muted: true },
+];
+
+const heroFacts = [
+  {
+    label: "Spoed",
+    value: "Direct te bereiken",
+    icon: (
+      <svg className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" />
+      </svg>
+    ),
+  },
+  {
+    label: "Locatie",
+    value: "Lindelaan, Amstelveen",
+    icon: (
+      <svg className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" />
+      </svg>
+    ),
+  },
+  {
+    label: "Erkend",
+    value: "NHG-geaccrediteerd",
+    icon: (
+      <svg className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" />
+      </svg>
+    ),
+  },
 ];
 
 export default function Home() {
   return (
-    <div className="flex flex-col bg-[#f8faf9] text-slate-700">
-      <header className="sticky top-0 z-50 border-b border-teal-100/80 bg-white/90 backdrop-blur-md">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <a href="#home" className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-700 text-white shadow-sm">
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-              </svg>
+    <div className="flex flex-col bg-background text-foreground">
+      <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5 md:px-6">
+          <a href="#top" className="flex items-center gap-2.5">
+            <span className="flex size-9 items-center justify-center rounded-full bg-primary text-primary-foreground">
+              <LeafIcon className="size-5" />
             </span>
-            <div>
-              <p className="text-sm font-semibold tracking-tight text-teal-900">Bloem & Bloem</p>
-              <p className="text-xs text-slate-500">huisartsen</p>
-            </div>
+            <span className="font-heading text-lg font-semibold leading-tight text-foreground">
+              Bloem & Bloem
+              <span className="block text-xs font-normal text-muted-foreground">huisartsen</span>
+            </span>
           </a>
 
-          <ul className="hidden items-center gap-8 md:flex">
+          <nav className="hidden items-center gap-7 md:flex" aria-label="Hoofdnavigatie">
             {navLinks.map((link) => (
-              <li key={link.href}>
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          <div className="hidden items-center gap-3 md:flex">
+            <a
+              href="tel:0201234567"
+              className="flex items-center gap-1.5 text-sm font-medium text-foreground"
+            >
+              <svg className="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+              </svg>
+              020 - 123 45 67
+            </a>
+            <a
+              href="#afspraak"
+              className="inline-flex h-9 items-center justify-center rounded-lg bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            >
+              Afspraak maken
+            </a>
+          </div>
+
+          <details className="group relative md:hidden">
+            <summary className="flex size-9 cursor-pointer list-none items-center justify-center rounded-lg border border-border text-foreground [&::-webkit-details-marker]:hidden">
+              <svg className="size-5 group-open:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <svg className="hidden size-5 group-open:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path d="M18 6 6 18M6 6l12 12" />
+              </svg>
+            </summary>
+            <div className="absolute right-0 top-full mt-2 w-56 rounded-xl border border-border bg-card p-3 shadow-lg">
+              {navLinks.map((link) => (
                 <a
+                  key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-slate-600 transition-colors hover:text-teal-700"
+                  className="block rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
                 >
                   {link.label}
                 </a>
-              </li>
-            ))}
-          </ul>
-
-          <a
-            href="#contact"
-            className="rounded-full bg-teal-700 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-all hover:bg-teal-800 hover:shadow-md"
-          >
-            Afspraak maken
-          </a>
-        </nav>
+              ))}
+              <a
+                href="#afspraak"
+                className="mt-2 block rounded-lg bg-primary px-3 py-2 text-center text-sm font-medium text-primary-foreground"
+              >
+                Afspraak maken
+              </a>
+            </div>
+          </details>
+        </div>
       </header>
 
       <main>
-        <section
-          id="home"
-          className="relative overflow-hidden bg-gradient-to-br from-teal-50 via-[#f0f7f5] to-sky-50"
-        >
-          <div className="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-teal-200/30 blur-3xl" />
-          <div className="absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-sky-200/40 blur-3xl" />
-
-          <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-24 lg:grid-cols-2 lg:items-center lg:py-32">
-            <div>
-              <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-teal-200 bg-white/70 px-4 py-1.5 text-sm font-medium text-teal-800">
-                <span className="h-2 w-2 rounded-full bg-teal-500" />
-                Uw vertrouwde huisarts in de buurt
+        <section id="top" className="relative overflow-hidden">
+          <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 md:grid-cols-2 md:px-6 md:py-20 lg:py-24">
+            <div className="flex flex-col gap-6">
+              <span className="inline-flex w-fit items-center gap-2 rounded-full bg-accent px-3.5 py-1.5 text-sm font-medium text-accent-foreground">
+                <span className="size-2 rounded-full bg-primary" aria-hidden="true" />
+                Nieuwe patiënten welkom
               </span>
-              <h1 className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-                Uw gezondheid,{" "}
-                <span className="text-teal-700">onze zorg</span>
+              <h1 className="font-heading text-4xl font-semibold leading-[1.1] text-balance text-foreground md:text-5xl lg:text-6xl">
+                Persoonlijke zorg, dichtbij voor uw hele gezin
               </h1>
-              <p className="mt-6 max-w-lg text-lg leading-relaxed text-slate-600">
-                Bij Bloem & Bloem huisartsen staan we voor u klaar met persoonlijke,
-                toegankelijke zorg. Van consult tot chronische begeleiding — altijd met aandacht
-                en respect.
+              <p className="max-w-md text-lg leading-relaxed text-pretty text-muted-foreground">
+                Bij Bloem & Bloem huisartsen staat u centraal. Een vertrouwd team dat luistert,
+                met aandacht en zonder haast. Samen werken we aan uw gezondheid.
               </p>
-              <div className="mt-10 flex flex-wrap gap-4">
+              <div className="flex flex-col gap-3 sm:flex-row">
                 <a
-                  href="#contact"
-                  className="inline-flex items-center gap-2 rounded-full bg-teal-700 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-teal-700/20 transition-all hover:bg-teal-800 hover:shadow-xl"
+                  href="#afspraak"
+                  className="inline-flex h-10 items-center justify-center rounded-lg bg-primary px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
                 >
-                  Maak een afspraak
-                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                  </svg>
+                  Afspraak maken
                 </a>
                 <a
                   href="#diensten"
-                  className="inline-flex items-center rounded-full border border-teal-200 bg-white px-8 py-4 text-base font-semibold text-teal-800 transition-colors hover:border-teal-300 hover:bg-teal-50"
+                  className="inline-flex h-10 items-center justify-center rounded-lg border border-border bg-background px-5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
                 >
                   Bekijk onze diensten
                 </a>
               </div>
+              <dl className="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-3">
+                {heroFacts.map((fact) => (
+                  <div key={fact.label} className="flex items-center gap-3">
+                    <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-secondary text-primary">
+                      {fact.icon}
+                    </span>
+                    <div>
+                      <dt className="text-xs text-muted-foreground">{fact.label}</dt>
+                      <dd className="text-sm font-medium text-foreground">{fact.value}</dd>
+                    </div>
+                  </div>
+                ))}
+              </dl>
             </div>
 
             <div className="relative">
-              <div className="rounded-3xl border border-white/60 bg-white/80 p-8 shadow-xl shadow-teal-900/5 backdrop-blur-sm">
-                <div className="mb-6 flex items-center gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-teal-100 text-teal-700">
-                    <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-slate-900">Lindelaan</p>
-                    <p className="text-sm text-slate-500">Amstelveen</p>
-                  </div>
-                </div>
-
-                <div className="space-y-4 border-t border-slate-100 pt-6">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-slate-500">Maandag – Vrijdag</span>
-                    <span className="font-medium text-slate-800">08:00 – 17:00</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-slate-500">Zaterdag</span>
-                    <span className="font-medium text-slate-800">09:00 – 12:00</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-slate-500">Telefoon</span>
-                    <span className="font-medium text-teal-700">020 – 123 45 67</span>
-                  </div>
-                </div>
-
-                <div className="mt-6 rounded-2xl bg-teal-50 px-4 py-3 text-sm text-teal-800">
-                  Spoed buiten openingstijden? Bel de huisartsenpost:{" "}
-                  <span className="font-semibold">088 – 00 30 600</span>
-                </div>
+              <div className="overflow-hidden rounded-3xl border border-border/60 shadow-sm">
+                <Image
+                  src="/images/hero-praktijk.png"
+                  alt="De lichte en rustige wachtruimte van Bloem & Bloem huisartsen"
+                  width={800}
+                  height={600}
+                  className="h-full w-full object-cover"
+                  priority
+                />
+              </div>
+              <div className="absolute -bottom-5 left-5 hidden rounded-2xl border border-border/60 bg-card px-5 py-4 shadow-md sm:block">
+                <p className="text-sm font-medium text-foreground">Vandaag geopend</p>
+                <p className="text-xs text-muted-foreground">08:00 – 17:00 uur</p>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="diensten" className="mx-auto max-w-6xl px-6 py-24">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-wider text-teal-700">Onze diensten</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-              Zorg op maat, dichtbij huis
-            </h2>
-            <p className="mt-4 text-lg text-slate-600">
-              Wij bieden een breed scala aan medische diensten, zodat u en uw gezin altijd de juiste
-              zorg ontvangen.
-            </p>
-          </div>
-
-          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <article
-                key={service.title}
-                className="group rounded-2xl border border-slate-100 bg-white p-8 shadow-sm transition-all hover:border-teal-200 hover:shadow-md"
-              >
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-teal-50 text-teal-700 transition-colors group-hover:bg-teal-100">
-                  {service.icon}
-                </div>
-                <h3 className="text-lg font-semibold text-slate-900">{service.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-600">{service.description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section id="over-ons" className="bg-white py-24">
-          <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-2">
-            <div className="rounded-3xl bg-gradient-to-br from-teal-700 to-teal-900 p-10 text-white shadow-xl">
-              <p className="text-sm font-medium uppercase tracking-wider text-teal-200">Over ons</p>
-              <h2 className="mt-4 text-3xl font-bold">Een praktijk waar u zich welkom voelt</h2>
-              <p className="mt-6 leading-relaxed text-teal-50">
-                Ons team van ervaren huisartsen en praktijkondersteuners werkt samen om u de best
-                mogelijke zorg te bieden. Wij geloven in korte lijnen, duidelijke communicatie en
-                een warme, rustige sfeer.
+        <section id="diensten" className="bg-secondary/50 py-16 md:py-24">
+          <div className="mx-auto max-w-6xl px-4 md:px-6">
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="text-sm font-semibold uppercase tracking-wide text-primary">Onze diensten</p>
+              <h2 className="mt-2 font-heading text-3xl font-semibold text-balance text-foreground md:text-4xl">
+                Complete huisartsenzorg onder één dak
+              </h2>
+              <p className="mt-4 text-lg leading-relaxed text-pretty text-muted-foreground">
+                Van een eenvoudig consult tot de begeleiding van chronische aandoeningen. Wij bieden
+                brede zorg, afgestemd op u.
               </p>
-              <ul className="mt-8 space-y-3 text-sm text-teal-100">
-                <li className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 rounded-full bg-teal-300" />
-                  4 huisartsen en 6 praktijkondersteuners
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 rounded-full bg-teal-300" />
-                  Aangesloten bij alle zorgverzekeraars
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 rounded-full bg-teal-300" />
-                  Digitale recepten en online afspraken
-                </li>
-              </ul>
             </div>
-
-            <div className="space-y-6">
-              {[
-                { value: "15+", label: "Jaar ervaring in de wijk" },
-                { value: "8.500+", label: "Patiënten in onze praktijk" },
-                { value: "4.8", label: "Gemiddelde patiëntwaardering" },
-              ].map((stat) => (
-                <div
-                  key={stat.label}
-                  className="flex items-center gap-6 rounded-2xl border border-slate-100 bg-[#f8faf9] px-8 py-6"
+            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {services.map((service) => (
+                <article
+                  key={service.title}
+                  className="group rounded-2xl border border-border/60 bg-card p-6 transition-shadow hover:shadow-md"
                 >
-                  <span className="text-4xl font-bold text-teal-700">{stat.value}</span>
-                  <span className="text-slate-600">{stat.label}</span>
-                </div>
+                  <span className="flex size-12 items-center justify-center rounded-xl bg-accent text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                    {service.icon}
+                  </span>
+                  <h3 className="mt-5 font-heading text-xl font-medium text-foreground">
+                    {service.title}
+                  </h3>
+                  <p className="mt-2 leading-relaxed text-muted-foreground">{service.description}</p>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="contact" className="mx-auto max-w-6xl px-6 py-24">
-          <div className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-xl shadow-slate-200/50">
-            <div className="grid lg:grid-cols-2">
-              <div className="bg-gradient-to-br from-teal-50 to-sky-50 p-10 lg:p-14">
-                <p className="text-sm font-semibold uppercase tracking-wider text-teal-700">Contact</p>
-                <h2 className="mt-3 text-3xl font-bold text-slate-900">Neem contact met ons op</h2>
-                <p className="mt-4 leading-relaxed text-slate-600">
-                  Heeft u een vraag of wilt u een afspraak maken? Vul het formulier in en wij nemen
-                  zo snel mogelijk contact met u op.
-                </p>
+        <section id="praktijk" className="py-16 md:py-24">
+          <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 md:grid-cols-2 md:px-6">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-wide text-primary">Over de praktijk</p>
+              <h2 className="mt-2 font-heading text-3xl font-semibold text-balance text-foreground md:text-4xl">
+                Een praktijk met een warm hart
+              </h2>
+              <p className="mt-4 text-lg leading-relaxed text-pretty text-muted-foreground">
+                Bloem & Bloem huisartsen is een kleinschalige praktijk aan de Lindelaan in
+                Amstelveen. Al meer dan twintig jaar bieden wij betrokken zorg aan jong en oud,
+                met persoonlijke aandacht als uitgangspunt.
+              </p>
+              <p className="mt-4 leading-relaxed text-pretty text-muted-foreground">
+                We geloven in zorg die bij u past. Daarom kennen we onze patiënten, denken we met u
+                mee en werken we nauw samen met specialisten, fysiotherapeuten en de apotheek in de
+                buurt.
+              </p>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {values.map((value) => (
+                <article key={value.title} className="rounded-2xl border border-border/60 bg-card p-6">
+                  <span className="flex size-11 items-center justify-center rounded-full bg-secondary text-primary">
+                    {value.icon}
+                  </span>
+                  <h3 className="mt-4 font-heading text-lg font-medium text-foreground">
+                    {value.title}
+                  </h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                    {value.description}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
 
-                <div className="mt-10 space-y-5 text-sm">
-                  <div className="flex items-start gap-4">
-                    <span className="mt-0.5 text-teal-700">
-                      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
-                      </svg>
-                    </span>
-                    <div>
-                      <p className="font-medium text-slate-900">Telefoon</p>
-                      <p className="text-slate-600">020 – 123 45 67</p>
-                    </div>
+        <section id="team" className="py-16 md:py-24">
+          <div className="mx-auto max-w-6xl px-4 md:px-6">
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="text-sm font-semibold uppercase tracking-wide text-primary">Ons team</p>
+              <h2 className="mt-2 font-heading text-3xl font-semibold text-balance text-foreground md:text-4xl">
+                Vertrouwde gezichten die u kennen
+              </h2>
+              <p className="mt-4 text-lg leading-relaxed text-pretty text-muted-foreground">
+                Een klein, betrokken team dat de tijd neemt. Bij ons bent u geen nummer, maar een
+                bekend gezicht.
+              </p>
+            </div>
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:mx-auto lg:max-w-4xl">
+              {team.map((member) => (
+                <article
+                  key={member.name}
+                  className="overflow-hidden rounded-2xl border border-border/60 bg-card"
+                >
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <Image
+                      src={member.image}
+                      alt={`Portret van ${member.name}, ${member.role}`}
+                      width={600}
+                      height={450}
+                      className="h-full w-full object-cover"
+                    />
                   </div>
-                  <div className="flex items-start gap-4">
-                    <span className="mt-0.5 text-teal-700">
-                      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-7.5a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-                      </svg>
-                    </span>
-                    <div>
-                      <p className="font-medium text-slate-900">E-mail</p>
-                      <p className="text-slate-600">info@bloemenbloem.nl</p>
-                    </div>
+                  <div className="p-6">
+                    <h3 className="font-heading text-xl font-medium text-foreground">{member.name}</h3>
+                    <p className="mt-0.5 text-sm font-medium text-primary">{member.role}</p>
+                    <p className="mt-3 leading-relaxed text-muted-foreground">{member.description}</p>
                   </div>
-                </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="openingstijden" className="bg-secondary/50 py-16 md:py-24">
+          <div className="mx-auto grid max-w-6xl gap-8 px-4 md:grid-cols-2 md:px-6">
+            <div className="rounded-2xl border border-border/60 bg-card p-7 md:p-8">
+              <h2 className="font-heading text-2xl font-semibold text-foreground md:text-3xl">
+                Openingstijden
+              </h2>
+              <ul className="mt-6 divide-y divide-border">
+                {openingHours.map((item) => (
+                  <li key={item.day} className="flex items-center justify-between py-3">
+                    <span className="font-medium text-foreground">{item.day}</span>
+                    <span className={item.muted ? "text-muted-foreground" : "text-foreground"}>
+                      {item.hours}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+                Tussen 12:00 en 13:00 uur is de praktijk gesloten voor de lunch. Bel voor 10:00 uur
+                voor een afspraak op dezelfde dag.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-5">
+              <div className="rounded-2xl border border-primary/30 bg-accent p-7 md:p-8">
+                <span className="flex size-11 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                  <svg className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+                  </svg>
+                </span>
+                <h3 className="mt-4 font-heading text-xl font-medium text-accent-foreground">
+                  Een afspraak maken
+                </h3>
+                <p className="mt-2 leading-relaxed text-accent-foreground/80">
+                  Bel ons tijdens openingstijden of regel het online via het patiëntenportaal.
+                </p>
+                <a href="tel:0201234567" className="mt-4 inline-block text-lg font-semibold text-primary">
+                  020 - 123 45 67
+                </a>
               </div>
 
-              <form className="space-y-5 p-10 lg:p-14">
+              <div className="rounded-2xl border border-border/60 bg-card p-7 md:p-8">
+                <span className="flex size-11 items-center justify-center rounded-full bg-secondary text-primary">
+                  <svg className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                  </svg>
+                </span>
+                <h3 className="mt-4 font-heading text-xl font-medium text-foreground">
+                  Spoed buiten openingstijden
+                </h3>
+                <p className="mt-2 leading-relaxed text-muted-foreground">
+                  Bij levensbedreigende situaties belt u altijd{" "}
+                  <span className="font-semibold text-foreground">112</span>. Voor dringende zorg
+                  &apos;s avonds en in het weekend belt u de huisartsenpost:{" "}
+                  <span className="font-semibold text-foreground">0900 - 450 60 70</span>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="afspraak" className="bg-secondary/50 py-16 md:py-24">
+          <div className="mx-auto max-w-3xl px-4 md:px-6">
+            <div className="rounded-3xl border border-border/60 bg-card p-7 shadow-sm md:p-10">
+              <div className="text-center">
+                <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+                  Afspraak aanvragen
+                </p>
+                <h2 className="mt-2 font-heading text-3xl font-semibold text-balance text-foreground md:text-4xl">
+                  Plan uw bezoek
+                </h2>
+                <p className="mt-3 leading-relaxed text-muted-foreground">
+                  Vul het formulier in en de assistente neemt zo snel mogelijk contact met u op om
+                  een tijd af te stemmen.
+                </p>
+              </div>
+              <form className="mt-8 grid gap-5 sm:grid-cols-2">
                 <div>
-                  <label htmlFor="naam" className="mb-2 block text-sm font-medium text-slate-700">
-                    Naam
+                  <label htmlFor="voornaam" className="mb-1.5 block text-sm font-medium text-foreground">
+                    Voornaam<span className="text-primary"> *</span>
                   </label>
                   <input
-                    id="naam"
-                    name="naam"
+                    id="voornaam"
+                    name="voornaam"
                     type="text"
-                    placeholder="Uw volledige naam"
-                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-teal-400 focus:bg-white focus:ring-2 focus:ring-teal-100"
+                    required
+                    className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/30"
                   />
-                </div>
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <div>
-                    <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-700">
-                      E-mail
-                    </label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="naam@voorbeeld.nl"
-                      className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-teal-400 focus:bg-white focus:ring-2 focus:ring-teal-100"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="telefoon" className="mb-2 block text-sm font-medium text-slate-700">
-                      Telefoon
-                    </label>
-                    <input
-                      id="telefoon"
-                      name="telefoon"
-                      type="tel"
-                      placeholder="06 – 12345678"
-                      className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-teal-400 focus:bg-white focus:ring-2 focus:ring-teal-100"
-                    />
-                  </div>
                 </div>
                 <div>
-                  <label htmlFor="bericht" className="mb-2 block text-sm font-medium text-slate-700">
-                    Bericht
+                  <label htmlFor="achternaam" className="mb-1.5 block text-sm font-medium text-foreground">
+                    Achternaam<span className="text-primary"> *</span>
                   </label>
-                  <textarea
-                    id="bericht"
-                    name="bericht"
-                    rows={4}
-                    placeholder="Waar kunnen wij u mee helpen?"
-                    className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-teal-400 focus:bg-white focus:ring-2 focus:ring-teal-100"
+                  <input
+                    id="achternaam"
+                    name="achternaam"
+                    type="text"
+                    required
+                    className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/30"
                   />
                 </div>
-                <button
-                  type="submit"
-                  className="w-full rounded-xl bg-teal-700 px-6 py-4 text-base font-semibold text-white shadow-md shadow-teal-700/20 transition-all hover:bg-teal-800 hover:shadow-lg sm:w-auto"
-                >
-                  Verstuur bericht
-                </button>
+                <div>
+                  <label htmlFor="telefoon" className="mb-1.5 block text-sm font-medium text-foreground">
+                    Telefoonnummer<span className="text-primary"> *</span>
+                  </label>
+                  <input
+                    id="telefoon"
+                    name="telefoon"
+                    type="tel"
+                    required
+                    className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/30"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-foreground">
+                    E-mailadres<span className="text-primary"> *</span>
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/30"
+                  />
+                </div>
+                <div className="sm:col-span-2">
+                  <label htmlFor="reden" className="mb-1.5 block text-sm font-medium text-foreground">
+                    Reden van uw afspraak
+                  </label>
+                  <textarea
+                    id="reden"
+                    name="reden"
+                    rows={4}
+                    placeholder="Omschrijf kort uw klacht of vraag"
+                    className="w-full resize-none rounded-xl border border-input bg-background px-4 py-2.5 text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/30"
+                  />
+                </div>
+                <div className="sm:col-span-2">
+                  <button
+                    type="submit"
+                    className="w-full rounded-xl bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 sm:w-auto"
+                  >
+                    Afspraak aanvragen
+                  </button>
+                  <p className="mt-4 text-sm text-muted-foreground">
+                    Bij spoed belt u ons direct op{" "}
+                    <a href="tel:0201234567" className="font-medium text-primary">
+                      020 - 123 45 67
+                    </a>
+                    .
+                  </p>
+                </div>
               </form>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="border-t border-slate-200 bg-white py-10">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-sm text-slate-500 sm:flex-row">
-          <p>© {new Date().getFullYear()} Bloem & Bloem huisartsen</p>
-          <p>Lindelaan, Amstelveen</p>
+      <footer id="contact" className="bg-primary text-primary-foreground">
+        <div className="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16">
+          <div className="grid gap-10 md:grid-cols-4">
+            <div className="md:col-span-1">
+              <div className="flex items-center gap-2.5">
+                <span className="flex size-9 items-center justify-center rounded-full bg-primary-foreground/15">
+                  <LeafIcon className="size-5" />
+                </span>
+                <span className="font-heading text-lg font-semibold">Bloem & Bloem</span>
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-primary-foreground/80">
+                Persoonlijke en betrokken huisartsenzorg voor het hele gezin, aan de Lindelaan in
+                Amstelveen.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="font-heading text-base font-medium">Contact</h3>
+              <ul className="mt-4 flex flex-col gap-3 text-sm text-primary-foreground/80">
+                <li className="flex items-start gap-2.5">
+                  <svg className="mt-0.5 size-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" />
+                  </svg>
+                  Lindelaan, Amstelveen
+                </li>
+                <li className="flex items-center gap-2.5">
+                  <svg className="size-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+                  </svg>
+                  <a href="tel:0201234567" className="hover:underline">020 - 123 45 67</a>
+                </li>
+                <li className="flex items-center gap-2.5">
+                  <svg className="size-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" />
+                  </svg>
+                  <a href="mailto:info@bloemenbloem.nl" className="hover:underline">
+                    info@bloemenbloem.nl
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-heading text-base font-medium">Snel naar</h3>
+              <ul className="mt-4 flex flex-col gap-3 text-sm text-primary-foreground/80">
+                {[
+                  { label: "Diensten", href: "#diensten" },
+                  { label: "Ons team", href: "#team" },
+                  { label: "Openingstijden", href: "#openingstijden" },
+                  { label: "Afspraak maken", href: "#afspraak" },
+                ].map((link) => (
+                  <li key={link.href}>
+                    <a href={link.href} className="hover:underline">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-heading text-base font-medium">Spoed</h3>
+              <p className="mt-4 text-sm text-primary-foreground/80">
+                Levensbedreigend? Bel <span className="font-semibold">112</span>.
+              </p>
+              <p className="mt-2 text-sm text-primary-foreground/80">
+                Huisartsenpost (avond/weekend): 0900 - 450 60 70
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-primary-foreground/20 pt-8 text-sm text-primary-foreground/70 sm:flex-row">
+            <p>© {new Date().getFullYear()} Bloem & Bloem huisartsen</p>
+            <div className="flex gap-6">
+              <a href="#" className="hover:underline">Privacy</a>
+              <a href="#" className="hover:underline">Klachten</a>
+              <a href="#" className="hover:underline">Disclaimer</a>
+            </div>
+          </div>
         </div>
       </footer>
     </div>

@@ -1,22 +1,38 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: hsl(150 33% 98%);
+  --foreground: hsl(180 25% 12%);
+  --primary: hsl(168 48% 32%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(150 30% 93%);
+  --accent: hsl(155 35% 90%);
+  --accent-foreground: hsl(168 48% 22%);
+  --muted: hsl(150 20% 95%);
+  --muted-foreground: hsl(160 10% 42%);
+  --card: hsl(0 0% 100%);
+  --border: hsl(155 18% 86%);
+  --input: hsl(155 18% 86%);
+  --ring: hsl(168 48% 32%);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
   --font-sans: var(--font-geist-sans);
+  --font-heading: var(--font-fraunces);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
@@ -27,4 +43,8 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+.font-heading {
+  font-family: var(--font-fraunces), Georgia, serif;
 }
