@@ -356,8 +356,8 @@ export default function Home() {
               </p>
               <p className="mt-4 leading-relaxed text-pretty text-muted-foreground">
                 We geloven in zorg die bij u past. Daarom kennen we onze patiënten, denken we met u
-                mee en werken we nauw samen met specialisten, fysiotherapeuten en de apotheek in de
-                buurt.
+                mee en werken we nauw samen met specialisten, fysiotherapeuten en Apotheek Marne
+                in Amstelveen.
               </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
@@ -394,24 +394,84 @@ export default function Home() {
               {team.map((member) => (
                 <article
                   key={member.name}
-                  className="overflow-hidden rounded-2xl border border-border/60 bg-card"
+                  className="flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-card"
                 >
-                  <div className="aspect-[4/3] overflow-hidden">
+                  <div className="aspect-[4/3] w-full shrink-0 overflow-hidden">
                     <Image
                       src={member.image}
                       alt={`Portret van ${member.name}, ${member.role}`}
                       width={600}
                       height={450}
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-cover object-top"
                     />
                   </div>
-                  <div className="p-6">
+                  <div className="flex flex-1 flex-col p-6">
                     <h3 className="font-heading text-xl font-medium text-foreground">{member.name}</h3>
                     <p className="mt-0.5 text-sm font-medium text-primary">{member.role}</p>
                     <p className="mt-3 leading-relaxed text-muted-foreground">{member.description}</p>
                   </div>
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="apotheek" className="bg-secondary/50 py-16 md:py-24">
+          <div className="mx-auto max-w-6xl px-4 md:px-6">
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+                Samenwerking
+              </p>
+              <h2 className="mt-2 font-heading text-3xl font-semibold text-balance text-foreground md:text-4xl">
+                Nauwe samenwerking met Apotheek Marne
+              </h2>
+              <p className="mt-4 text-lg leading-relaxed text-pretty text-muted-foreground">
+                Wij werken in het bijzonder nauw samen met Apotheek Marne in Amstelveen. Zo bent u
+                verzekerd van een vlotte overdracht van recepten en persoonlijk medicatieadvies,
+                direct naast onze praktijk.
+              </p>
+            </div>
+
+            <div className="mt-12 grid gap-6 lg:grid-cols-2 lg:items-stretch">
+              <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-border/60 bg-card shadow-sm">
+                <div className="aspect-[4/3] w-full shrink-0 overflow-hidden">
+                  <Image
+                    src="/images/apotheek-marne.png"
+                    alt="Exterieur van Apotheek Marne in Amstelveen"
+                    width={800}
+                    height={600}
+                    className="h-full w-full object-cover object-center"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="font-heading text-xl font-medium text-foreground">Apotheek Marne</h3>
+                  <p className="mt-2 flex-1 leading-relaxed text-muted-foreground">
+                    Onze vaste partner in Amstelveen voor betrouwbare en toegankelijke
+                    farmaceutische zorg.
+                  </p>
+                </div>
+              </article>
+
+              <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-border/60 bg-card shadow-sm">
+                <div className="aspect-[4/3] w-full shrink-0 overflow-hidden">
+                  <Image
+                    src="/images/michiel-bloem.png"
+                    alt="Portret van Michiel Bloem, apotheker bij Apotheek Marne"
+                    width={800}
+                    height={600}
+                    className="h-full w-full object-cover object-top"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="font-heading text-xl font-medium text-foreground">Michiel Bloem</h3>
+                  <p className="mt-0.5 text-sm font-medium text-primary">Apotheker</p>
+                  <p className="mt-3 flex-1 leading-relaxed text-muted-foreground">
+                    De derde broer van het team. Michiel is een exceptioneel goede apotheker die met
+                    aandacht en vakmanschap uw medicatie begeleidt — een waardevolle schakel in onze
+                    gezamenlijke zorg.
+                  </p>
+                </div>
+              </article>
             </div>
           </div>
         </section>
