@@ -1,26 +1,17 @@
 import type { Metadata } from "next";
-import { Fraunces, Geist, Geist_Mono } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
-});
-
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
   title: "Bloem & Bloem huisartsen",
   description:
-    "Uw vertrouwde huisartsenpraktijk aan de Lindelaan in Amstelveen. Persoonlijke zorg, consulten, vaccinaties en chronische begeleiding.",
+    "Uw vertrouwde huisartsenpraktijk aan de Keizer Karelweg in Amstelveen. Persoonlijke zorg, consulten, vaccinaties en chronische begeleiding.",
 };
 
 export default function RootLayout({
@@ -29,10 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="nl"
-      className={`${geistSans.variable} ${fraunces.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="nl" className={`${poppins.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
