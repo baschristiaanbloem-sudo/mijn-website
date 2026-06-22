@@ -122,9 +122,7 @@ export default function Home() {
             </p>
             <div className="mt-3 flex flex-col gap-2">
               <a
-                href="https://www.mijngezondheid.net"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/inschrijving"
                 className="bk-btn relative w-full justify-start pl-12"
               >
                 <svg className="absolute left-4 size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

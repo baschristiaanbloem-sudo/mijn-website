@@ -39,12 +39,7 @@ export function SiteHeader() {
             </svg>
             020 - 123 45 67
           </a>
-          <a
-            href="https://www.mijngezondheid.net"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bk-btn"
-          >
+          <a href="/inschrijving" className="bk-btn">
             Inschrijven
           </a>
         </div>
@@ -68,12 +63,7 @@ export function SiteHeader() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="https://www.mijngezondheid.net"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bk-btn mt-2 w-full"
-            >
+            <a href="/inschrijving" className="bk-btn mt-2 w-full">
               Inschrijven
             </a>
           </div>

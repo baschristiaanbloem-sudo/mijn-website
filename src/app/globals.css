@@ -99,3 +99,30 @@ html {
   background: var(--card);
   box-shadow: 0 1px 3px rgb(0 0 0 / 0.04);
 }
+
+.bk-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.bk-input {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: var(--background);
+  padding: 0.625rem 0.75rem;
+  font-size: 0.875rem;
+  color: var(--foreground);
+  outline: none;
+}
+
+.bk-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+
+.bk-form-section {
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+}
