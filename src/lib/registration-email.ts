@@ -1,4 +1,5 @@
-export const registrationEmail = "bas@medi-stad.nl";
+import type { Messages } from "@/lib/i18n/types";
+import { replaceParams } from "@/lib/i18n";
 
 export type RegistrationFormData = {
   voornaam: string;
@@ -42,95 +43,104 @@ function section(title: string, rows: string) {
   return `<h2 style="margin:24px 0 8px;font-size:16px">${title}</h2><table style="border-collapse:collapse">${rows}</table>`;
 }
 
-export function buildRegistrationEmailHtml(data: RegistrationFormData) {
+export function buildRegistrationEmailHtml(data: RegistrationFormData, email: Messages["email"]) {
+  const labels = email.labels;
+
   const patientRows = [
-    row("Voornaam", data.voornaam),
-    row("Achternaam", data.achternaam),
-    row("Geboortedatum", data.geboortedatum),
-    row("BSN", data.bsn),
-    row("Geslacht", data.geslacht),
-    row("Adres", data.adres),
-    row("Postcode", data.postcode),
-    row("Woonplaats", data.woonplaats),
-    row("Telefoon", data.telefoon),
-    row("E-mail", data.email),
+    row(labels.voornaam, data.voornaam),
+    row(labels.achternaam, data.achternaam),
+    row(labels.geboortedatum, data.geboortedatum),
+    row(labels.bsn, data.bsn),
+    row(labels.geslacht, data.geslacht),
+    row(labels.adres, data.adres),
+    row(labels.postcode, data.postcode),
+    row(labels.woonplaats, data.woonplaats),
+    row(labels.telefoon, data.telefoon),
+    row(labels.email, data.email),
   ].join("");
 
   const insuranceRows = [
-    row("Zorgverzekeraar", data.zorgverzekeraar),
-    row("Polisnummer", data.polisnummer),
-    row("Naam hoofdverzekerde", data.hoofdverzekerde),
-    row("Geboortedatum hoofdverzekerde", data.geboortedatum_hoofdverzekerde),
+    row(labels.zorgverzekeraar, data.zorgverzekeraar),
+    row(labels.polisnummer, data.polisnummer),
+    row(labels.hoofdverzekerde, data.hoofdverzekerde),
+    row(labels.geboortedatum_hoofdverzekerde, data.geboortedatum_hoofdverzekerde),
   ].join("");
 
   const previousGpRows = [
-    row("Naam vorige huisarts", data.vorige_huisarts),
-    row("Telefoon vorige huisarts", data.vorige_huisarts_telefoon),
-    row("Adres vorige huisarts", data.vorige_huisarts_adres),
+    row(labels.vorige_huisarts, data.vorige_huisarts),
+    row(labels.vorige_huisarts_telefoon, data.vorige_huisarts_telefoon),
+    row(labels.vorige_huisarts_adres, data.vorige_huisarts_adres),
   ].join("");
 
   const medicalRows = [
-    row("Medicijnen", data.medicijnen),
-    row("Toelichting medicijnen", data.medicijnen_details),
-    row("Allergieën", data.allergieen),
-    row("Toelichting allergieën", data.allergieen_details),
-    row("Chronische aandoening", data.chronisch),
-    row("Toelichting chronisch", data.chronisch_details),
-    row("Behandeling specialist", data.specialist),
-    row("Toelichting specialist", data.specialist_details),
-    row("Instelling of begeleid wonen", data.instelling),
+    row(labels.medicijnen, data.medicijnen),
+    row(labels.medicijnen_details, data.medicijnen_details),
+    row(labels.allergieen, data.allergieen),
+    row(labels.allergieen_details, data.allergieen_details),
+    row(labels.chronisch, data.chronisch),
+    row(labels.chronisch_details, data.chronisch_details),
+    row(labels.specialist, data.specialist),
+    row(labels.specialist_details, data.specialist_details),
+    row(labels.instelling, data.instelling),
   ].join("");
 
   const consentRows = [
-    row("Delen met zorgverleners", data.delen_zorgverleners),
-    row("Dossieroverdracht", data.dossier_overdracht),
+    row(labels.delen_zorgverleners, data.delen_zorgverleners),
+    row(labels.dossier_overdracht, data.dossier_overdracht),
   ].join("");
 
   const signatureSection = data.handtekening.startsWith("data:image")
-    ? `<h2 style="margin:24px 0 8px;font-size:16px">Handtekening</h2><img src="${data.handtekening}" alt="Handtekening patiënt" style="max-width:320px;border:1px solid #dfe3de" />`
-    : section("Handtekening", row("Handtekening", data.handtekening));
+    ? `<h2 style="margin:24px 0 8px;font-size:16px">${email.sections.signature}</h2><img src="${data.handtekening}" alt="${email.sections.signature}" style="max-width:320px;border:1px solid #dfe3de" />`
+    : section(email.sections.signature, row(labels.handtekening, data.handtekening));
 
   return `
     <div style="font-family:Arial,sans-serif;color:#1f1f1f;line-height:1.5">
-      <h1 style="font-size:20px;margin:0 0 8px">Nieuwe inschrijving</h1>
-      <p style="margin:0 0 16px">Er is een nieuw inschrijfformulier ingediend via bloemhuisartsen.nl.</p>
-      ${section("Gegevens patiënt", patientRows)}
-      ${section("Verzekeringsgegevens", insuranceRows)}
-      ${section("Gegevens voorgaande huisarts", previousGpRows)}
-      ${section("Medische gegevens", medicalRows)}
-      ${section("Toestemmingen", consentRows)}
+      <h1 style="font-size:20px;margin:0 0 8px">${email.heading}</h1>
+      <p style="margin:0 0 16px">${email.intro}</p>
+      ${section(email.sections.patient, patientRows)}
+      ${section(email.sections.insurance, insuranceRows)}
+      ${section(email.sections.previousGp, previousGpRows)}
+      ${section(email.sections.medical, medicalRows)}
+      ${section(email.sections.consent, consentRows)}
       ${signatureSection}
     </div>
   `;
 }
 
-export function buildRegistrationEmailText(data: RegistrationFormData) {
+export function buildRegistrationEmailText(data: RegistrationFormData, email: Messages["email"]) {
+  const labels = email.labels;
+
   const lines = [
-    "Nieuwe inschrijving via bloemhuisartsen.nl",
+    email.intro,
     "",
-    `Naam: ${data.voornaam} ${data.achternaam}`,
-    `Geboortedatum: ${data.geboortedatum}`,
-    `BSN: ${data.bsn}`,
-    `Geslacht: ${data.geslacht ?? "-"}`,
-    `Adres: ${data.adres}, ${data.postcode} ${data.woonplaats}`,
-    `Telefoon: ${data.telefoon}`,
-    `E-mail: ${data.email}`,
+    `${labels.voornaam}: ${data.voornaam}`,
+    `${labels.achternaam}: ${data.achternaam}`,
+    `${labels.geboortedatum}: ${data.geboortedatum}`,
+    `${labels.bsn}: ${data.bsn}`,
+    `${labels.geslacht}: ${data.geslacht ?? "-"}`,
+    `${labels.adres}: ${data.adres}, ${data.postcode} ${data.woonplaats}`,
+    `${labels.telefoon}: ${data.telefoon}`,
+    `${labels.email}: ${data.email}`,
     "",
-    `Zorgverzekeraar: ${data.zorgverzekeraar}`,
-    `Polisnummer: ${data.polisnummer}`,
+    `${labels.zorgverzekeraar}: ${data.zorgverzekeraar}`,
+    `${labels.polisnummer}: ${data.polisnummer}`,
     "",
-    `Medicijnen: ${data.medicijnen ?? "-"}${data.medicijnen_details ? ` (${data.medicijnen_details})` : ""}`,
-    `Allergieën: ${data.allergieen ?? "-"}${data.allergieen_details ? ` (${data.allergieen_details})` : ""}`,
-    `Chronische aandoening: ${data.chronisch ?? "-"}${data.chronisch_details ? ` (${data.chronisch_details})` : ""}`,
-    `Specialist: ${data.specialist ?? "-"}${data.specialist_details ? ` (${data.specialist_details})` : ""}`,
-    `Instelling/begeleid wonen: ${data.instelling ?? "-"}`,
+    `${labels.medicijnen}: ${data.medicijnen ?? "-"}${data.medicijnen_details ? ` (${data.medicijnen_details})` : ""}`,
+    `${labels.allergieen}: ${data.allergieen ?? "-"}${data.allergieen_details ? ` (${data.allergieen_details})` : ""}`,
+    `${labels.chronisch}: ${data.chronisch ?? "-"}${data.chronisch_details ? ` (${data.chronisch_details})` : ""}`,
+    `${labels.specialist}: ${data.specialist ?? "-"}${data.specialist_details ? ` (${data.specialist_details})` : ""}`,
+    `${labels.instelling}: ${data.instelling ?? "-"}`,
     "",
-    `Delen met zorgverleners: ${data.delen_zorgverleners ?? "-"}`,
-    `Dossieroverdracht: ${data.dossier_overdracht ?? "-"}`,
+    `${labels.delen_zorgverleners}: ${data.delen_zorgverleners ?? "-"}`,
+    `${labels.dossier_overdracht}: ${data.dossier_overdracht ?? "-"}`,
     data.handtekening.startsWith("data:image")
-      ? "Handtekening: bijgevoegd in HTML-versie"
-      : `Handtekening: ${data.handtekening}`,
+      ? email.signatureInHtml
+      : `${labels.handtekening}: ${data.handtekening}`,
   ];
 
   return lines.join("\n");
+}
+
+export function buildRegistrationSubject(data: RegistrationFormData, email: Messages["email"]) {
+  return replaceParams(email.subject, { name: `${data.voornaam} ${data.achternaam}` });
 }

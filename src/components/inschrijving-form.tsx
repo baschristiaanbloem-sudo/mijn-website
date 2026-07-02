@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useLanguage } from "@/components/language-provider";
 import { SignaturePad } from "@/components/signature-pad";
 
 type YesNo = "" | "ja" | "nee";
@@ -35,6 +36,8 @@ function YesNoField({
   detailsLabel,
   detailsValue,
   onDetailsChange,
+  yesLabel,
+  noLabel,
 }: {
   name: string;
   label: string;
@@ -44,6 +47,8 @@ function YesNoField({
   detailsLabel?: string;
   detailsValue?: string;
   onDetailsChange?: (value: string) => void;
+  yesLabel: string;
+  noLabel: string;
 }) {
   return (
     <fieldset className="space-y-3">
@@ -60,7 +65,7 @@ function YesNoField({
               required={required}
               className="size-4 accent-[var(--primary)]"
             />
-            {option === "ja" ? "Ja" : "Nee"}
+            {option === "ja" ? yesLabel : noLabel}
           </label>
         ))}
       </div>
@@ -80,6 +85,7 @@ function YesNoField({
 }
 
 export function InschrijvingForm() {
+  const { locale, t } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -96,6 +102,12 @@ export function InschrijvingForm() {
   const [dossierOverdracht, setDossierOverdracht] = useState<YesNo>("");
   const [handtekening, setHandtekening] = useState("");
 
+  const genderOptions = [
+    { value: t.common.male, label: t.common.male },
+    { value: t.common.female, label: t.common.female },
+    { value: t.common.other, label: t.common.other },
+  ];
+
   if (submitted) {
     return (
       <div className="bk-card p-8 text-center md:p-10">
@@ -105,12 +117,9 @@ export function InschrijvingForm() {
           </svg>
         </span>
         <h2 className="mt-5 font-heading text-2xl font-bold uppercase tracking-wide text-foreground">
-          Inschrijving ontvangen
+          {t.inschrijving.successTitle}
         </h2>
-        <p className="mt-3 leading-relaxed text-muted-foreground">
-          Bedankt voor uw inschrijving. Wij nemen uw gegevens in behandeling en nemen contact met u op
-          zodra uw dossier is overgedragen.
-        </p>
+        <p className="mt-3 leading-relaxed text-muted-foreground">{t.inschrijving.successText}</p>
       </div>
     );
   }
@@ -124,7 +133,7 @@ export function InschrijvingForm() {
         setError(null);
 
         if (!handtekening) {
-          setError("Zet uw handtekening in het vak.");
+          setError(t.inschrijving.signatureMissing);
           setSubmitting(false);
           return;
         }
@@ -137,6 +146,7 @@ export function InschrijvingForm() {
           chronisch_details: chronischDetails,
           specialist_details: specialistDetails,
           handtekening,
+          locale,
         };
 
         try {
@@ -148,74 +158,71 @@ export function InschrijvingForm() {
 
           if (!response.ok) {
             const result = (await response.json()) as { error?: string };
-            setError(result.error ?? "Het versturen is mislukt. Probeer het opnieuw.");
+            setError(result.error ?? t.inschrijving.sendFailed);
             return;
           }
 
           setSubmitted(true);
         } catch {
-          setError("Het versturen is mislukt. Controleer uw internetverbinding en probeer het opnieuw.");
+          setError(t.inschrijving.networkError);
         } finally {
           setSubmitting(false);
         }
       }}
     >
       <div className="mx-auto max-w-2xl text-center">
-        <p className="bk-section-label">Inschrijven</p>
+        <p className="bk-section-label">{t.inschrijving.label}</p>
         <h1 className="mt-2 font-heading text-2xl font-bold uppercase tracking-wide text-foreground md:text-3xl">
-          Inschrijfformulier huisartsenpraktijk
+          {t.inschrijving.title}
         </h1>
-        <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-          Vul onderstaand formulier in om u in te schrijven bij Bloem & Bloem huisartsen. Velden met
-          een * zijn verplicht.
-        </p>
+        <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{t.inschrijving.intro}</p>
       </div>
 
       <section className="bk-form-section mt-10 space-y-6">
         <h2 className="font-heading text-lg font-bold uppercase tracking-wide text-foreground">
-          Gegevens patiënt
+          {t.inschrijving.sections.patient}
         </h2>
         <div className="grid gap-5 sm:grid-cols-2">
-          <Field label="Voornaam" required>
+          <Field label={t.inschrijving.fields.firstName} required>
             <input type="text" name="voornaam" required className="bk-input" />
           </Field>
-          <Field label="Achternaam" required>
+          <Field label={t.inschrijving.fields.lastName} required>
             <input type="text" name="achternaam" required className="bk-input" />
           </Field>
-          <Field label="Geboortedatum" required>
+          <Field label={t.inschrijving.fields.birthDate} required>
             <input type="date" name="geboortedatum" required className="bk-input" />
           </Field>
-          <Field label="BSN-nummer" required>
+          <Field label={t.inschrijving.fields.bsn} required>
             <input type="text" name="bsn" required pattern="[0-9]{9}" className="bk-input" />
           </Field>
         </div>
 
         <fieldset className="space-y-3">
-          <legend className="bk-label">Geslacht</legend>
+          <legend className="bk-label">{t.inschrijving.fields.gender}</legend>
           <div className="flex flex-wrap gap-4">
-            {["Man", "Vrouw", "Anders"].map((option) => (
-              <label key={option} className="flex items-center gap-2 text-sm text-foreground">
-                <input type="radio" name="geslacht" value={option} className="size-4 accent-[var(--primary)]" />
-                {option}
+            {genderOptions.map((option) => (
+              <label key={option.value} className="flex items-center gap-2 text-sm text-foreground">
+                <input type="radio" name="geslacht" value={option.value} className="size-4 accent-[var(--primary)]" />
+                {option.label}
               </label>
             ))}
           </div>
         </fieldset>
 
         <div className="grid gap-5 sm:grid-cols-2">
-          <Field label="Straatnaam en huisnummer" required>
+          <Field label={t.inschrijving.fields.street} required>
             <input type="text" name="adres" required className="bk-input" />
           </Field>
-          <Field label="Postcode" required>
+          <Field label={t.inschrijving.fields.postcode} required>
             <input type="text" name="postcode" required className="bk-input" />
           </Field>
-          <Field label="Woonplaats" required>
+          <Field label={t.inschrijving.fields.city} required>
             <input type="text" name="woonplaats" required className="bk-input" />
           </Field>
-          <Field label="Telefoonnummer" required>
+          <Field label={t.inschrijving.fields.phone} required>
             <input type="tel" name="telefoon" required className="bk-input" />
           </Field>
-          <Field label="E-mailadres" required>
+          <Field label={t.inschrijving.fields.email} required>
             <input type="email" name="email" required className="bk-input" />
           </Field>
         </div>
@@ -223,19 +230,19 @@ export function InschrijvingForm() {
 
       <section className="bk-form-section mt-10 space-y-6">
         <h2 className="font-heading text-lg font-bold uppercase tracking-wide text-foreground">
-          Verzekeringsgegevens
+          {t.inschrijving.sections.insurance}
         </h2>
         <div className="grid gap-5 sm:grid-cols-2">
-          <Field label="Zorgverzekeraar" required>
+          <Field label={t.inschrijving.fields.insurer} required>
             <input type="text" name="zorgverzekeraar" required className="bk-input" />
           </Field>
-          <Field label="Polisnummer" required>
+          <Field label={t.inschrijving.fields.policyNumber} required>
             <input type="text" name="polisnummer" required className="bk-input" />
           </Field>
-          <Field label="Naam hoofdverzekerde (indien anders)">
+          <Field label={t.inschrijving.fields.mainInsuredName}>
             <input type="text" name="hoofdverzekerde" className="bk-input" />
           </Field>
-          <Field label="Geboortedatum hoofdverzekerde">
+          <Field label={t.inschrijving.fields.mainInsuredBirthDate}>
             <input type="date" name="geboortedatum_hoofdverzekerde" className="bk-input" />
           </Field>
         </div>
@@ -243,17 +250,17 @@ export function InschrijvingForm() {
 
       <section className="bk-form-section mt-10 space-y-6">
         <h2 className="font-heading text-lg font-bold uppercase tracking-wide text-foreground">
-          Gegevens voorgaande huisarts
+          {t.inschrijving.sections.previousGp}
         </h2>
         <div className="grid gap-5 sm:grid-cols-2">
-          <Field label="Naam vorige huisarts">
+          <Field label={t.inschrijving.fields.previousGpName}>
             <input type="text" name="vorige_huisarts" className="bk-input" />
           </Field>
-          <Field label="Telefoonnummer vorige huisarts">
+          <Field label={t.inschrijving.fields.previousGpPhone}>
             <input type="tel" name="vorige_huisarts_telefoon" className="bk-input" />
           </Field>
           <div className="sm:col-span-2">
-            <Field label="Adres vorige huisarts">
+            <Field label={t.inschrijving.fields.previousGpAddress}>
               <input type="text" name="vorige_huisarts_adres" className="bk-input" />
             </Field>
           </div>
@@ -262,73 +269,87 @@ export function InschrijvingForm() {
 
       <section className="bk-form-section mt-10 space-y-6">
         <h2 className="font-heading text-lg font-bold uppercase tracking-wide text-foreground">
-          Medische gegevens
+          {t.inschrijving.sections.medical}
         </h2>
         <YesNoField
           name="medicijnen"
-          label="Gebruikt u medicijnen?"
+          label={t.inschrijving.questions.medication}
           value={medicijnen}
           onChange={setMedicijnen}
-          detailsLabel="Zo ja, welke?"
+          detailsLabel={t.inschrijving.questions.medicationDetails}
           detailsValue={medicijnenDetails}
           onDetailsChange={setMedicijnenDetails}
+          yesLabel={t.common.yes}
+          noLabel={t.common.no}
         />
         <YesNoField
           name="allergieen"
-          label="Heeft u allergieën?"
+          label={t.inschrijving.questions.allergies}
           value={allergieen}
           onChange={setAllergieen}
-          detailsLabel="Zo ja, waarvoor?"
+          detailsLabel={t.inschrijving.questions.allergiesDetails}
           detailsValue={allergieenDetails}
           onDetailsChange={setAllergieenDetails}
+          yesLabel={t.common.yes}
+          noLabel={t.common.no}
         />
         <YesNoField
           name="chronisch"
-          label="Heeft u een chronische aandoening?"
+          label={t.inschrijving.questions.chronic}
           value={chronisch}
           onChange={setChronisch}
-          detailsLabel="Zo ja, welke?"
+          detailsLabel={t.inschrijving.questions.chronicDetails}
           detailsValue={chronischDetails}
           onDetailsChange={setChronischDetails}
+          yesLabel={t.common.yes}
+          noLabel={t.common.no}
         />
         <YesNoField
           name="specialist"
-          label="Bent u momenteel onder behandeling van een specialist?"
+          label={t.inschrijving.questions.specialist}
           value={specialist}
           onChange={setSpecialist}
-          detailsLabel="Zo ja, welke?"
+          detailsLabel={t.inschrijving.questions.specialistDetails}
           detailsValue={specialistDetails}
           onDetailsChange={setSpecialistDetails}
+          yesLabel={t.common.yes}
+          noLabel={t.common.no}
         />
         <YesNoField
           name="instelling"
-          label="Woont u op dit moment in een instelling of begeleid wonen?"
+          label={t.inschrijving.questions.institution}
           required
           value={instelling}
           onChange={setInstelling}
+          yesLabel={t.common.yes}
+          noLabel={t.common.no}
         />
       </section>
 
       <section className="bk-form-section mt-10 space-y-6">
         <h2 className="font-heading text-lg font-bold uppercase tracking-wide text-foreground">
-          Toestemmingen
+          {t.inschrijving.sections.consent}
         </h2>
         <YesNoField
           name="delen_zorgverleners"
-          label="Mag de praktijk informatie over uw gezondheid delen met andere zorgverleners (bv. apotheek, specialist)?"
+          label={t.inschrijving.questions.shareCare}
           required
           value={delenZorgverleners}
           onChange={setDelenZorgverleners}
+          yesLabel={t.common.yes}
+          noLabel={t.common.no}
         />
         <YesNoField
           name="dossier_overdracht"
-          label="Geeft u toestemming dat uw vorige huisartsenpraktijk uw medisch dossier aan ons mag versturen?"
+          label={t.inschrijving.questions.transferRecords}
           required
           value={dossierOverdracht}
           onChange={setDossierOverdracht}
+          yesLabel={t.common.yes}
+          noLabel={t.common.no}
         />
         <div className="space-y-1.5">
-          <RequiredLabel>Handtekening patiënt / vertegenwoordiger</RequiredLabel>
+          <RequiredLabel>{t.inschrijving.fields.signature}</RequiredLabel>
           <SignaturePad onChange={setHandtekening} />
         </div>
       </section>
@@ -340,7 +361,7 @@ export function InschrijvingForm() {
           </p>
         )}
         <button type="submit" disabled={submitting} className="bk-btn w-full sm:w-auto disabled:opacity-60">
-          {submitting ? "Bezig met versturen..." : "Inschrijving versturen"}
+          {submitting ? t.inschrijving.submitting : t.inschrijving.submit}
         </button>
       </div>
     </form>

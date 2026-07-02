@@ -1,7 +1,20 @@
+"use client";
+
 import { LeafIcon } from "@/components/leaf-icon";
-import { footerQuickLinks, googleMapsUrl, practiceAddress, practiceEmail, practicePhone, practicePhoneHref } from "@/lib/site";
+import { useLanguage } from "@/components/language-provider";
+import { googleMapsUrl, practiceAddress, practiceEmail, practicePhone, practicePhoneHref } from "@/lib/site";
 
 export function SiteFooter() {
+  const { t } = useLanguage();
+
+  const quickLinks = [
+    { label: t.nav.services, href: "/#diensten" },
+    { label: t.nav.team, href: "/team" },
+    { label: t.nav.praktijk, href: "/praktijk" },
+    { label: t.nav.contact, href: "/contact" },
+    { label: t.nav.appointment, href: "/#afspraak" },
+  ];
+
   return (
     <footer className="bg-footer text-white">
       <div className="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16">
@@ -13,25 +26,17 @@ export function SiteFooter() {
               </span>
               <span className="font-heading text-lg font-semibold uppercase tracking-wide">Bloem & Bloem</span>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-white/75">
-              Persoonlijke en betrokken huisartsenzorg voor het hele gezin, aan de Keizer
-              Karelweg in Amstelveen.
-            </p>
+            <p className="mt-4 text-sm leading-relaxed text-white/75">{t.footer.tagline}</p>
           </div>
 
           <div>
-            <h3 className="font-heading text-base font-semibold uppercase tracking-wide">Contact</h3>
+            <h3 className="font-heading text-base font-semibold uppercase tracking-wide">{t.footer.contact}</h3>
             <ul className="mt-4 flex flex-col gap-3 text-sm text-white/75">
               <li className="flex items-start gap-2.5">
                 <svg className="mt-0.5 size-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" />
                 </svg>
-                <a
-                  href={googleMapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline"
-                >
+                <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer" className="hover:underline">
                   {practiceAddress}
                 </a>
               </li>
@@ -53,9 +58,9 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h3 className="font-heading text-base font-semibold uppercase tracking-wide">Snel naar</h3>
+            <h3 className="font-heading text-base font-semibold uppercase tracking-wide">{t.footer.quickLinks}</h3>
             <ul className="mt-4 flex flex-col gap-3 text-sm text-white/75">
-              {footerQuickLinks.map((link) => (
+              {quickLinks.map((link) => (
                 <li key={link.href}>
                   <a href={link.href} className="hover:underline">
                     {link.label}
@@ -66,22 +71,18 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h3 className="font-heading text-base font-semibold uppercase tracking-wide">Spoed</h3>
-            <p className="mt-4 text-sm text-white/75">
-              Levensbedreigend? Bel <span className="font-semibold">112</span>.
-            </p>
-            <p className="mt-2 text-sm text-white/75">
-              Huisartsenpost (avond/weekend/nacht/feestdagen): 0900 - 450 60 70
-            </p>
+            <h3 className="font-heading text-base font-semibold uppercase tracking-wide">{t.footer.emergency}</h3>
+            <p className="mt-4 text-sm text-white/75">{t.footer.emergency112}</p>
+            <p className="mt-2 text-sm text-white/75">{t.footer.emergencyPost}</p>
           </div>
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/15 pt-8 text-sm text-white/60 sm:flex-row">
-          <p>© {new Date().getFullYear()} Bloem & Bloem huisartsen</p>
+          <p>© {new Date().getFullYear()} {t.footer.copyright}</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:underline">Privacy</a>
-            <a href="#" className="hover:underline">Klachten</a>
-            <a href="#" className="hover:underline">Disclaimer</a>
+            <a href="#" className="hover:underline">{t.common.privacy}</a>
+            <a href="#" className="hover:underline">{t.common.complaints}</a>
+            <a href="#" className="hover:underline">{t.common.disclaimer}</a>
           </div>
         </div>
       </div>

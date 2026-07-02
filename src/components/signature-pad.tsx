@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useLanguage } from "@/components/language-provider";
 
 const SIGNATURE_HEIGHT = 86;
 
@@ -9,6 +10,7 @@ type SignaturePadProps = {
 };
 
 export function SignaturePad({ onChange }: SignaturePadProps) {
+  const { t } = useLanguage();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const isDrawing = useRef(false);
@@ -116,9 +118,9 @@ export function SignaturePad({ onChange }: SignaturePadProps) {
           onTouchEnd={stopDrawing}
         />
       </div>
-      <p className="text-xs text-muted-foreground">Teken uw handtekening met de muis of uw vinger.</p>
+      <p className="text-xs text-muted-foreground">{t.inschrijving.signatureHint}</p>
       <button type="button" onClick={clear} className="text-sm font-medium text-primary hover:underline">
-        Handtekening wissen
+        {t.inschrijving.signatureClear}
       </button>
     </div>
   );

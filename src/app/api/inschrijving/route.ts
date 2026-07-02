@@ -1,8 +1,11 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { getMessages } from "@/lib/i18n";
+import type { Locale } from "@/lib/i18n/types";
 import {
   buildRegistrationEmailHtml,
   buildRegistrationEmailText,
+  buildRegistrationSubject,
   type RegistrationFormData,
 } from "@/lib/registration-email";
 import { registrationEmail } from "@/lib/site";
@@ -67,25 +70,30 @@ function parseRegistrationData(body: unknown): RegistrationFormData | null {
   };
 }
 
-export async function POST(request: Request) {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    return NextResponse.json(
-      { error: "E-mailverzending is nog niet geconfigureerd." },
-      { status: 503 },
-    );
-  }
+function parseLocale(value: unknown): Locale {
+  return value === "en" ? "en" : "nl";
+}
 
+export async function POST(request: Request) {
   let body: unknown;
   try {
     body = await request.json();
   } catch {
-    return NextResponse.json({ error: "Ongeldige aanvraag." }, { status: 400 });
+    const t = getMessages("nl");
+    return NextResponse.json({ error: t.api.invalidRequest }, { status: 400 });
+  }
+
+  const locale = parseLocale((body as Record<string, unknown>).locale);
+  const t = getMessages(locale);
+
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    return NextResponse.json({ error: t.api.notConfigured }, { status: 503 });
   }
 
   const data = parseRegistrationData(body);
   if (!data) {
-    return NextResponse.json({ error: "Vul alle verplichte velden in." }, { status: 400 });
+    return NextResponse.json({ error: t.api.requiredFields }, { status: 400 });
   }
 
   const resend = new Resend(apiKey);
@@ -96,16 +104,13 @@ export async function POST(request: Request) {
     from,
     to: registrationEmail,
     replyTo: data.email,
-    subject: `Nieuwe inschrijving: ${data.voornaam} ${data.achternaam}`,
-    html: buildRegistrationEmailHtml(data),
-    text: buildRegistrationEmailText(data),
+    subject: buildRegistrationSubject(data, t.email),
+    html: buildRegistrationEmailHtml(data, t.email),
+    text: buildRegistrationEmailText(data, t.email),
   });
 
   if (error) {
-    return NextResponse.json(
-      { error: "Het versturen van de inschrijving is mislukt. Probeer het later opnieuw." },
-      { status: 500 },
-    );
+    return NextResponse.json({ error: t.api.sendFailed }, { status: 500 });
   }
 
   return NextResponse.json({ success: true });
