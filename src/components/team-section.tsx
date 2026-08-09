@@ -12,10 +12,7 @@ export function TeamSection() {
     <section id="team" className="bg-secondary py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="bk-section-label">{t.team.label}</p>
-          <h1 className="mt-2 font-heading text-2xl font-bold uppercase tracking-wide text-foreground md:text-3xl">
-            {t.team.title}
-          </h1>
+          <h1 className="bk-section-label">{t.team.label}</h1>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:mx-auto lg:max-w-4xl">
           {team.map((member) => {
