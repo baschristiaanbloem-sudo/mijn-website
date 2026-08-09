@@ -43,6 +43,7 @@ export const nl: Messages = {
     disclaimer: "Disclaimer",
     switchToNl: "Nederlands",
     switchToEn: "Engels",
+    switchToEs: "Spaans",
   },
   nav: {
     services: "Diensten",
@@ -111,21 +112,9 @@ export const nl: Messages = {
         title: "Kleine ingrepen",
         description: "Wratten, moedervlekken en wondverzorging in onze eigen behandelkamer.",
       },
-      vaccinaties: {
-        title: "(Reizigers)vaccinaties",
-        description: "Griepprik, reizigersvaccinaties en het rijksvaccinatieprogramma voor kinderen.",
-      },
       rijbewijs: {
         title: "Rijbewijskeuringen",
         description: "Medische keuring voor aanvraag of verlenging van uw rijbewijs, op afspraak.",
-      },
-      vasectomie: {
-        title: "Vasectomie",
-        description: "Vaste anticonceptie voor mannen, uitgevoerd in onze behandelkamer na intake.",
-      },
-      cosmetisch: {
-        title: "Cosmetisch",
-        description: "Behandeling van huidklachten en cosmetische ingrepen, afgestemd op uw wensen.",
       },
     },
   },
@@ -164,11 +153,11 @@ export const nl: Messages = {
     members: {
       bas: {
         role: "Huisarts & praktijkhouder",
-        description: "Gespecialiseerd in kleine chirurgische ingrepen.",
+        description: "",
       },
       stef: {
         role: "Huisarts & praktijkhouder",
-        description: "Gespecialiseerd in vrouwenzaken en psychiatrische problemen.",
+        description: "",
       },
     },
   },

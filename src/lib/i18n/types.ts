@@ -1,14 +1,11 @@
-export type Locale = "nl" | "en";
+export type Locale = "nl" | "en" | "es";
 
 export type ServiceKey =
   | "psychische"
   | "chronische"
   | "ouderenzorg"
   | "kleineIngrepen"
-  | "vaccinaties"
-  | "rijbewijs"
-  | "vasectomie"
-  | "cosmetisch";
+  | "rijbewijs";
 
 export type ValueKey = "attention" | "family" | "fast" | "accessible";
 
@@ -37,6 +34,7 @@ export type Messages = {
     disclaimer: string;
     switchToNl: string;
     switchToEn: string;
+    switchToEs: string;
   };
   nav: {
     services: string;

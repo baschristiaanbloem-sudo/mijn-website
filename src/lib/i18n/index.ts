@@ -1,8 +1,9 @@
 import { en } from "@/lib/i18n/en";
+import { es } from "@/lib/i18n/es";
 import { nl } from "@/lib/i18n/nl";
 import type { Locale, Messages } from "@/lib/i18n/types";
 
-export const messages: Record<Locale, Messages> = { nl, en };
+export const messages: Record<Locale, Messages> = { nl, en, es };
 
 export function getMessages(locale: Locale): Messages {
   return messages[locale];

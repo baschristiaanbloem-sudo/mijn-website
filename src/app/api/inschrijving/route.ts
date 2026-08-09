@@ -71,7 +71,8 @@ function parseRegistrationData(body: unknown): RegistrationFormData | null {
 }
 
 function parseLocale(value: unknown): Locale {
-  return value === "en" ? "en" : "nl";
+  if (value === "en" || value === "es") return value;
+  return "nl";
 }
 
 export async function POST(request: Request) {

@@ -35,9 +35,11 @@ export function TeamSection() {
                 <div className="flex flex-1 flex-col p-6">
                   <h2 className="font-heading text-xl font-medium text-foreground">{member.name}</h2>
                   <p className="mt-0.5 text-sm font-medium text-primary">{role}</p>
-                  <p className="mt-3 leading-relaxed text-muted-foreground">
-                    {t.team.members[member.key].description}
-                  </p>
+                  {t.team.members[member.key].description ? (
+                    <p className="mt-3 leading-relaxed text-muted-foreground">
+                      {t.team.members[member.key].description}
+                    </p>
+                  ) : null}
                 </div>
               </article>
             );

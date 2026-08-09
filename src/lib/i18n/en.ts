@@ -43,6 +43,7 @@ export const en: Messages = {
     disclaimer: "Disclaimer",
     switchToNl: "Dutch",
     switchToEn: "English",
+    switchToEs: "Spanish",
   },
   nav: {
     services: "Services",
@@ -110,21 +111,9 @@ export const en: Messages = {
         title: "Minor procedures",
         description: "Warts, moles and wound care in our own treatment room.",
       },
-      vaccinaties: {
-        title: "(Travel) vaccinations",
-        description: "Flu jab, travel vaccinations and the national vaccination programme for children.",
-      },
       rijbewijs: {
         title: "Driving licence medicals",
         description: "Medical examination for applying for or renewing your driving licence, by appointment.",
-      },
-      vasectomie: {
-        title: "Vasectomy",
-        description: "Permanent contraception for men, performed in our treatment room after intake.",
-      },
-      cosmetisch: {
-        title: "Cosmetic care",
-        description: "Treatment of skin complaints and cosmetic procedures tailored to your wishes.",
       },
     },
   },
@@ -163,11 +152,11 @@ export const en: Messages = {
     members: {
       bas: {
         role: "GP & practice owner",
-        description: "Specialised in minor surgical procedures.",
+        description: "",
       },
       stef: {
         role: "GP & practice owner",
-        description: "Specialised in women's health and psychiatric problems.",
+        description: "",
       },
     },
   },

@@ -1,6 +1,8 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { useLanguage } from "@/components/language-provider";
+import type { Locale } from "@/lib/i18n/types";
 
 function NlFlag() {
   return (
@@ -24,29 +26,43 @@ function GbFlag() {
   );
 }
 
+function EsFlag() {
+  return (
+    <svg viewBox="0 0 20 14" className="h-3.5 w-5 rounded-sm border border-border" aria-hidden="true">
+      <rect width="20" height="3.5" fill="#AA151B" />
+      <rect y="3.5" width="20" height="7" fill="#F1BF00" />
+      <rect y="10.5" width="20" height="3.5" fill="#AA151B" />
+    </svg>
+  );
+}
+
+const languages: {
+  locale: Locale;
+  labelKey: "switchToNl" | "switchToEn" | "switchToEs";
+  Flag: () => ReactNode;
+}[] = [
+  { locale: "nl", labelKey: "switchToNl", Flag: NlFlag },
+  { locale: "en", labelKey: "switchToEn", Flag: GbFlag },
+  { locale: "es", labelKey: "switchToEs", Flag: EsFlag },
+];
+
 export function LanguageSwitcher() {
   const { locale, setLocale, t } = useLanguage();
 
   return (
     <div className="flex items-center gap-1.5">
-      <button
-        type="button"
-        onClick={() => setLocale("nl")}
-        aria-label={t.common.switchToNl}
-        aria-pressed={locale === "nl"}
-        className={`rounded p-1 transition-opacity ${locale === "nl" ? "opacity-100 ring-1 ring-primary" : "opacity-60 hover:opacity-100"}`}
-      >
-        <NlFlag />
-      </button>
-      <button
-        type="button"
-        onClick={() => setLocale("en")}
-        aria-label={t.common.switchToEn}
-        aria-pressed={locale === "en"}
-        className={`rounded p-1 transition-opacity ${locale === "en" ? "opacity-100 ring-1 ring-primary" : "opacity-60 hover:opacity-100"}`}
-      >
-        <GbFlag />
-      </button>
+      {languages.map(({ locale: code, labelKey, Flag }) => (
+        <button
+          key={code}
+          type="button"
+          onClick={() => setLocale(code)}
+          aria-label={t.common[labelKey]}
+          aria-pressed={locale === code}
+          className={`rounded p-1 transition-opacity ${locale === code ? "opacity-100 ring-1 ring-primary" : "opacity-60 hover:opacity-100"}`}
+        >
+          <Flag />
+        </button>
+      ))}
     </div>
   );
 }

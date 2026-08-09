@@ -23,9 +23,9 @@ export function SiteHeader() {
             <LeafIcon className="size-5" />
           </span>
           <span className="font-heading text-sm font-semibold uppercase leading-tight tracking-wide text-primary md:text-base">
-            Bloem & Bloem
+            Bloem Huisartsen
             <span className="block text-[0.65rem] font-medium tracking-widest text-muted-foreground md:text-xs">
-              {t.common.brandSubtitle}
+              Amstelveen
             </span>
           </span>
         </a>
