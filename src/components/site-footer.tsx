@@ -1,18 +1,15 @@
 "use client";
 
 import { useLanguage } from "@/components/language-provider";
-import { PracticeLogo } from "@/components/practice-logo";
 import { googleMapsUrl, practiceAddress, practiceEmail, practicePhone, practicePhoneHref } from "@/lib/site";
 
 export function SiteFooter() {
   const { t } = useLanguage();
 
   const quickLinks = [
-    { label: t.nav.services, href: "/#diensten" },
     { label: t.nav.team, href: "/team" },
     { label: t.nav.praktijk, href: "/praktijk" },
     { label: t.nav.contact, href: "/contact" },
-    { label: t.nav.appointment, href: "/#afspraak" },
   ];
 
   return (
@@ -20,10 +17,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-1">
-            <div className="inline-flex rounded-sm bg-white px-3 py-2">
-              <PracticeLogo className="h-14 w-auto" />
-            </div>
-            <p className="mt-4 text-sm leading-relaxed text-white/75">{t.footer.tagline}</p>
+            <p className="text-sm leading-relaxed text-white/75">{t.footer.tagline}</p>
           </div>
 
           <div>

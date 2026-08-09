@@ -43,14 +43,11 @@ export const en: Messages = {
     disclaimer: "Disclaimer",
     switchToNl: "Dutch",
     switchToEn: "English",
-    switchToEs: "Spanish",
   },
   nav: {
-    services: "Services",
     team: "Our team",
     praktijk: "Practice",
     contact: "Contact",
-    appointment: "Book appointment",
   },
   footer: {
     tagline:
@@ -60,57 +57,20 @@ export const en: Messages = {
     emergency: "Emergency",
     emergency112: "Life-threatening emergency? Call 112.",
     emergencyPost: "GP out-of-hours service (evenings/weekends/nights/holidays): 0900 - 450 60 70",
-    copyright: "Bloem & Bloem General Practice",
+    copyright: "Bloem Huisartsen Amstelveen",
   },
   home: {
     heroWelcome: "New patients welcome!",
-    heroTitle: "Personal care, close to home for your whole family",
     heroText:
-      "At Bloem & Bloem General Practice, you come first. A trusted team that listens with care and without rush. Together we work on your health.",
+      "At Bloem Huisartsen Amstelveen we strive for personal care for the whole family. Together with you, we work on your health. We offer modern GP care with good accessibility, including online.",
     openToday:
       "Huisartsenpraktijk Kieviet will transfer to Bloem Huisartsen Amstelveen as of 1 January 2027.",
     openTodayCta: "Registration is possible right away!",
-    servicesLabel: "Our services",
-    servicesTitle: "Modern and dedicated GP care",
-    servicesText:
-      "From a simple consultation to support for chronic conditions. We offer broad care tailored to you.",
-    portalTitle: "Online patient portal",
-    portalDescription:
-      "Our online patient portal for appointments, repeat prescriptions and messages to the practice.",
-    portalFeatures: [
-      "Book an appointment at a time that suits you",
-      "Easily request repeat prescriptions",
-      "Securely exchange messages with the practice",
-    ],
-    portalButton: "Go to MijnGezondheid.net",
-    portalEmergency: "In an emergency, call us directly on",
     locationLabel: "Location",
     locationText: "You can find us at {address}. Click the map to open directions in Google Maps.",
     mapTitle: "Map showing the location of Bloem & Bloem General Practice",
     mapOpen: "Open in Google Maps →",
     mapAria: "Open {address} in Google Maps",
-    services: {
-      psychische: {
-        title: "Mental health care",
-        description: "Support for stress, anxiety and depressive symptoms, with referral where needed.",
-      },
-      chronische: {
-        title: "Chronic care",
-        description: "Support for diabetes, cardiovascular disease, COPD and asthma.",
-      },
-      ouderenzorg: {
-        title: "Elderly care",
-        description: "Tailored care for older adults, with attention for independence and living at home.",
-      },
-      kleineIngrepen: {
-        title: "Minor procedures",
-        description: "Warts, moles and wound care in our own treatment room.",
-      },
-      rijbewijs: {
-        title: "Driving licence medicals",
-        description: "Medical examination for applying for or renewing your driving licence, by appointment.",
-      },
-    },
   },
   praktijk: {
     label: "About the practice",

@@ -1,11 +1,4 @@
-export type Locale = "nl" | "en" | "es";
-
-export type ServiceKey =
-  | "psychische"
-  | "chronische"
-  | "ouderenzorg"
-  | "kleineIngrepen"
-  | "rijbewijs";
+export type Locale = "nl" | "en";
 
 export type ValueKey = "attention" | "family" | "fast" | "accessible";
 
@@ -34,14 +27,11 @@ export type Messages = {
     disclaimer: string;
     switchToNl: string;
     switchToEn: string;
-    switchToEs: string;
   };
   nav: {
-    services: string;
     team: string;
     praktijk: string;
     contact: string;
-    appointment: string;
   };
   footer: {
     tagline: string;
@@ -54,24 +44,14 @@ export type Messages = {
   };
   home: {
     heroWelcome: string;
-    heroTitle: string;
     heroText: string;
     openToday: string;
     openTodayCta: string;
-    servicesLabel: string;
-    servicesTitle: string;
-    servicesText: string;
-    portalTitle: string;
-    portalDescription: string;
-    portalFeatures: [string, string, string];
-    portalButton: string;
-    portalEmergency: string;
     locationLabel: string;
     locationText: string;
     mapTitle: string;
     mapOpen: string;
     mapAria: string;
-    services: Record<ServiceKey, { title: string; description: string }>;
   };
   praktijk: {
     label: string;

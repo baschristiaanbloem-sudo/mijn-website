@@ -26,24 +26,13 @@ function GbFlag() {
   );
 }
 
-function EsFlag() {
-  return (
-    <svg viewBox="0 0 20 14" className="h-3.5 w-5 rounded-sm border border-border" aria-hidden="true">
-      <rect width="20" height="3.5" fill="#AA151B" />
-      <rect y="3.5" width="20" height="7" fill="#F1BF00" />
-      <rect y="10.5" width="20" height="3.5" fill="#AA151B" />
-    </svg>
-  );
-}
-
 const languages: {
   locale: Locale;
-  labelKey: "switchToNl" | "switchToEn" | "switchToEs";
+  labelKey: "switchToNl" | "switchToEn";
   Flag: () => ReactNode;
 }[] = [
   { locale: "nl", labelKey: "switchToNl", Flag: NlFlag },
   { locale: "en", labelKey: "switchToEn", Flag: GbFlag },
-  { locale: "es", labelKey: "switchToEs", Flag: EsFlag },
 ];
 
 export function LanguageSwitcher() {

@@ -43,14 +43,11 @@ export const nl: Messages = {
     disclaimer: "Disclaimer",
     switchToNl: "Nederlands",
     switchToEn: "Engels",
-    switchToEs: "Spaans",
   },
   nav: {
-    services: "Diensten",
     team: "Ons team",
     praktijk: "Praktijk",
     contact: "Contact",
-    appointment: "Afspraak maken",
   },
   footer: {
     tagline:
@@ -60,58 +57,20 @@ export const nl: Messages = {
     emergency: "Spoed",
     emergency112: "Levensbedreigend? Bel 112.",
     emergencyPost: "Huisartsenpost (avond/weekend/nacht/feestdagen): 0900 - 450 60 70",
-    copyright: "Bloem & Bloem huisartsen",
+    copyright: "Bloem Huisartsen Amstelveen",
   },
   home: {
     heroWelcome: "Nieuwe patiënten welkom!",
-    heroTitle: "Persoonlijke zorg, dichtbij voor uw hele gezin",
     heroText:
-      "Bij Bloem & Bloem huisartsen staat u centraal. Een vertrouwd team dat luistert, met aandacht en zonder haast. Samen werken we aan uw gezondheid.",
+      "Bij Bloem Huisartsen Amstelveen streven wij naar persoonlijke zorg voor het hele gezin. Samen met u werken we aan uw gezondheid. We bieden moderne huisartsenzorg met goede bereikbaarheid, ook online.",
     openToday:
       "Huisartsenpraktijk Kieviet gaat per 1 januari 2027 over naar Bloem Huisartsen Amstelveen.",
     openTodayCta: "Inschrijving per direct mogelijk!",
-    servicesLabel: "Onze diensten",
-    servicesTitle: "Moderne en betrokken huisartsenzorg",
-    servicesText:
-      "Van een eenvoudig consult tot de begeleiding van chronische aandoeningen. Wij bieden brede zorg, afgestemd op u.",
-    portalTitle: "Online patiënten portaal",
-    portalDescription:
-      "Ons online patiëntenportaal voor afspraken, herhaalrecepten en berichten aan de praktijk.",
-    portalFeatures: [
-      "Afspraak maken op een moment dat u schikt",
-      "Herhaalrecepten eenvoudig aanvragen",
-      "Veilig berichten uitwisselen met de praktijk",
-    ],
-    portalButton: "Ga naar MijnGezondheid.net",
-    portalEmergency: "Bij spoed belt u ons direct op",
     locationLabel: "Locatie",
     locationText: "U vindt ons aan de {address}. Klik op de kaart om de route te openen in Google Maps.",
     mapTitle: "Kaart met locatie van Bloem & Bloem huisartsen",
     mapOpen: "Open in Google Maps →",
     mapAria: "Open {address} in Google Maps",
-    services: {
-      psychische: {
-        title: "Psychische zorg",
-        description:
-          "Begeleiding bij stress, angst en depressieve klachten, met verwijzing waar nodig.",
-      },
-      chronische: {
-        title: "Chronische zorg",
-        description: "Begeleiding bij diabetes, hart- en vaatziekten, COPD en astma.",
-      },
-      ouderenzorg: {
-        title: "Ouderenzorg",
-        description: "Zorg op maat voor ouderen, met aandacht voor zelfstandigheid en thuiswonen.",
-      },
-      kleineIngrepen: {
-        title: "Kleine ingrepen",
-        description: "Wratten, moedervlekken en wondverzorging in onze eigen behandelkamer.",
-      },
-      rijbewijs: {
-        title: "Rijbewijskeuringen",
-        description: "Medische keuring voor aanvraag of verlenging van uw rijbewijs, op afspraak.",
-      },
-    },
   },
   praktijk: {
     label: "Over de praktijk",
