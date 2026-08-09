@@ -2,7 +2,7 @@
 
 import { useLanguage } from "@/components/language-provider";
 import { replaceParams } from "@/lib/i18n";
-import { practiceEmail } from "@/lib/site";
+import { practiceEmail, registrationFormUrl } from "@/lib/site";
 
 export function InschrijvingForm() {
   const { t } = useLanguage();
@@ -17,7 +17,9 @@ export function InschrijvingForm() {
         {t.inschrijving.ctaText}
       </p>
       <a
-        href={`mailto:${practiceEmail}?subject=${encodeURIComponent(t.inschrijving.label)}`}
+        href={registrationFormUrl}
+        target="_blank"
+        rel="noopener noreferrer"
         className="bk-btn mt-8 min-h-16 w-full max-w-md px-10 text-lg font-semibold tracking-wide uppercase shadow-md md:min-h-20 md:max-w-lg md:text-xl"
       >
         {t.common.register}

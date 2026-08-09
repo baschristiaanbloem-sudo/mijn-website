@@ -59,8 +59,13 @@ export const en: Messages = {
   },
   home: {
     heroWelcome: "New patients welcome!",
-    heroText:
-      "At Bloem Huisartsen Amstelveen, personal and dedicated care is central. We are here for young and old and work with you on your health and wellbeing. In doing so, we combine trusted GP care with the possibilities of today: skilled, easily accessible and, where possible, also simple online.",
+    heroText: [
+      "Are you already a patient of Dr Kieviet?",
+      "Then you do not need to do anything. You remain a patient of the practice and will automatically transfer to Bloem Huisartsen Amstelveen as of 1 January 2027. Until then we will already be present at the practice regularly and we look forward to meeting you.",
+      "Would you like to become a patient with us?",
+      "You are most welcome! You can register quickly and easily. There is currently no waiting list.",
+      "Once your registration has been processed, you can access GP care straight away at Dr Kieviet's current practice. As of 1 January 2027 your registration will automatically continue with Bloem Huisartsen Amstelveen.",
+    ],
     openToday:
       "Huisartsenpraktijk Kieviet will transfer to Bloem Huisartsen Amstelveen as of 1 January 2027.",
     openTodayCta: "Registration is possible right away!",

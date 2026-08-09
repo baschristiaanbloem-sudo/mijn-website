@@ -59,8 +59,13 @@ export const nl: Messages = {
   },
   home: {
     heroWelcome: "Nieuwe patiënten welkom!",
-    heroText:
-      "Bij Bloem Huisartsen Amstelveen staan persoonlijke en betrokken zorg centraal. We zijn er voor jong en oud en werken samen met u aan uw gezondheid en welzijn. Daarbij combineren we vertrouwde huisartsenzorg met de mogelijkheden van nu: deskundig, goed bereikbaar en waar mogelijk ook eenvoudig online.",
+    heroText: [
+      "Bent u al patiënt bij dokter Kieviet?",
+      "Dan hoeft u niets te doen. U blijft gewoon patiënt van de praktijk en gaat per 1 januari 2027 automatisch over naar Bloem Huisartsen Amstelveen. In de periode daarvoor zijn wij al regelmatig in de praktijk aanwezig en maken we natuurlijk graag kennis met u.",
+      "Wilt u patiënt bij ons worden?",
+      "Van harte welkom! U kunt zich snel en eenvoudig inschrijven. Op dit moment is er geen wachtlijst.",
+      "Zodra uw inschrijving is verwerkt kunt u direct voor huisartsenzorg terecht bij de huidige praktijk van dokter Kieviet. Per 1 januari 2027 wordt uw inschrijving automatisch voortgezet bij Bloem Huisartsen Amstelveen.",
+    ],
     openToday:
       "Huisartsenpraktijk Kieviet gaat per 1 januari 2027 over naar Bloem Huisartsen Amstelveen.",
     openTodayCta: "Inschrijving per direct mogelijk!",

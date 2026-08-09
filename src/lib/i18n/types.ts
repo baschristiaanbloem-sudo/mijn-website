@@ -43,7 +43,7 @@ export type Messages = {
   };
   home: {
     heroWelcome: string;
-    heroText: string;
+    heroText: string[];
     openToday: string;
     openTodayCta: string;
     locationLabel: string;

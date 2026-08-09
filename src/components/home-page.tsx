@@ -22,18 +22,37 @@ export function HomePage() {
           <div className="absolute inset-0 bg-black/35" aria-hidden="true" />
 
           <div className="relative z-10 w-full max-w-xl border border-white/40 bg-white/90 p-8 shadow-xl backdrop-blur-sm md:p-10">
-            <h1 className="text-center text-sm font-medium text-[#8a7a62]">{t.home.heroWelcome}</h1>
+            <h1 className="sr-only">{t.footer.copyright}</h1>
 
-            <div className="mt-5 border border-primary/25 bg-primary/10 px-4 py-5 text-center md:px-6 md:py-6">
+            <div className="border border-primary/25 bg-primary/10 px-4 py-5 text-center md:px-6 md:py-6">
               <p className="font-heading text-base font-semibold leading-snug text-foreground md:text-lg">
                 {t.home.openToday}
               </p>
-              <p className="mt-2 text-base font-semibold text-primary md:text-lg">{t.home.openTodayCta}</p>
+              <p className="mt-2 text-base font-semibold text-primary md:text-lg">
+                <a href="/inschrijving" className="underline-offset-2 hover:underline">
+                  {t.home.openTodayCta}
+                </a>
+              </p>
             </div>
 
-            <p className="mt-5 text-center text-sm leading-relaxed text-muted-foreground md:text-base">
-              {t.home.heroText}
-            </p>
+            <div className="mt-5 text-center text-sm leading-relaxed text-muted-foreground md:text-base">
+              {t.home.heroText.map((paragraph, index) => {
+                const isQuestion = paragraph.endsWith("?");
+                return (
+                  <p
+                    key={index}
+                    className={[
+                      index > 0 ? (isQuestion ? "mt-5" : "mt-2") : undefined,
+                      isQuestion ? "font-semibold text-foreground" : undefined,
+                    ]
+                      .filter(Boolean)
+                      .join(" ")}
+                  >
+                    {paragraph}
+                  </p>
+                );
+              })}
+            </div>
 
             <div className="mt-6 flex justify-center">
               <a href="/inschrijving" className="bk-btn w-full sm:w-auto">
