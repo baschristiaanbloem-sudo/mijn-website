@@ -16,7 +16,6 @@ export function TeamSection() {
           <h1 className="mt-2 font-heading text-2xl font-bold uppercase tracking-wide text-foreground md:text-3xl">
             {t.team.title}
           </h1>
-          <p className="mt-4 text-lg leading-relaxed text-pretty text-muted-foreground">{t.team.intro}</p>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:mx-auto lg:max-w-4xl">
           {team.map((member) => {
