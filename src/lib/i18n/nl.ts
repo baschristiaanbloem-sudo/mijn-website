@@ -50,8 +50,6 @@ export const nl: Messages = {
     contact: "Contact",
   },
   footer: {
-    tagline:
-      "Persoonlijke en betrokken huisartsenzorg voor het hele gezin, aan de Keizer Karelweg in Amstelveen.",
     contact: "Contact",
     quickLinks: "Snel naar",
     emergency: "Spoed",
@@ -62,7 +60,7 @@ export const nl: Messages = {
   home: {
     heroWelcome: "Nieuwe patiënten welkom!",
     heroText:
-      "Bij Bloem Huisartsen Amstelveen streven wij naar persoonlijke zorg voor het hele gezin. Samen met u werken we aan uw gezondheid. We bieden moderne huisartsenzorg met goede bereikbaarheid, ook online.",
+      "Bij Bloem Huisartsen Amstelveen staan persoonlijke en betrokken zorg centraal. We zijn er voor jong en oud en werken samen met u aan uw gezondheid en welzijn. Daarbij combineren we vertrouwde huisartsenzorg met de mogelijkheden van nu: deskundig, goed bereikbaar en waar mogelijk ook eenvoudig online.",
     openToday:
       "Huisartsenpraktijk Kieviet gaat per 1 januari 2027 over naar Bloem Huisartsen Amstelveen.",
     openTodayCta: "Inschrijving per direct mogelijk!",
@@ -74,11 +72,14 @@ export const nl: Messages = {
   },
   praktijk: {
     label: "Over de praktijk",
-    title: "Een praktijk met een warm hart",
-    paragraph1:
-      "Bloem & Bloem huisartsen is een kleinschalige praktijk aan de Keizer Karelweg in Amstelveen. Al meer dan twintig jaar bieden wij betrokken zorg aan jong en oud, met persoonlijke aandacht als uitgangspunt.",
-    paragraph2:
-      "We geloven in zorg die bij u past. Daarom kennen we onze patiënten, denken we met u mee en werken we nauw samen met specialisten en fysiotherapeuten in de regio.",
+    title: "Welkom bij Bloem Huisartsen Amstelveen",
+    paragraphs: [
+      "Per 1 januari 2027 gaat dokter Kieviet met pensioen en nemen wij zijn huisartsenpraktijk over. De praktijk gaat verder onder de nieuwe naam Bloem Huisartsen Amstelveen.",
+      "De afgelopen periode hebben wij al regelmatig als waarnemend huisarts in de praktijk gewerkt. Mogelijk heeft u ons daardoor al eens ontmoet. Vanaf 1 september 2026 zullen wij meerdere dagen per week in de praktijk aanwezig zijn. Zo krijgen we de gelegenheid om alvast kennis te maken met u en vertrouwd te raken met de praktijk.",
+      "We kijken ernaar uit om de praktijk voort te zetten en samen met het bestaande team goede, persoonlijke en toegankelijke huisartsenzorg te bieden.",
+      "De komende periode gaan we bovendien actief aan de slag met de verdere ontwikkeling van de praktijk. Ons doel is om de kwaliteit, toegankelijkheid en dienstverlening stap voor stap te verbeteren. We hopen dat u deze verbeteringen als patiënt ook daadwerkelijk zult ervaren.",
+    ],
+    closing: "We maken graag kennis met u en kijken uit naar een mooie toekomst voor Bloem Huisartsen Amstelveen.",
     values: {
       attention: {
         title: "Aandacht & tijd",
@@ -86,7 +87,7 @@ export const nl: Messages = {
       },
       family: {
         title: "Zorg voor het gezin",
-        description: "Van baby tot grootouder — wij kennen uw familie en haar geschiedenis.",
+        description: "Van jong tot oud",
       },
       fast: {
         title: "Snel terecht",
@@ -121,11 +122,9 @@ export const nl: Messages = {
     intro:
       "Heeft u een vraag of wilt u een afspraak maken? Hier vindt u onze openingstijden en contactgegevens.",
     hoursTitle: "Openingstijden",
-    lunchNote:
-      "Tussen 12:00 en 13:00 uur is de praktijk gesloten voor de lunch. Bel voor 10:00 uur voor een afspraak op dezelfde dag.",
+    lunchNote: "Bel voor 10:00 uur voor een afspraak op dezelfde dag.",
     addressTitle: "Adres",
     phoneEmailTitle: "Telefoon & e-mail",
-    phoneEmailText: "Bel ons tijdens openingstijden of regel het online via het patiëntenportaal.",
     emergencyTitle: "Spoed buiten openingstijden",
     emergencyText:
       "Bij levensbedreigende situaties belt u altijd 112. Voor dringende zorg 's avonds en in het weekend belt u de huisartsenpost: 0900 - 450 60 70.",
@@ -143,6 +142,10 @@ export const nl: Messages = {
     title: "Inschrijfformulier huisartsenpraktijk",
     intro:
       "Vul onderstaand formulier in om u in te schrijven bij Bloem & Bloem huisartsen. Velden met een * zijn verplicht.",
+    ctaText: "Klik op de onderstaande knop en schrijf u direct in.",
+    helpText:
+      "Heeft u nog vragen of lukt het inschrijven niet? Stuur dan een mail met uw nummer naar {email}.",
+    helpFollowUp: "We nemen dan binnen een week contact met u op!",
     successTitle: "Inschrijving ontvangen",
     successText:
       "Bedankt voor uw inschrijving. Wij nemen uw gegevens in behandeling en nemen contact met u op zodra uw dossier is overgedragen.",

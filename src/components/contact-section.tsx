@@ -73,7 +73,6 @@ export function ContactSection() {
                 </svg>
               </span>
               <h2 className="mt-4 font-heading text-xl font-medium text-accent-foreground">{t.contact.phoneEmailTitle}</h2>
-              <p className="mt-2 leading-relaxed text-accent-foreground/80">{t.contact.phoneEmailText}</p>
               <a href={practicePhoneHref} className="mt-4 inline-block text-lg font-semibold text-primary">
                 {practicePhone}
               </a>

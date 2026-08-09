@@ -7,19 +7,15 @@ export function SiteFooter() {
   const { t } = useLanguage();
 
   const quickLinks = [
-    { label: t.nav.team, href: "/team" },
     { label: t.nav.praktijk, href: "/praktijk" },
+    { label: t.nav.team, href: "/team" },
     { label: t.nav.contact, href: "/contact" },
   ];
 
   return (
     <footer className="bg-footer text-white">
       <div className="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16">
-        <div className="grid gap-10 md:grid-cols-4">
-          <div className="md:col-span-1">
-            <p className="text-sm leading-relaxed text-white/75">{t.footer.tagline}</p>
-          </div>
-
+        <div className="grid gap-10 md:grid-cols-3">
           <div>
             <h3 className="font-heading text-base font-semibold uppercase tracking-wide">{t.footer.contact}</h3>
             <ul className="mt-4 flex flex-col gap-3 text-sm text-white/75">

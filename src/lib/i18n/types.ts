@@ -34,7 +34,6 @@ export type Messages = {
     contact: string;
   };
   footer: {
-    tagline: string;
     contact: string;
     quickLinks: string;
     emergency: string;
@@ -56,8 +55,8 @@ export type Messages = {
   praktijk: {
     label: string;
     title: string;
-    paragraph1: string;
-    paragraph2: string;
+    paragraphs: string[];
+    closing: string;
     values: Record<ValueKey, { title: string; description: string }>;
   };
   team: {
@@ -75,7 +74,6 @@ export type Messages = {
     lunchNote: string;
     addressTitle: string;
     phoneEmailTitle: string;
-    phoneEmailText: string;
     emergencyTitle: string;
     emergencyText: string;
     days: {
@@ -91,6 +89,9 @@ export type Messages = {
     label: string;
     title: string;
     intro: string;
+    ctaText: string;
+    helpText: string;
+    helpFollowUp: string;
     successTitle: string;
     successText: string;
     submit: string;

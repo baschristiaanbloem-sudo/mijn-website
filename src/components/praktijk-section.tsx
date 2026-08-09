@@ -40,8 +40,14 @@ export function PraktijkSection() {
           <h1 className="mt-2 font-heading text-2xl font-bold uppercase tracking-wide text-foreground md:text-3xl">
             {t.praktijk.title}
           </h1>
-          <p className="mt-4 text-lg leading-relaxed text-pretty text-muted-foreground">{t.praktijk.paragraph1}</p>
-          <p className="mt-4 leading-relaxed text-pretty text-muted-foreground">{t.praktijk.paragraph2}</p>
+          {t.praktijk.paragraphs.map((paragraph) => (
+            <p key={paragraph} className="mt-4 text-lg leading-relaxed text-pretty text-muted-foreground">
+              {paragraph}
+            </p>
+          ))}
+          <p className="mt-4 text-lg font-semibold leading-relaxed text-pretty text-foreground">
+            {t.praktijk.closing}
+          </p>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           {valueKeys.map((key) => (

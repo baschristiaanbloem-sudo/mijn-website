@@ -6,8 +6,8 @@ import { PracticeLogo } from "@/components/practice-logo";
 import { practicePhone, practicePhoneHref } from "@/lib/site";
 
 const navItems = [
-  { key: "team" as const, href: "/team" },
   { key: "praktijk" as const, href: "/praktijk" },
+  { key: "team" as const, href: "/team" },
   { key: "contact" as const, href: "/contact" },
 ];
 

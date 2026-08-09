@@ -2,16 +2,16 @@ import type { Messages } from "@/lib/i18n/types";
 import { replaceParams } from "@/lib/i18n";
 
 export type RegistrationFormData = {
-  voornaam: string;
-  achternaam: string;
-  geboortedatum: string;
-  bsn: string;
+  voornaam?: string;
+  achternaam?: string;
+  geboortedatum?: string;
+  bsn?: string;
   geslacht?: string;
-  adres: string;
-  postcode: string;
-  woonplaats: string;
-  telefoon: string;
-  email: string;
+  adres?: string;
+  postcode?: string;
+  woonplaats?: string;
+  telefoon?: string;
+  email?: string;
   zorgverzekeraar: string;
   polisnummer: string;
   hoofdverzekerde?: string;
@@ -109,18 +109,21 @@ export function buildRegistrationEmailHtml(data: RegistrationFormData, email: Me
 
 export function buildRegistrationEmailText(data: RegistrationFormData, email: Messages["email"]) {
   const labels = email.labels;
+  const address = [data.adres, [data.postcode, data.woonplaats].filter(Boolean).join(" ")]
+    .filter(Boolean)
+    .join(", ");
 
   const lines = [
     email.intro,
     "",
-    `${labels.voornaam}: ${data.voornaam}`,
-    `${labels.achternaam}: ${data.achternaam}`,
-    `${labels.geboortedatum}: ${data.geboortedatum}`,
-    `${labels.bsn}: ${data.bsn}`,
-    `${labels.geslacht}: ${data.geslacht ?? "-"}`,
-    `${labels.adres}: ${data.adres}, ${data.postcode} ${data.woonplaats}`,
-    `${labels.telefoon}: ${data.telefoon}`,
-    `${labels.email}: ${data.email}`,
+    data.voornaam ? `${labels.voornaam}: ${data.voornaam}` : "",
+    data.achternaam ? `${labels.achternaam}: ${data.achternaam}` : "",
+    data.geboortedatum ? `${labels.geboortedatum}: ${data.geboortedatum}` : "",
+    data.bsn ? `${labels.bsn}: ${data.bsn}` : "",
+    data.geslacht ? `${labels.geslacht}: ${data.geslacht}` : "",
+    address ? `${labels.adres}: ${address}` : "",
+    data.telefoon ? `${labels.telefoon}: ${data.telefoon}` : "",
+    data.email ? `${labels.email}: ${data.email}` : "",
     "",
     `${labels.zorgverzekeraar}: ${data.zorgverzekeraar}`,
     `${labels.polisnummer}: ${data.polisnummer}`,
@@ -136,11 +139,12 @@ export function buildRegistrationEmailText(data: RegistrationFormData, email: Me
     data.handtekening.startsWith("data:image")
       ? email.signatureInHtml
       : `${labels.handtekening}: ${data.handtekening}`,
-  ];
+  ].filter((line, index, arr) => line !== "" || (arr[index - 1] !== "" && arr[index + 1] !== ""));
 
   return lines.join("\n");
 }
 
 export function buildRegistrationSubject(data: RegistrationFormData, email: Messages["email"]) {
-  return replaceParams(email.subject, { name: `${data.voornaam} ${data.achternaam}` });
+  const name = [data.voornaam, data.achternaam].filter(Boolean).join(" ");
+  return name ? replaceParams(email.subject, { name }) : email.heading;
 }

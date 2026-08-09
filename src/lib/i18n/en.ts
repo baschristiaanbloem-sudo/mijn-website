@@ -50,8 +50,6 @@ export const en: Messages = {
     contact: "Contact",
   },
   footer: {
-    tagline:
-      "Personal and dedicated GP care for the whole family on Keizer Karelweg in Amstelveen.",
     contact: "Contact",
     quickLinks: "Quick links",
     emergency: "Emergency",
@@ -62,7 +60,7 @@ export const en: Messages = {
   home: {
     heroWelcome: "New patients welcome!",
     heroText:
-      "At Bloem Huisartsen Amstelveen we strive for personal care for the whole family. Together with you, we work on your health. We offer modern GP care with good accessibility, including online.",
+      "At Bloem Huisartsen Amstelveen, personal and dedicated care is central. We are here for young and old and work with you on your health and wellbeing. In doing so, we combine trusted GP care with the possibilities of today: skilled, easily accessible and, where possible, also simple online.",
     openToday:
       "Huisartsenpraktijk Kieviet will transfer to Bloem Huisartsen Amstelveen as of 1 January 2027.",
     openTodayCta: "Registration is possible right away!",
@@ -74,11 +72,15 @@ export const en: Messages = {
   },
   praktijk: {
     label: "About the practice",
-    title: "A practice with a warm heart",
-    paragraph1:
-      "Bloem & Bloem General Practice is a small-scale practice on Keizer Karelweg in Amstelveen. For more than twenty years we have provided dedicated care to young and old, with personal attention as our starting point.",
-    paragraph2:
-      "We believe in care that suits you. That is why we know our patients, think along with you and work closely with specialists and physiotherapists in the region.",
+    title: "Welcome to Bloem Huisartsen Amstelveen",
+    paragraphs: [
+      "As of 1 January 2027, Dr Kieviet will retire and we will take over his GP practice. The practice will continue under the new name Bloem Huisartsen Amstelveen.",
+      "In the recent period we have already regularly worked as locum GPs in the practice. You may therefore already have met us. From 1 September 2026 we will be present in the practice several days a week. This gives us the opportunity to get to know you and become familiar with the practice.",
+      "We look forward to continuing the practice and, together with the existing team, providing good, personal and accessible GP care.",
+      "In the coming period we will also actively work on the further development of the practice. Our goal is to improve quality, accessibility and service step by step. We hope that you as a patient will truly experience these improvements.",
+    ],
+    closing:
+      "We look forward to meeting you and to a bright future for Bloem Huisartsen Amstelveen.",
     values: {
       attention: {
         title: "Attention & time",
@@ -86,7 +88,7 @@ export const en: Messages = {
       },
       family: {
         title: "Family care",
-        description: "From baby to grandparent — we know your family and its history.",
+        description: "From young to old",
       },
       fast: {
         title: "Quick access",
@@ -121,11 +123,9 @@ export const en: Messages = {
     intro:
       "Do you have a question or would you like to make an appointment? Here you will find our opening hours and contact details.",
     hoursTitle: "Opening hours",
-    lunchNote:
-      "Between 12:00 and 13:00 the practice is closed for lunch. Call before 10:00 for a same-day appointment.",
+    lunchNote: "Call before 10:00 for a same-day appointment.",
     addressTitle: "Address",
     phoneEmailTitle: "Phone & email",
-    phoneEmailText: "Call us during opening hours or arrange it online via the patient portal.",
     emergencyTitle: "Emergency outside opening hours",
     emergencyText:
       "In life-threatening situations always call 112. For urgent care in the evening or at weekends, call the GP out-of-hours service: 0900 - 450 60 70.",
@@ -143,6 +143,10 @@ export const en: Messages = {
     title: "GP practice registration form",
     intro:
       "Complete the form below to register with Bloem & Bloem General Practice. Fields marked with * are required.",
+    ctaText: "Click the button below to register straight away.",
+    helpText:
+      "Do you still have questions, or is registration not working? Please email your phone number to {email}.",
+    helpFollowUp: "We will contact you within a week!",
     successTitle: "Registration received",
     successText:
       "Thank you for registering. We will process your details and contact you once your records have been transferred.",

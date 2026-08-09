@@ -18,36 +18,23 @@ function parseRegistrationData(body: unknown): RegistrationFormData | null {
   if (!body || typeof body !== "object") return null;
 
   const data = body as Record<string, unknown>;
-  const required = [
-    "voornaam",
-    "achternaam",
-    "geboortedatum",
-    "bsn",
-    "adres",
-    "postcode",
-    "woonplaats",
-    "telefoon",
-    "email",
-    "zorgverzekeraar",
-    "polisnummer",
-    "handtekening",
-  ];
+  const required = ["zorgverzekeraar", "polisnummer", "handtekening"];
 
   for (const field of required) {
     if (typeof data[field] !== "string" || !data[field]) return null;
   }
 
   return {
-    voornaam: data.voornaam as string,
-    achternaam: data.achternaam as string,
-    geboortedatum: data.geboortedatum as string,
-    bsn: data.bsn as string,
+    voornaam: optionalString(data.voornaam),
+    achternaam: optionalString(data.achternaam),
+    geboortedatum: optionalString(data.geboortedatum),
+    bsn: optionalString(data.bsn),
     geslacht: optionalString(data.geslacht),
-    adres: data.adres as string,
-    postcode: data.postcode as string,
-    woonplaats: data.woonplaats as string,
-    telefoon: data.telefoon as string,
-    email: data.email as string,
+    adres: optionalString(data.adres),
+    postcode: optionalString(data.postcode),
+    woonplaats: optionalString(data.woonplaats),
+    telefoon: optionalString(data.telefoon),
+    email: optionalString(data.email),
     zorgverzekeraar: data.zorgverzekeraar as string,
     polisnummer: data.polisnummer as string,
     hoofdverzekerde: optionalString(data.hoofdverzekerde),
@@ -103,7 +90,7 @@ export async function POST(request: Request) {
   const { error } = await resend.emails.send({
     from,
     to: registrationEmail,
-    replyTo: data.email,
+    ...(data.email ? { replyTo: data.email } : {}),
     subject: buildRegistrationSubject(data, t.email),
     html: buildRegistrationEmailHtml(data, t.email),
     text: buildRegistrationEmailText(data, t.email),
