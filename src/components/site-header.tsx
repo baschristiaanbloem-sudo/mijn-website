@@ -1,8 +1,8 @@
 "use client";
 
-import { LeafIcon } from "@/components/leaf-icon";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { useLanguage } from "@/components/language-provider";
+import { PracticeLogo } from "@/components/practice-logo";
 import { practicePhone, practicePhoneHref } from "@/lib/site";
 
 const navItems = [
@@ -17,17 +17,9 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-white shadow-sm">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-6">
-        <a href="/" className="flex items-center gap-3">
-          <span className="flex size-10 items-center justify-center bg-primary text-primary-foreground">
-            <LeafIcon className="size-5" />
-          </span>
-          <span className="font-heading text-sm font-semibold uppercase leading-tight tracking-wide text-primary md:text-base">
-            Bloem Huisartsen
-            <span className="block text-[0.65rem] font-medium tracking-widest text-muted-foreground md:text-xs">
-              Amstelveen
-            </span>
-          </span>
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6 md:py-4">
+        <a href="/" className="flex shrink-0 items-center" aria-label="Bloem Huisartsen Amstelveen">
+          <PracticeLogo className="h-12 w-auto sm:h-14 md:h-16" priority />
         </a>
 
         <nav className="hidden items-center gap-6 md:flex" aria-label={t.common.navAria}>

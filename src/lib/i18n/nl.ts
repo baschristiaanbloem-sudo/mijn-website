@@ -63,12 +63,13 @@ export const nl: Messages = {
     copyright: "Bloem & Bloem huisartsen",
   },
   home: {
-    heroWelcome: "Nieuwe patiënten welkom",
+    heroWelcome: "Nieuwe patiënten welkom!",
     heroTitle: "Persoonlijke zorg, dichtbij voor uw hele gezin",
     heroText:
       "Bij Bloem & Bloem huisartsen staat u centraal. Een vertrouwd team dat luistert, met aandacht en zonder haast. Samen werken we aan uw gezondheid.",
-    heroCta: "Bekijk en regel uw zaken:",
-    openToday: "Vandaag geopend:",
+    openToday:
+      "Huisartsenpraktijk Kieviet gaat per 1 januari 2027 over naar Bloem Huisartsen Amstelveen.",
+    openTodayCta: "Inschrijving per direct mogelijk!",
     servicesLabel: "Onze diensten",
     servicesTitle: "Moderne en betrokken huisartsenzorg",
     servicesText:
@@ -88,12 +89,6 @@ export const nl: Messages = {
     mapTitle: "Kaart met locatie van Bloem & Bloem huisartsen",
     mapOpen: "Open in Google Maps →",
     mapAria: "Open {address} in Google Maps",
-    buttons: {
-      register: "Inschrijven",
-      appointment: "Afspraak maken",
-      econsult: "E-consult",
-      results: "Uitslagen",
-    },
     services: {
       psychische: {
         title: "Psychische zorg",

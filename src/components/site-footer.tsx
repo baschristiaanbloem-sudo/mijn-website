@@ -1,7 +1,7 @@
 "use client";
 
-import { LeafIcon } from "@/components/leaf-icon";
 import { useLanguage } from "@/components/language-provider";
+import { PracticeLogo } from "@/components/practice-logo";
 import { googleMapsUrl, practiceAddress, practiceEmail, practicePhone, practicePhoneHref } from "@/lib/site";
 
 export function SiteFooter() {
@@ -20,11 +20,8 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2.5">
-              <span className="flex size-9 items-center justify-center bg-white/15">
-                <LeafIcon className="size-5" />
-              </span>
-              <span className="font-heading text-lg font-semibold uppercase tracking-wide">Bloem & Bloem</span>
+            <div className="inline-flex rounded-sm bg-white px-3 py-2">
+              <PracticeLogo className="h-14 w-auto" />
             </div>
             <p className="mt-4 text-sm leading-relaxed text-white/75">{t.footer.tagline}</p>
           </div>

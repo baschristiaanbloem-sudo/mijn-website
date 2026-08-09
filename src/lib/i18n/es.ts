@@ -63,12 +63,13 @@ export const es: Messages = {
     copyright: "Bloem & Bloem médicos de familia",
   },
   home: {
-    heroWelcome: "Nuevos pacientes bienvenidos",
+    heroWelcome: "¡Nuevos pacientes bienvenidos!",
     heroTitle: "Atención personal, cerca de usted y de toda su familia",
     heroText:
       "En Bloem & Bloem médicos de familia, usted es lo más importante. Un equipo de confianza que escucha, con atención y sin prisas. Juntos trabajamos por su salud.",
-    heroCta: "Consulte y gestione sus asuntos:",
-    openToday: "Abierto hoy:",
+    openToday:
+      "Huisartsenpraktijk Kieviet pasará a Bloem Huisartsen Amstelveen a partir del 1 de enero de 2027.",
+    openTodayCta: "¡La inscripción es posible de inmediato!",
     servicesLabel: "Nuestros servicios",
     servicesTitle: "Atención médica moderna y comprometida",
     servicesText:
@@ -88,12 +89,6 @@ export const es: Messages = {
     mapTitle: "Mapa con la ubicación de Bloem & Bloem médicos de familia",
     mapOpen: "Abrir en Google Maps →",
     mapAria: "Abrir {address} en Google Maps",
-    buttons: {
-      register: "Inscribirse",
-      appointment: "Pedir cita",
-      econsult: "E-consulta",
-      results: "Resultados",
-    },
     services: {
       psychische: {
         title: "Atención psicológica",

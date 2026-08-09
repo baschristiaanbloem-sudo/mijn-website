@@ -70,36 +70,9 @@ export function HomePage() {
               {t.home.heroText}
             </p>
 
-            <p className="mt-6 text-center text-sm font-semibold text-foreground">{t.home.heroCta}</p>
-            <div className="mt-3 flex flex-col gap-2">
-              <a href="/inschrijving" className="bk-btn relative w-full justify-start pl-12">
-                <svg className="absolute left-4 size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM4 19.5a7.5 7.5 0 0 1 15 0v.75H4V19.5Z" />
-                </svg>
-                {t.home.buttons.register}
-              </a>
-              <a href="https://www.mijngezondheid.net" target="_blank" rel="noopener noreferrer" className="bk-btn relative w-full justify-start pl-12">
-                <svg className="absolute left-4 size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
-                </svg>
-                {t.home.buttons.appointment}
-              </a>
-              <a href="https://www.mijngezondheid.net" target="_blank" rel="noopener noreferrer" className="bk-btn relative w-full justify-start pl-12">
-                <svg className="absolute left-4 size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path d="M7.5 8.25h9m-9 3H12m-9 .75V19.5A2.25 2.25 0 0 0 4.5 21.75h15A2.25 2.25 0 0 0 21.75 19.5V6.75A2.25 2.25 0 0 0 19.5 4.5h-15A2.25 2.25 0 0 0 2.25 6.75v12" />
-                </svg>
-                {t.home.buttons.econsult}
-              </a>
-              <a href="https://www.mijngezondheid.net" target="_blank" rel="noopener noreferrer" className="bk-btn relative w-full justify-start pl-12">
-                <svg className="absolute left-4 size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-                </svg>
-                {t.home.buttons.results}
-              </a>
-            </div>
-
-            <p className="mt-6 border-t border-border pt-4 text-center text-sm font-medium text-foreground">
-              {t.home.openToday} <span className="text-primary">08:00 – 17:00 uur</span>
+            <p className="mt-6 border-t border-border pt-4 text-center text-sm font-medium leading-relaxed text-foreground">
+              {t.home.openToday}
+              <span className="mt-1 block text-primary">{t.home.openTodayCta}</span>
             </p>
           </div>
         </section>

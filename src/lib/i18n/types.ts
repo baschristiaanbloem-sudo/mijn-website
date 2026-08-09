@@ -56,8 +56,8 @@ export type Messages = {
     heroWelcome: string;
     heroTitle: string;
     heroText: string;
-    heroCta: string;
     openToday: string;
+    openTodayCta: string;
     servicesLabel: string;
     servicesTitle: string;
     servicesText: string;
@@ -71,12 +71,6 @@ export type Messages = {
     mapTitle: string;
     mapOpen: string;
     mapAria: string;
-    buttons: {
-      register: string;
-      appointment: string;
-      econsult: string;
-      results: string;
-    };
     services: Record<ServiceKey, { title: string; description: string }>;
   };
   praktijk: {

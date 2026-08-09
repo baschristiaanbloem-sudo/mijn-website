@@ -63,12 +63,13 @@ export const en: Messages = {
     copyright: "Bloem & Bloem General Practice",
   },
   home: {
-    heroWelcome: "New patients welcome",
+    heroWelcome: "New patients welcome!",
     heroTitle: "Personal care, close to home for your whole family",
     heroText:
       "At Bloem & Bloem General Practice, you come first. A trusted team that listens with care and without rush. Together we work on your health.",
-    heroCta: "View and manage your affairs:",
-    openToday: "Open today:",
+    openToday:
+      "Huisartsenpraktijk Kieviet will transfer to Bloem Huisartsen Amstelveen as of 1 January 2027.",
+    openTodayCta: "Registration is possible right away!",
     servicesLabel: "Our services",
     servicesTitle: "Modern and dedicated GP care",
     servicesText:
@@ -88,12 +89,6 @@ export const en: Messages = {
     mapTitle: "Map showing the location of Bloem & Bloem General Practice",
     mapOpen: "Open in Google Maps →",
     mapAria: "Open {address} in Google Maps",
-    buttons: {
-      register: "Register",
-      appointment: "Book appointment",
-      econsult: "E-consult",
-      results: "Test results",
-    },
     services: {
       psychische: {
         title: "Mental health care",
