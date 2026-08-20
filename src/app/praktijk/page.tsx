@@ -4,9 +4,9 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Over de praktijk | Bloem & Bloem huisartsen",
+  title: "Over de praktijk | Bloem Huisartsen Amstelveen",
   description:
-    "Lees meer over Bloem & Bloem huisartsen aan de Keizer Karelweg in Amstelveen: persoonlijke zorg met aandacht voor het hele gezin.",
+    "Lees meer over Bloem Huisartsen Amstelveen aan de Keizer Karelweg: persoonlijke zorg met aandacht voor het hele gezin.",
 };
 
 export default function PraktijkPage() {

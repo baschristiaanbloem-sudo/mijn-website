@@ -4,9 +4,9 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Contact | Bloem & Bloem huisartsen",
+  title: "Contact | Bloem Huisartsen Amstelveen",
   description:
-    "Openingstijden en contactgegevens van Bloem & Bloem huisartsen aan de Keizer Karelweg in Amstelveen.",
+    "Openingstijden en contactgegevens van Bloem Huisartsen Amstelveen aan de Keizer Karelweg.",
 };
 
 export default function ContactPage() {

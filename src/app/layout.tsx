@@ -10,7 +10,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Bloem & Bloem huisartsen",
+  title: "Bloem Huisartsen Amstelveen",
   description:
     "Uw vertrouwde huisartsenpraktijk aan de Keizer Karelweg in Amstelveen. Persoonlijke zorg, consulten, vaccinaties en chronische begeleiding.",
 };

@@ -85,7 +85,7 @@ export async function POST(request: Request) {
 
   const resend = new Resend(apiKey);
   const from =
-    process.env.EMAIL_FROM ?? "Inschrijving Bloem & Bloem <onboarding@resend.dev>";
+    process.env.EMAIL_FROM ?? "Inschrijving Bloem Huisartsen Amstelveen <onboarding@resend.dev>";
 
   const { error } = await resend.emails.send({
     from,

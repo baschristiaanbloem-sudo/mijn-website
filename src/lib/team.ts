@@ -7,6 +7,6 @@ export const team = [
   {
     key: "stef" as const,
     name: "Stef Bloem",
-    image: "/images/stef-bloem.png",
+    image: "/images/stef-bloem-portret.png",
   },
 ];

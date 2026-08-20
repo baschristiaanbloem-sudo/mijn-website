@@ -19,13 +19,13 @@ export function TeamSection() {
             const role = t.team.members[member.key].role;
             return (
               <article key={member.name} className="bk-card flex flex-col overflow-hidden">
-                <div className="aspect-[4/3] w-full shrink-0 overflow-hidden">
+                <div className="aspect-square w-full shrink-0 overflow-hidden">
                   <Image
                     src={member.image}
                     alt={replaceParams(t.team.portraitAlt, { name: member.name, role })}
                     width={600}
-                    height={450}
-                    className="h-full w-full object-cover object-top"
+                    height={600}
+                    className="h-full w-full object-cover object-center grayscale"
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-6">

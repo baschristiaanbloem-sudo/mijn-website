@@ -3,29 +3,27 @@ import type { Messages } from "@/lib/i18n/types";
 export const en: Messages = {
   meta: {
     home: {
-      title: "Bloem & Bloem General Practice",
+      title: "Bloem Huisartsen Amstelveen",
       description:
         "Your trusted GP practice on Keizer Karelweg in Amstelveen. Personal care, consultations, vaccinations and chronic disease support.",
     },
     contact: {
-      title: "Contact | Bloem & Bloem General Practice",
+      title: "Contact | Bloem Huisartsen Amstelveen",
       description:
-        "Opening hours and contact details for Bloem & Bloem General Practice on Keizer Karelweg in Amstelveen.",
+        "Opening hours and contact details for Bloem Huisartsen Amstelveen on Keizer Karelweg.",
     },
     praktijk: {
-      title: "About the practice | Bloem & Bloem General Practice",
+      title: "About the practice | Bloem Huisartsen Amstelveen",
       description:
-        "Learn more about Bloem & Bloem General Practice in Amstelveen: personal care with attention for the whole family.",
+        "Learn more about Bloem Huisartsen Amstelveen: personal care with attention for the whole family.",
     },
     team: {
-      title: "Our team | Bloem & Bloem General Practice",
-      description:
-        "Meet Dr Bas Bloem and Dr Stef Bloem of Bloem & Bloem General Practice in Amstelveen.",
+      title: "Our team | Bloem Huisartsen Amstelveen",
+      description: "Meet Bas Bloem and Stef Bloem of Bloem Huisartsen Amstelveen.",
     },
     inschrijving: {
-      title: "Register | Bloem & Bloem General Practice",
-      description:
-        "Register with Bloem & Bloem General Practice in Amstelveen using our online registration form.",
+      title: "Register | Bloem Huisartsen Amstelveen",
+      description: "Register with Bloem Huisartsen Amstelveen.",
     },
   },
   common: {
@@ -54,7 +52,7 @@ export const en: Messages = {
     quickLinks: "Quick links",
     emergency: "Emergency",
     emergency112: "Life-threatening emergency? Call 112.",
-    emergencyPost: "GP out-of-hours service (evenings/weekends/nights/holidays): 0900 - 450 60 70",
+    emergencyPost: "GP out-of-hours service (evenings/weekends/nights/holidays): 020 456 2000",
     copyright: "Bloem Huisartsen Amstelveen",
   },
   home: {
@@ -70,8 +68,8 @@ export const en: Messages = {
       "Huisartsenpraktijk Kieviet will transfer to Bloem Huisartsen Amstelveen as of 1 January 2027.",
     openTodayCta: "Registration is possible right away!",
     locationLabel: "Location",
-    locationText: "You can find us at {address}. Click the map to open directions in Google Maps.",
-    mapTitle: "Map showing the location of Bloem & Bloem General Practice",
+    locationText: "You can find us at {address}.",
+    mapTitle: "Map showing the location of Bloem Huisartsen Amstelveen",
     mapOpen: "Open in Google Maps →",
     mapAria: "Open {address} in Google Maps",
   },
@@ -133,7 +131,7 @@ export const en: Messages = {
     phoneEmailTitle: "Phone & email",
     emergencyTitle: "Emergency outside opening hours",
     emergencyText:
-      "In life-threatening situations always call 112. For urgent care in the evening or at weekends, call the GP out-of-hours service: 0900 - 450 60 70.",
+      "In life-threatening situations always call 112. For urgent care in the evening or at weekends, call the GP out-of-hours service: 020 456 2000.",
     days: {
       monday: "Monday",
       tuesday: "Tuesday",
@@ -147,7 +145,7 @@ export const en: Messages = {
     label: "Register",
     title: "GP practice registration form",
     intro:
-      "Complete the form below to register with Bloem & Bloem General Practice. Fields marked with * are required.",
+      "Complete the form below to register with Bloem Huisartsen Amstelveen. Fields marked with * are required.",
     ctaText: "Click the button below to register straight away.",
     helpText:
       "Do you still have questions, or is registration not working? Please email your phone number to {email}.",

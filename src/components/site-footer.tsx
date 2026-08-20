@@ -64,13 +64,8 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/15 pt-8 text-sm text-white/60 sm:flex-row">
+        <div className="mt-12 border-t border-white/15 pt-8 text-center text-sm text-white/60">
           <p>© {new Date().getFullYear()} {t.footer.copyright}</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:underline">{t.common.privacy}</a>
-            <a href="#" className="hover:underline">{t.common.complaints}</a>
-            <a href="#" className="hover:underline">{t.common.disclaimer}</a>
-          </div>
         </div>
       </div>
     </footer>

@@ -3,29 +3,27 @@ import type { Messages } from "@/lib/i18n/types";
 export const nl: Messages = {
   meta: {
     home: {
-      title: "Bloem & Bloem huisartsen",
+      title: "Bloem Huisartsen Amstelveen",
       description:
         "Uw vertrouwde huisartsenpraktijk aan de Keizer Karelweg in Amstelveen. Persoonlijke zorg, consulten, vaccinaties en chronische begeleiding.",
     },
     contact: {
-      title: "Contact | Bloem & Bloem huisartsen",
+      title: "Contact | Bloem Huisartsen Amstelveen",
       description:
-        "Openingstijden en contactgegevens van Bloem & Bloem huisartsen aan de Keizer Karelweg in Amstelveen.",
+        "Openingstijden en contactgegevens van Bloem Huisartsen Amstelveen aan de Keizer Karelweg.",
     },
     praktijk: {
-      title: "Over de praktijk | Bloem & Bloem huisartsen",
+      title: "Over de praktijk | Bloem Huisartsen Amstelveen",
       description:
-        "Lees meer over Bloem & Bloem huisartsen aan de Keizer Karelweg in Amstelveen: persoonlijke zorg met aandacht voor het hele gezin.",
+        "Lees meer over Bloem Huisartsen Amstelveen aan de Keizer Karelweg: persoonlijke zorg met aandacht voor het hele gezin.",
     },
     team: {
-      title: "Ons team | Bloem & Bloem huisartsen",
-      description:
-        "Maak kennis met Dokter Bas Bloem en Dokter Stef Bloem van Bloem & Bloem huisartsen in Amstelveen.",
+      title: "Ons team | Bloem Huisartsen Amstelveen",
+      description: "Maak kennis met Bas Bloem en Stef Bloem van Bloem Huisartsen Amstelveen.",
     },
     inschrijving: {
-      title: "Inschrijven | Bloem & Bloem huisartsen",
-      description:
-        "Schrijf u in bij Bloem & Bloem huisartsen in Amstelveen via het online inschrijfformulier.",
+      title: "Inschrijven | Bloem Huisartsen Amstelveen",
+      description: "Schrijf u in bij Bloem Huisartsen Amstelveen.",
     },
   },
   common: {
@@ -54,7 +52,7 @@ export const nl: Messages = {
     quickLinks: "Snel naar",
     emergency: "Spoed",
     emergency112: "Levensbedreigend? Bel 112.",
-    emergencyPost: "Huisartsenpost (avond/weekend/nacht/feestdagen): 0900 - 450 60 70",
+    emergencyPost: "Huisartsenpost (avond/weekend/nacht/feestdagen): 020 456 2000",
     copyright: "Bloem Huisartsen Amstelveen",
   },
   home: {
@@ -70,8 +68,8 @@ export const nl: Messages = {
       "Huisartsenpraktijk Kieviet gaat per 1 januari 2027 over naar Bloem Huisartsen Amstelveen.",
     openTodayCta: "Inschrijving per direct mogelijk!",
     locationLabel: "Locatie",
-    locationText: "U vindt ons aan de {address}. Klik op de kaart om de route te openen in Google Maps.",
-    mapTitle: "Kaart met locatie van Bloem & Bloem huisartsen",
+    locationText: "U vindt ons aan de {address}.",
+    mapTitle: "Kaart met locatie van Bloem Huisartsen Amstelveen",
     mapOpen: "Open in Google Maps →",
     mapAria: "Open {address} in Google Maps",
   },
@@ -132,7 +130,7 @@ export const nl: Messages = {
     phoneEmailTitle: "Telefoon & e-mail",
     emergencyTitle: "Spoed buiten openingstijden",
     emergencyText:
-      "Bij levensbedreigende situaties belt u altijd 112. Voor dringende zorg 's avonds en in het weekend belt u de huisartsenpost: 0900 - 450 60 70.",
+      "Bij levensbedreigende situaties belt u altijd 112. Voor dringende zorg 's avonds en in het weekend belt u de huisartsenpost: 020 456 2000.",
     days: {
       monday: "Maandag",
       tuesday: "Dinsdag",
@@ -146,7 +144,7 @@ export const nl: Messages = {
     label: "Inschrijven",
     title: "Inschrijfformulier huisartsenpraktijk",
     intro:
-      "Vul onderstaand formulier in om u in te schrijven bij Bloem & Bloem huisartsen. Velden met een * zijn verplicht.",
+      "Vul onderstaand formulier in om u in te schrijven bij Bloem Huisartsen Amstelveen. Velden met een * zijn verplicht.",
     ctaText: "Klik op de onderstaande knop en schrijf u direct in.",
     helpText:
       "Heeft u nog vragen of lukt het inschrijven niet? Stuur dan een mail met uw nummer naar {email}.",

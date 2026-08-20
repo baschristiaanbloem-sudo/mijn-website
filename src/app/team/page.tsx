@@ -4,9 +4,8 @@ import { SiteHeader } from "@/components/site-header";
 import { TeamSection } from "@/components/team-section";
 
 export const metadata: Metadata = {
-  title: "Ons team | Bloem & Bloem huisartsen",
-  description:
-    "Maak kennis met Dokter Bas Bloem en Dokter Stef Bloem van Bloem & Bloem huisartsen in Amstelveen.",
+  title: "Ons team | Bloem Huisartsen Amstelveen",
+  description: "Maak kennis met Bas Bloem en Stef Bloem van Bloem Huisartsen Amstelveen.",
 };
 
 export default function TeamPage() {

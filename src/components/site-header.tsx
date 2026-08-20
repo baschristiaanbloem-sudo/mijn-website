@@ -18,7 +18,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border bg-white shadow-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6 md:py-4">
         <a href="/" className="flex shrink-0 items-center" aria-label="Bloem Huisartsen Amstelveen">
-          <PracticeLogo className="h-16 w-auto sm:h-[4.5rem] md:h-20" priority />
+          <PracticeLogo className="h-14 w-auto sm:h-16 md:h-[4.5rem]" priority />
         </a>
 
         <nav className="hidden items-center gap-6 md:flex" aria-label={t.common.navAria}>
