@@ -90,6 +90,7 @@ export type Messages = {
     title: string;
     intro: string;
     ctaText: string;
+    redirectNote: string;
     helpText: string;
     helpFollowUp: string;
     successTitle: string;

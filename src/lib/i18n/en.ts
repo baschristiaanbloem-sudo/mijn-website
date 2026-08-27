@@ -147,6 +147,8 @@ export const en: Messages = {
     intro:
       "Complete the form below to register with Bloem Huisartsen Amstelveen. Fields marked with * are required.",
     ctaText: "Click the button below to register straight away.",
+    redirectNote:
+      "You will be redirected to the registration form of Huisartsenpraktijk Kieviet. Until 1 January 2027, registrations are handled via this form.",
     helpText:
       "Do you still have questions, or is registration not working? Please email your phone number to {email}.",
     helpFollowUp: "We will contact you within a week!",

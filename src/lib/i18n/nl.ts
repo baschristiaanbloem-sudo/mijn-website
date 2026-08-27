@@ -146,6 +146,8 @@ export const nl: Messages = {
     intro:
       "Vul onderstaand formulier in om u in te schrijven bij Bloem Huisartsen Amstelveen. Velden met een * zijn verplicht.",
     ctaText: "Klik op de onderstaande knop en schrijf u direct in.",
+    redirectNote:
+      "U wordt doorgestuurd naar het inschrijfformulier van Huisartsenpraktijk Kieviet. Tot 1 januari 2027 lopen de inschrijvingen via dit formulier.",
     helpText:
       "Heeft u nog vragen of lukt het inschrijven niet? Stuur dan een mail met uw nummer naar {email}.",
     helpFollowUp: "We nemen dan binnen een week contact met u op!",

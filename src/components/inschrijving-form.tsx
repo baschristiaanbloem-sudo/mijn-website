@@ -16,6 +16,9 @@ export function InschrijvingForm() {
       <p className="text-base font-medium leading-relaxed text-foreground md:text-lg">
         {t.inschrijving.ctaText}
       </p>
+      <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
+        {t.inschrijving.redirectNote}
+      </p>
       <a
         href={registrationFormUrl}
         target="_blank"
