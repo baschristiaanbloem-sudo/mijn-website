@@ -17,7 +17,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16">
         <div className="grid gap-10 md:grid-cols-3">
           <div>
-            <h3 className="font-heading text-base font-semibold uppercase tracking-wide">{t.footer.contact}</h3>
+            <p className="font-heading text-base font-semibold uppercase tracking-wide">{t.footer.contact}</p>
             <ul className="mt-4 flex flex-col gap-3 text-sm text-white/75">
               <li className="flex items-start gap-2.5">
                 <svg className="mt-0.5 size-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -45,7 +45,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h3 className="font-heading text-base font-semibold uppercase tracking-wide">{t.footer.quickLinks}</h3>
+            <p className="font-heading text-base font-semibold uppercase tracking-wide">{t.footer.quickLinks}</p>
             <ul className="mt-4 flex flex-col gap-3 text-sm text-white/75">
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -58,7 +58,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h3 className="font-heading text-base font-semibold uppercase tracking-wide">{t.footer.emergency}</h3>
+            <p className="font-heading text-base font-semibold uppercase tracking-wide">{t.footer.emergency}</p>
             <p className="mt-4 text-sm text-white/75">{t.footer.emergency112}</p>
             <p className="mt-2 text-sm text-white/75">{t.footer.emergencyPost}</p>
           </div>

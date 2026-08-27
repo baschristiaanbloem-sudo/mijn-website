@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Contact | Bloem Huisartsen Amstelveen",
   description:
     "Openingstijden en contactgegevens van Bloem Huisartsen Amstelveen aan de Keizer Karelweg.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {

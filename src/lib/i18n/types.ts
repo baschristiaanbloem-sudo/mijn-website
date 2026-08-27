@@ -87,82 +87,10 @@ export type Messages = {
   };
   inschrijving: {
     label: string;
-    title: string;
-    intro: string;
     ctaText: string;
     redirectNote: string;
+    helpTitle: string;
     helpText: string;
     helpFollowUp: string;
-    successTitle: string;
-    successText: string;
-    submit: string;
-    submitting: string;
-    signatureRequired: string;
-    signatureMissing: string;
-    sendFailed: string;
-    networkError: string;
-    sections: {
-      patient: string;
-      insurance: string;
-      previousGp: string;
-      medical: string;
-      consent: string;
-    };
-    fields: {
-      firstName: string;
-      lastName: string;
-      birthDate: string;
-      bsn: string;
-      gender: string;
-      street: string;
-      postcode: string;
-      city: string;
-      phone: string;
-      email: string;
-      insurer: string;
-      policyNumber: string;
-      mainInsuredName: string;
-      mainInsuredBirthDate: string;
-      previousGpName: string;
-      previousGpPhone: string;
-      previousGpAddress: string;
-      signature: string;
-    };
-    questions: {
-      medication: string;
-      medicationDetails: string;
-      allergies: string;
-      allergiesDetails: string;
-      chronic: string;
-      chronicDetails: string;
-      specialist: string;
-      specialistDetails: string;
-      institution: string;
-      shareCare: string;
-      transferRecords: string;
-    };
-    signatureHint: string;
-    signatureClear: string;
-  };
-  email: {
-    subject: string;
-    heading: string;
-    intro: string;
-    sections: {
-      patient: string;
-      insurance: string;
-      previousGp: string;
-      medical: string;
-      consent: string;
-      signature: string;
-    };
-    labels: Record<string, string>;
-    signatureInHtml: string;
-  };
-  api: {
-    notConfigured: string;
-    invalidRequest: string;
-    requiredFields: string;
-    sendFailed: string;
   };
 };

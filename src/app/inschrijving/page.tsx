@@ -6,6 +6,9 @@ import { SiteHeader } from "@/components/site-header";
 export const metadata: Metadata = {
   title: "Inschrijven | Bloem Huisartsen Amstelveen",
   description: "Schrijf u in bij Bloem Huisartsen Amstelveen.",
+  alternates: {
+    canonical: "/inschrijving",
+  },
 };
 
 export default function InschrijvingPage() {

@@ -3,20 +3,12 @@
 import { useLanguage } from "@/components/language-provider";
 import {
   googleMapsUrl,
+  hourRows,
   practiceAddress,
   practiceEmail,
   practicePhone,
   practicePhoneHref,
 } from "@/lib/site";
-
-const hourRows = [
-  { key: "monday" as const, hours: "08:00 – 17:00" },
-  { key: "tuesday" as const, hours: "08:00 – 17:00" },
-  { key: "wednesday" as const, hours: "08:00 – 13:00" },
-  { key: "thursday" as const, hours: "08:00 – 17:00" },
-  { key: "friday" as const, hours: "08:00 – 16:00" },
-  { key: "weekend" as const, hours: "", muted: true },
-];
 
 export function ContactSection() {
   const { t } = useLanguage();

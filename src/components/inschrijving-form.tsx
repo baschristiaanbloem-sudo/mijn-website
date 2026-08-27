@@ -12,8 +12,8 @@ export function InschrijvingForm() {
 
   return (
     <div className="mx-auto flex min-h-[50vh] max-w-2xl flex-col items-center justify-center px-4 text-center">
-      <h1 className="sr-only">{t.inschrijving.label}</h1>
-      <p className="text-base font-medium leading-relaxed text-foreground md:text-lg">
+      <h1 className="bk-section-label">{t.inschrijving.label}</h1>
+      <p className="mt-4 text-base font-medium leading-relaxed text-foreground md:text-lg">
         {t.inschrijving.ctaText}
       </p>
       <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
@@ -27,7 +27,10 @@ export function InschrijvingForm() {
       >
         {t.common.register}
       </a>
-      <p className="mt-8 text-sm leading-relaxed text-muted-foreground md:text-base">
+      <h2 className="mt-10 font-heading text-base font-semibold text-foreground md:text-lg">
+        {t.inschrijving.helpTitle}
+      </h2>
+      <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
         {helpParts[0]}
         <a
           href={`mailto:${practiceEmail}`}

@@ -38,16 +38,23 @@ export function HomePage() {
             <div className="mt-5 text-center text-sm leading-relaxed text-muted-foreground md:text-base">
               {t.home.heroText.map((paragraph, index) => {
                 const isQuestion = paragraph.endsWith("?");
+                const className = [
+                  index > 0 ? (isQuestion ? "mt-5" : "mt-2") : undefined,
+                  isQuestion ? "font-semibold text-foreground" : undefined,
+                ]
+                  .filter(Boolean)
+                  .join(" ");
+
+                if (isQuestion) {
+                  return (
+                    <h2 key={index} className={className}>
+                      {paragraph}
+                    </h2>
+                  );
+                }
+
                 return (
-                  <p
-                    key={index}
-                    className={[
-                      index > 0 ? (isQuestion ? "mt-5" : "mt-2") : undefined,
-                      isQuestion ? "font-semibold text-foreground" : undefined,
-                    ]
-                      .filter(Boolean)
-                      .join(" ")}
-                  >
+                  <p key={index} className={className || undefined}>
                     {paragraph}
                   </p>
                 );
@@ -65,7 +72,7 @@ export function HomePage() {
         <section id="locatie" className="bg-secondary py-16 md:py-20">
           <div className="mx-auto max-w-6xl px-4 md:px-6">
             <div className="mx-auto max-w-2xl text-center">
-              <p className="bk-section-label">{t.home.locationLabel}</p>
+              <h2 className="bk-section-label">{t.home.locationLabel}</h2>
               <p className="mt-4 text-lg leading-relaxed text-pretty text-muted-foreground">
                 {replaceParams(t.home.locationText, { address: practiceAddress })}
               </p>

@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Over de praktijk | Bloem Huisartsen Amstelveen",
   description:
     "Lees meer over Bloem Huisartsen Amstelveen aan de Keizer Karelweg: persoonlijke zorg met aandacht voor het hele gezin.",
+  alternates: {
+    canonical: "/praktijk",
+  },
 };
 
 export default function PraktijkPage() {
