@@ -25,7 +25,7 @@ export function TeamSection() {
                     alt={replaceParams(t.team.portraitAlt, { name: member.name, role })}
                     width={600}
                     height={600}
-                    className="h-full w-full object-cover object-center grayscale"
+                    className="h-full w-full object-cover object-top grayscale"
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
