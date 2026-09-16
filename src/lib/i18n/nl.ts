@@ -19,7 +19,7 @@ export const nl: Messages = {
     },
     team: {
       title: "Ons team | Bloem Huisartsen Amstelveen",
-      description: "Maak kennis met Bas Bloem en Stef Bloem van Bloem Huisartsen Amstelveen.",
+      description: "Maak kennis met B.C.Bloem en S.J.Bloem van Bloem Huisartsen Amstelveen.",
     },
     inschrijving: {
       title: "Inschrijven | Bloem Huisartsen Amstelveen",

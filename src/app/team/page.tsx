@@ -5,7 +5,7 @@ import { TeamSection } from "@/components/team-section";
 
 export const metadata: Metadata = {
   title: "Ons team | Bloem Huisartsen Amstelveen",
-  description: "Maak kennis met Bas Bloem en Stef Bloem van Bloem Huisartsen Amstelveen.",
+  description: "Maak kennis met B.C.Bloem en S.J.Bloem van Bloem Huisartsen Amstelveen.",
   alternates: {
     canonical: "/team",
   },
