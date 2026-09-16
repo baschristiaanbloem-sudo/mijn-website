@@ -14,7 +14,7 @@ export function TeamSection() {
         <div className="mx-auto max-w-2xl text-center">
           <h1 className="bk-section-label">{t.team.label}</h1>
         </div>
-        <div className="mx-auto mt-12 grid max-w-[17rem] gap-5 sm:max-w-[29rem] sm:grid-cols-2">
+        <div className="mx-auto mt-12 grid max-w-[19.5rem] gap-5 sm:max-w-[33.5rem] sm:grid-cols-2">
           {team.map((member) => {
             const role = t.team.members[member.key].role;
             return (
