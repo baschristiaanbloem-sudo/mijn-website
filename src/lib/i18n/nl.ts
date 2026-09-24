@@ -144,7 +144,7 @@ export const nl: Messages = {
     label: "Inschrijven",
     ctaText: "Klik op de onderstaande knop en schrijf u direct in.",
     redirectNote:
-      "U wordt doorgestuurd naar het inschrijfformulier van Huisartsenpraktijk Kieviet. Tot 1 januari 2027 lopen de inschrijvingen via dit formulier.",
+      "U wordt doorgestuurd naar ons inschrijfformulier. Vult u deze zo volledig mogelijk in. U ontvangt per mail een bevestiging.",
     helpTitle: "Lukt het inschrijven niet?",
     helpText: "Heeft u nog vragen? Stuur dan een mail met uw nummer naar {email}.",
     helpFollowUp: "We nemen dan binnen een week contact met u op!",

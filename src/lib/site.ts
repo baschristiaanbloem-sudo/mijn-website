@@ -15,7 +15,8 @@ export const practicePhoneHref = "tel:0206412640";
 export const practicePhoneInternational = "+31206412640";
 export const practiceEmail = "info@bloemhuisartsen.nl";
 
-export const registrationFormUrl = "https://praktijk-kieviet.mijnpraktijk.nl/register";
+export const registrationFormUrl =
+  "https://bloem-huisartsen-amstelveen.mijnpraktijk.nl/register";
 
 export const googleMapsUrl =
   "https://www.google.com/maps/search/?api=1&query=Keizer+Karelweg+94C,+Amstelveen,+Netherlands";

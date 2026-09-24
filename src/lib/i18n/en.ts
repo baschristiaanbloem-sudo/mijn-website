@@ -145,7 +145,7 @@ export const en: Messages = {
     label: "Register",
     ctaText: "Click the button below to register straight away.",
     redirectNote:
-      "You will be redirected to the registration form of Huisartsenpraktijk Kieviet. Until 1 January 2027, registrations are handled via this form.",
+      "You will be redirected to our registration form. Please fill it in as completely as possible. You will receive a confirmation by email.",
     helpTitle: "Having trouble registering?",
     helpText: "Do you still have questions? Please email your phone number to {email}.",
     helpFollowUp: "We will contact you within a week!",
