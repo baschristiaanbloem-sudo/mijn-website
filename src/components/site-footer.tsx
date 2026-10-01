@@ -9,6 +9,7 @@ export function SiteFooter() {
   const quickLinks = [
     { label: t.nav.praktijk, href: "/praktijk" },
     { label: t.nav.team, href: "/team" },
+    { label: t.nav.nieuwInAmstelveen, href: "/nieuw-in-amstelveen" },
     { label: t.nav.contact, href: "/contact" },
   ];
 

@@ -27,6 +27,7 @@ const pageTitles: Record<string, keyof Messages["meta"]> = {
   "/contact": "contact",
   "/praktijk": "praktijk",
   "/team": "team",
+  "/nieuw-in-amstelveen": "nieuwInAmstelveen",
   "/inschrijving": "inschrijving",
 };
 

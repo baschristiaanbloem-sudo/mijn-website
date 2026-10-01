@@ -9,6 +9,7 @@ import { practicePhone, practicePhoneHref } from "@/lib/site";
 const navItems = [
   { key: "praktijk" as const, href: "/praktijk" },
   { key: "team" as const, href: "/team" },
+  { key: "nieuwInAmstelveen" as const, href: "/nieuw-in-amstelveen" },
   { key: "contact" as const, href: "/contact" },
 ];
 

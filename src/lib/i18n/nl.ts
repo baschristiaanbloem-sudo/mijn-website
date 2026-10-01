@@ -21,6 +21,11 @@ export const nl: Messages = {
       title: "Ons team | Bloem Huisartsen Amstelveen",
       description: "Maak kennis met B.C.Bloem en S.J.Bloem van Bloem Huisartsen Amstelveen.",
     },
+    nieuwInAmstelveen: {
+      title: "Nieuw in Amstelveen | Bloem Huisartsen Amstelveen",
+      description:
+        "Nieuw in Amstelveen? Schrijf u op tijd in bij een huisarts. Inschrijven bij Bloem Huisartsen Amstelveen kost u niets.",
+    },
     inschrijving: {
       title: "Inschrijven | Bloem Huisartsen Amstelveen",
       description: "Schrijf u in bij Bloem Huisartsen Amstelveen.",
@@ -45,6 +50,7 @@ export const nl: Messages = {
   nav: {
     team: "Ons team",
     praktijk: "Praktijk",
+    nieuwInAmstelveen: "Nieuw in Amstelveen",
     contact: "Contact",
   },
   footer: {
@@ -139,6 +145,43 @@ export const nl: Messages = {
       friday: "Vrijdag",
       weekend: "Weekend",
     },
+  },
+  nieuwInAmstelveen: {
+    label: "Nieuw in Amstelveen",
+    title: "Nieuw in Amstelveen? Schrijf u op tijd in bij een huisarts",
+    intro: [
+      "Bent u onlangs in Amstelveen komen wonen? Schrijf u dan bij voorkeur direct in bij een huisarts, ook als u gezond bent en op dit moment geen zorg nodig heeft.",
+      "Wacht niet tot u een consult nodig heeft. Als u zich pas aanmeldt wanneer u ziek bent is het niet altijd mogelijk om u direct in te schrijven. We kunnen u dan mogelijk niet op korte termijn een afspraak bij de huisarts geven.",
+      "De Nederlandse overheid en de Gemeente Amstelveen adviseren daarom nadrukkelijk om u bij een huisarts in te schrijven zodra u in Nederland komt wonen.",
+    ],
+    sections: [
+      {
+        title: "Waarom vooraf inschrijven?",
+        paragraphs: [
+          "De huisarts is in Nederland meestal uw eerste aanspreekpunt bij gezondheidsklachten. De huisarts geeft medisch advies, schrijft waar nodig medicijnen voor en verwijst u indien nodig naar een specialist of ziekenhuis.",
+          "Als u vooraf bent ingeschreven, zijn uw gegevens al bij de praktijk bekend wanneer u zorg nodig heeft. Indien nodig kunt u dan altijd een consult krijgen bij de huisarts.",
+        ],
+      },
+      {
+        title: "Inschrijven kost u niets",
+        paragraphs: [
+          "Heeft u een Nederlandse zorgverzekering? Dan zijn aan de inschrijving bij een huisarts geen kosten verbonden.",
+          "Ook voor een consult bij de huisarts geldt geen verplicht eigen risico en geen eigen bijdrage. Let op: bijvoorbeeld medicijnen, laboratoriumonderzoek of ziekenhuiszorg kunnen wel onder uw eigen risico vallen.",
+        ],
+      },
+      {
+        title: "Inschrijven bij Bloem Huisartsen Amstelveen",
+        paragraphs: [
+          "Wij verwelkomen nieuwe patiënten die in Amstelveen wonen, zolang er ruimte is voor nieuwe inschrijvingen.",
+          "Bent u gezond en heeft u momenteel geen medische klachten? Ook dan adviseren wij u om uw inschrijving alvast te regelen.",
+          "Schrijf u nu in. Het kost u niets en u weet waar u terechtkunt wanneer u medische zorg nodig heeft.",
+        ],
+      },
+    ],
+    moreInfoPrefix: "Meer informatie over huisartsenzorg in Nederland vindt u op:",
+    moreInfoLinkLabel: "Thuisarts.nl – Huisartsenzorg",
+    moreInfoUrl: "https://www.thuisarts.nl/huisartsenzorg",
+    cta: "Schrijf u nu in",
   },
   inschrijving: {
     label: "Inschrijven",

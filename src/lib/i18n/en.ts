@@ -21,6 +21,11 @@ export const en: Messages = {
       title: "Our team | Bloem Huisartsen Amstelveen",
       description: "Meet B.C.Bloem and S.J.Bloem of Bloem Huisartsen Amstelveen.",
     },
+    nieuwInAmstelveen: {
+      title: "New to Amstelveen | Bloem Huisartsen Amstelveen",
+      description:
+        "New to Amstelveen? Register with a GP in good time. Registration with Bloem Huisartsen Amstelveen is free of charge.",
+    },
     inschrijving: {
       title: "Register | Bloem Huisartsen Amstelveen",
       description: "Register with Bloem Huisartsen Amstelveen.",
@@ -45,6 +50,7 @@ export const en: Messages = {
   nav: {
     team: "Our team",
     praktijk: "Practice",
+    nieuwInAmstelveen: "New to Amstelveen",
     contact: "Contact",
   },
   footer: {
@@ -140,6 +146,43 @@ export const en: Messages = {
       friday: "Friday",
       weekend: "Weekend",
     },
+  },
+  nieuwInAmstelveen: {
+    label: "New to Amstelveen",
+    title: "New to Amstelveen? Register with a GP in good time",
+    intro: [
+      "Have you recently moved to Amstelveen? Preferably register with a GP straight away, even if you are healthy and do not currently need care.",
+      "Do not wait until you need a consultation. If you only register when you are ill, it is not always possible to register you immediately. We may then not be able to offer you a GP appointment at short notice.",
+      "The Dutch government and the Municipality of Amstelveen therefore strongly advise you to register with a GP as soon as you come to live in the Netherlands.",
+    ],
+    sections: [
+      {
+        title: "Why register in advance?",
+        paragraphs: [
+          "In the Netherlands, the GP is usually your first point of contact for health concerns. The GP provides medical advice, prescribes medication where needed, and refers you to a specialist or hospital if necessary.",
+          "If you are already registered, your details are known at the practice when you need care. If needed, you can then always get a consultation with the GP.",
+        ],
+      },
+      {
+        title: "Registration costs nothing",
+        paragraphs: [
+          "Do you have Dutch health insurance? Then there are no costs for registering with a GP.",
+          "A GP consultation also has no compulsory deductible excess and no co-payment. Please note: medicines, laboratory tests or hospital care, for example, may still fall under your deductible excess.",
+        ],
+      },
+      {
+        title: "Registering with Bloem Huisartsen Amstelveen",
+        paragraphs: [
+          "We welcome new patients who live in Amstelveen, as long as there is room for new registrations.",
+          "Are you healthy and currently have no medical complaints? Even then we advise you to arrange your registration in advance.",
+          "Register now. It costs you nothing and you know where to go when you need medical care.",
+        ],
+      },
+    ],
+    moreInfoPrefix: "More information about GP care in the Netherlands is available at:",
+    moreInfoLinkLabel: "Thuisarts.nl – GP care",
+    moreInfoUrl: "https://www.thuisarts.nl/huisartsenzorg",
+    cta: "Register now",
   },
   inschrijving: {
     label: "Register",

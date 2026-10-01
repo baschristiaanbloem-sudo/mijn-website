@@ -10,6 +10,7 @@ export type Messages = {
     contact: { title: string; description: string };
     praktijk: { title: string; description: string };
     team: { title: string; description: string };
+    nieuwInAmstelveen: { title: string; description: string };
     inschrijving: { title: string; description: string };
   };
   common: {
@@ -31,6 +32,7 @@ export type Messages = {
   nav: {
     team: string;
     praktijk: string;
+    nieuwInAmstelveen: string;
     contact: string;
   };
   footer: {
@@ -84,6 +86,16 @@ export type Messages = {
       friday: string;
       weekend: string;
     };
+  };
+  nieuwInAmstelveen: {
+    label: string;
+    title: string;
+    intro: string[];
+    sections: { title: string; paragraphs: string[] }[];
+    moreInfoPrefix: string;
+    moreInfoLinkLabel: string;
+    moreInfoUrl: string;
+    cta: string;
   };
   inschrijving: {
     label: string;
