@@ -152,7 +152,8 @@ export const en: Messages = {
     title: "New to Amstelveen? Register with a GP before you need one",
     intro: [
       "Have you recently moved to Amstelveen? We recommend registering with a GP as soon as possible, even if you are healthy and do not currently need medical care.",
-      "**Do not wait until you need an appointment.** If you only register when you are ill, we may not be able to complete your registration immediately or offer you a GP appointment at short notice.",
+      "**Do not wait until you need an appointment.**",
+      "If you only register when you are ill, we may not be able to complete your registration immediately or offer you a GP appointment at short notice.",
       "The Dutch government therefore recommends registering with a GP. The Municipality of Amstelveen also provides international residents with information on finding a local GP.",
     ],
     sections: [
@@ -166,7 +167,7 @@ export const en: Messages = {
       {
         title: "Registration is free",
         paragraphs: [
-          "Do you have Dutch health insurance? **There is no charge to register with a GP.**",
+          "Do you have Dutch health insurance? **Registering with a GP is free of charge.**",
           "GP consultations are also covered by Dutch basic health insurance and are not subject to the compulsory deductible (*eigen risico*) or a co-payment.",
           "Please note that other healthcare costs, such as medication, laboratory tests or hospital care, may be subject to your deductible.",
         ],
