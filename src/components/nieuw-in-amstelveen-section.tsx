@@ -1,6 +1,23 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { useLanguage } from "@/components/language-provider";
+
+function formatRichText(text: string): ReactNode[] {
+  return text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g).map((part, index) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return (
+        <strong key={index} className="font-semibold text-foreground">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    if (part.startsWith("*") && part.endsWith("*")) {
+      return <em key={index}>{part.slice(1, -1)}</em>;
+    }
+    return part;
+  });
+}
 
 export function NieuwInAmstelveenSection() {
   const { t } = useLanguage();
@@ -16,7 +33,7 @@ export function NieuwInAmstelveenSection() {
 
         {page.intro.map((paragraph) => (
           <p key={paragraph} className="mt-4 text-lg leading-relaxed text-pretty text-muted-foreground">
-            {paragraph}
+            {formatRichText(paragraph)}
           </p>
         ))}
 
@@ -27,13 +44,17 @@ export function NieuwInAmstelveenSection() {
             </h2>
             {section.paragraphs.map((paragraph) => (
               <p key={paragraph} className="mt-4 text-lg leading-relaxed text-pretty text-muted-foreground">
-                {paragraph}
+                {formatRichText(paragraph)}
               </p>
             ))}
           </div>
         ))}
 
-        <p className="mt-10 text-lg leading-relaxed text-pretty text-muted-foreground">
+        <a href="/inschrijving" className="bk-btn mt-8">
+          {page.cta}
+        </a>
+
+        <p className="mt-8 text-lg leading-relaxed text-pretty text-muted-foreground">
           {page.moreInfoPrefix}{" "}
           <a
             href={page.moreInfoUrl}
@@ -45,10 +66,6 @@ export function NieuwInAmstelveenSection() {
           </a>
           .
         </p>
-
-        <a href="/inschrijving" className="bk-btn mt-8">
-          {page.cta}
-        </a>
       </div>
     </section>
   );
