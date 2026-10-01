@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { useLanguage } from "@/components/language-provider";
 import { PracticeLogo } from "@/components/practice-logo";
@@ -13,6 +14,8 @@ const navItems = [
 
 export function SiteHeader() {
   const { t } = useLanguage();
+  const pathname = usePathname();
+  const showRegisterCta = pathname !== "/inschrijving";
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-white shadow-sm">
@@ -44,9 +47,11 @@ export function SiteHeader() {
             {practicePhone}
           </a>
           <LanguageSwitcher />
-          <a href="/inschrijving" className="bk-btn">
-            {t.common.register}
-          </a>
+          {showRegisterCta ? (
+            <a href="/inschrijving" className="bk-btn">
+              {t.common.register}
+            </a>
+          ) : null}
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
@@ -70,9 +75,11 @@ export function SiteHeader() {
                 {t.nav[link.key]}
               </a>
             ))}
-            <a href="/inschrijving" className="bk-btn mt-2 w-full">
-              {t.common.register}
-            </a>
+            {showRegisterCta ? (
+              <a href="/inschrijving" className="bk-btn mt-2 w-full">
+                {t.common.register}
+              </a>
+            ) : null}
           </div>
         </details>
         </div>
