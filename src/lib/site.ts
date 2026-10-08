@@ -31,7 +31,7 @@ export const openingHours = [
   { dayOfWeek: "Tuesday" as const, opens: "08:00", closes: "17:00" },
   { dayOfWeek: "Wednesday" as const, opens: "08:00", closes: "13:00" },
   { dayOfWeek: "Thursday" as const, opens: "08:00", closes: "17:00" },
-  { dayOfWeek: "Friday" as const, opens: "08:00", closes: "16:00" },
+  { dayOfWeek: "Friday" as const, opens: "08:00", closes: "17:00" },
 ];
 
 export const hourRows = [
@@ -39,6 +39,6 @@ export const hourRows = [
   { key: "tuesday" as const, hours: "08:00 – 17:00" },
   { key: "wednesday" as const, hours: "08:00 – 13:00" },
   { key: "thursday" as const, hours: "08:00 – 17:00" },
-  { key: "friday" as const, hours: "08:00 – 16:00" },
+  { key: "friday" as const, hours: "08:00 – 17:00" },
   { key: "weekend" as const, hours: "", muted: true },
 ];

@@ -191,5 +191,7 @@ export const nl: Messages = {
     helpTitle: "Lukt het inschrijven niet?",
     helpText: "Heeft u nog vragen? Stuur dan een mail met uw nummer naar {email}.",
     helpFollowUp: "We nemen dan binnen een week contact met u op!",
+    helpEmailNote:
+      "Let op! Het emailadres is alleen bedoeld voor administratieve zaken, voor medisch inhoudelijke problemen neem s.v.p. contact op met de praktijk.",
   },
 };

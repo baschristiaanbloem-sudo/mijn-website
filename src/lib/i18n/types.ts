@@ -104,5 +104,6 @@ export type Messages = {
     helpTitle: string;
     helpText: string;
     helpFollowUp: string;
+    helpEmailNote: string;
   };
 };

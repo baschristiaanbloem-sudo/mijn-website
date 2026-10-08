@@ -43,6 +43,9 @@ export function InschrijvingForm() {
       <p className="mt-2 text-sm leading-relaxed text-muted-foreground md:text-base">
         {t.inschrijving.helpFollowUp}
       </p>
+      <p className="mt-2 text-xs leading-relaxed text-muted-foreground md:text-sm">
+        {t.inschrijving.helpEmailNote}
+      </p>
     </div>
   );
 }

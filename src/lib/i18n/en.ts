@@ -194,5 +194,7 @@ export const en: Messages = {
     helpTitle: "Having trouble registering?",
     helpText: "Do you still have questions? Please email your phone number to {email}.",
     helpFollowUp: "We will contact you within a week!",
+    helpEmailNote:
+      "Please note! This email address is for administrative matters only. For medical issues, please contact the practice.",
   },
 };
