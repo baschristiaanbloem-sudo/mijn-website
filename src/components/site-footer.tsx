@@ -10,6 +10,7 @@ export function SiteFooter() {
     { label: t.nav.praktijk, href: "/praktijk" },
     { label: t.nav.team, href: "/team" },
     { label: t.nav.nieuwInAmstelveen, href: "/nieuw-in-amstelveen" },
+    { label: t.gpAmstelveen.label, href: "/gp-amstelveen" },
     { label: t.nav.contact, href: "/contact" },
   ];
 

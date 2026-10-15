@@ -4,10 +4,16 @@ import { SiteHeader } from "@/components/site-header";
 import { TeamSection } from "@/components/team-section";
 
 export const metadata: Metadata = {
-  title: "Ons team | Bloem Huisartsen Amstelveen",
-  description: "Maak kennis met B.C.Bloem en S.J.Bloem van Bloem Huisartsen Amstelveen.",
+  title: "Huisartsen Amstelveen | Ons team | Bloem Huisartsen",
+  description:
+    "Maak kennis met de huisartsen van Bloem Huisartsen Amstelveen: B.C.Bloem en S.J.Bloem.",
   alternates: {
     canonical: "/team",
+  },
+  openGraph: {
+    title: "Huisartsen Amstelveen | Ons team | Bloem Huisartsen",
+    description:
+      "Maak kennis met de huisartsen van Bloem Huisartsen Amstelveen: B.C.Bloem en S.J.Bloem.",
   },
 };
 

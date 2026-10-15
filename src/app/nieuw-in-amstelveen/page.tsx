@@ -4,11 +4,16 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Nieuw in Amstelveen | Bloem Huisartsen Amstelveen",
+  title: "Huisarts Amstelveen voor nieuwe inwoners | Bloem Huisartsen",
   description:
-    "Nieuw in Amstelveen? Schrijf u op tijd in bij een huisarts. Inschrijven bij Bloem Huisartsen Amstelveen kost u niets.",
+    "Nieuw in Amstelveen? Schrijf u op tijd in bij een huisarts. Bloem Huisartsen Amstelveen verwelkomt nieuwe patiënten.",
   alternates: {
     canonical: "/nieuw-in-amstelveen",
+  },
+  openGraph: {
+    title: "Huisarts Amstelveen voor nieuwe inwoners | Bloem Huisartsen",
+    description:
+      "Nieuw in Amstelveen? Schrijf u op tijd in bij een huisarts. Bloem Huisartsen Amstelveen verwelkomt nieuwe patiënten.",
   },
 };
 

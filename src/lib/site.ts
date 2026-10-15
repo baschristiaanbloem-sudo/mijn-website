@@ -24,7 +24,15 @@ export const googleMapsEmbedUrl =
   "https://www.google.com/maps?q=Keizer+Karelweg+94C,+Amstelveen,+Netherlands&output=embed";
 
 export const practiceDescription =
-  "Huisartsenpraktijk aan de Keizer Karelweg in Amstelveen. Persoonlijke zorg voor jong en oud, consulten, vaccinaties en chronische begeleiding.";
+  "Zoekt u een huisarts of GP in Amstelveen? Bloem Huisartsen verwelkomt nieuwe patiënten. Schrijf u eenvoudig online in.";
+
+export const practiceSeoKeywords = [
+  "Huisarts Amstelveen",
+  "Huisartsenpraktijk Amstelveen",
+  "GP Amstelveen",
+  "GP",
+  "General practitioner Amstelveen",
+] as const;
 
 export const openingHours = [
   { dayOfWeek: "Monday" as const, opens: "08:00", closes: "17:00" },

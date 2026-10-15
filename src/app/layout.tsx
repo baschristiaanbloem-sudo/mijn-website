@@ -13,24 +13,21 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: practiceName,
+  title: "Huisarts Amstelveen | Bloem Huisartsen (GP)",
   description: practiceDescription,
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     type: "website",
     locale: "nl_NL",
     url: siteUrl,
     siteName: practiceName,
-    title: practiceName,
+    title: "Huisarts Amstelveen | Bloem Huisartsen (GP)",
     description: practiceDescription,
     images: [
       {
         url: "/images/hero-praktijk.png",
         width: 1200,
         height: 630,
-        alt: practiceName,
+        alt: "Huisartsenpraktijk Bloem Huisartsen Amstelveen",
       },
     ],
   },

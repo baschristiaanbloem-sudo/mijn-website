@@ -11,6 +11,7 @@ export type Messages = {
     praktijk: { title: string; description: string };
     team: { title: string; description: string };
     nieuwInAmstelveen: { title: string; description: string };
+    gpAmstelveen: { title: string; description: string };
     inschrijving: { title: string; description: string };
   };
   common: {
@@ -44,6 +45,8 @@ export type Messages = {
     copyright: string;
   };
   home: {
+    h1: string;
+    h1Intro: string;
     heroWelcome: string;
     heroText: string[];
     openToday: string;
@@ -95,6 +98,12 @@ export type Messages = {
     moreInfoPrefix: string;
     moreInfoLinkLabel: string;
     moreInfoUrl: string;
+    cta: string;
+  };
+  gpAmstelveen: {
+    label: string;
+    title: string;
+    paragraphs: string[];
     cta: string;
   };
   inschrijving: {

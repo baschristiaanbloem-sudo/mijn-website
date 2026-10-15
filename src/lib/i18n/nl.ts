@@ -3,32 +3,39 @@ import type { Messages } from "@/lib/i18n/types";
 export const nl: Messages = {
   meta: {
     home: {
-      title: "Bloem Huisartsen Amstelveen",
+      title: "Huisarts Amstelveen | Bloem Huisartsen (GP)",
       description:
-        "Uw vertrouwde huisartsenpraktijk aan de Keizer Karelweg in Amstelveen. Persoonlijke zorg, consulten, vaccinaties en chronische begeleiding.",
+        "Zoekt u een huisarts of GP in Amstelveen? Bloem Huisartsen verwelkomt nieuwe patiënten. Schrijf u eenvoudig online in.",
     },
     contact: {
-      title: "Contact | Bloem Huisartsen Amstelveen",
+      title: "Contact huisarts Amstelveen | Bloem Huisartsen",
       description:
-        "Openingstijden en contactgegevens van Bloem Huisartsen Amstelveen aan de Keizer Karelweg.",
+        "Contactgegevens en openingstijden van huisarts Bloem Huisartsen Amstelveen aan de Keizer Karelweg.",
     },
     praktijk: {
-      title: "Over de praktijk | Bloem Huisartsen Amstelveen",
+      title: "Huisartsenpraktijk Amstelveen | Bloem Huisartsen",
       description:
-        "Lees meer over Bloem Huisartsen Amstelveen aan de Keizer Karelweg: persoonlijke zorg met aandacht voor het hele gezin.",
+        "Huisartsenpraktijk Amstelveen aan de Keizer Karelweg. Bloem Huisartsen biedt persoonlijke huisartsenzorg voor het hele gezin.",
     },
     team: {
-      title: "Ons team | Bloem Huisartsen Amstelveen",
-      description: "Maak kennis met B.C.Bloem en S.J.Bloem van Bloem Huisartsen Amstelveen.",
+      title: "Huisartsen Amstelveen | Ons team | Bloem Huisartsen",
+      description:
+        "Maak kennis met de huisartsen van Bloem Huisartsen Amstelveen: B.C.Bloem en S.J.Bloem.",
     },
     nieuwInAmstelveen: {
-      title: "Nieuw in Amstelveen | Bloem Huisartsen Amstelveen",
+      title: "Huisarts Amstelveen voor nieuwe inwoners | Bloem Huisartsen",
       description:
-        "Nieuw in Amstelveen? Schrijf u op tijd in bij een huisarts. Inschrijven bij Bloem Huisartsen Amstelveen kost u niets.",
+        "Nieuw in Amstelveen? Schrijf u op tijd in bij een huisarts. Bloem Huisartsen Amstelveen verwelkomt nieuwe patiënten.",
+    },
+    gpAmstelveen: {
+      title: "GP Amstelveen | Bloem Huisartsen",
+      description:
+        "Looking for a GP in Amstelveen? Bloem Huisartsen welcomes new patients. Register online with our general practice in Amstelveen.",
     },
     inschrijving: {
-      title: "Inschrijven | Bloem Huisartsen Amstelveen",
-      description: "Schrijf u in bij Bloem Huisartsen Amstelveen.",
+      title: "Huisarts inschrijven Amstelveen | Bloem Huisartsen",
+      description:
+        "Schrijf u online in bij huisarts Bloem Huisartsen Amstelveen. Nieuwe patiënten welkom, eenvoudig inschrijven.",
     },
   },
   common: {
@@ -62,6 +69,9 @@ export const nl: Messages = {
     copyright: "Bloem Huisartsen Amstelveen",
   },
   home: {
+    h1: "Huisarts in Amstelveen – Bloem Huisartsen",
+    h1Intro:
+      "Welkom bij Bloem Huisartsen Amstelveen, uw huisartsenpraktijk aan de Keizer Karelweg. Bent u op zoek naar een huisarts in Amstelveen? Wij verwelkomen nieuwe patiënten. Inschrijven kan eenvoudig online.",
     heroWelcome: "Nieuwe patiënten welkom!",
     heroText: [
       "Bent u al patiënt bij dokter Kieviet?",
@@ -81,9 +91,9 @@ export const nl: Messages = {
   },
   praktijk: {
     label: "Over de praktijk",
-    title: "Welkom bij Bloem Huisartsen Amstelveen",
+    title: "Huisartsenpraktijk Amstelveen",
     paragraphs: [
-      "Per 1 januari 2027 gaat dokter Kieviet met pensioen en nemen wij zijn huisartsenpraktijk over. De praktijk gaat verder onder de nieuwe naam Bloem Huisartsen Amstelveen.",
+      "Welkom bij Bloem Huisartsen Amstelveen, uw huisartsenpraktijk aan de Keizer Karelweg. Per 1 januari 2027 gaat dokter Kieviet met pensioen en nemen wij zijn huisartsenpraktijk over. De praktijk gaat verder onder de naam Bloem Huisartsen Amstelveen.",
       "De afgelopen periode hebben wij al regelmatig als waarnemend huisarts in de praktijk gewerkt. Mogelijk heeft u ons daardoor al eens ontmoet. Vanaf 1 september 2026 zullen wij meerdere dagen per week in de praktijk aanwezig zijn. Zo krijgen we de gelegenheid om alvast kennis te maken met u en vertrouwd te raken met de praktijk.",
       "We kijken ernaar uit om de praktijk voort te zetten en samen met het bestaande team goede, persoonlijke en toegankelijke huisartsenzorg te bieden.",
       "De komende periode gaan we bovendien actief aan de slag met de verdere ontwikkeling van de praktijk. Ons doel is om de kwaliteit, toegankelijkheid en dienstverlening stap voor stap te verbeteren. We hopen dat u deze verbeteringen als patiënt ook daadwerkelijk zult ervaren.",
@@ -110,7 +120,7 @@ export const nl: Messages = {
   },
   team: {
     label: "Ons team",
-    title: "Vertrouwde gezichten die u kennen",
+    title: "Huisartsen in Amstelveen",
     intro:
       "Een klein, betrokken team dat de tijd neemt. Bij ons bent u geen nummer, maar een bekend gezicht.",
     portraitAlt: "Portret van {name}, {role}",
@@ -127,9 +137,9 @@ export const nl: Messages = {
   },
   contact: {
     label: "Contact",
-    title: "Bereikbaarheid & openingstijden",
+    title: "Contact huisarts Amstelveen",
     intro:
-      "Heeft u een vraag of wilt u een afspraak maken? Hier vindt u onze openingstijden en contactgegevens.",
+      "Heeft u een vraag of wilt u een afspraak maken bij onze huisartsenpraktijk in Amstelveen? Hier vindt u openingstijden en contactgegevens.",
     hoursTitle: "Openingstijden",
     lunchNote: "Bel voor 10:00 uur voor een afspraak op dezelfde dag.",
     addressTitle: "Adres",
@@ -183,9 +193,18 @@ export const nl: Messages = {
     moreInfoUrl: "https://www.thuisarts.nl/huisartsenzorg",
     cta: "Schrijf u nu in",
   },
+  gpAmstelveen: {
+    label: "GP Amstelveen",
+    title: "Looking for a GP in Amstelveen?",
+    paragraphs: [
+      "Bloem Huisartsen welcomes new patients. Register online with our general practice on Keizer Karelweg in Amstelveen.",
+      "Our practice provides personal and accessible GP care for the whole family. There is currently no waiting list.",
+    ],
+    cta: "Register with Bloem Huisartsen",
+  },
   inschrijving: {
-    label: "Inschrijven",
-    ctaText: "Klik op de onderstaande knop en schrijf u direct in.",
+    label: "Huisarts inschrijven Amstelveen",
+    ctaText: "Klik op de onderstaande knop en schrijf u direct in bij onze huisartsenpraktijk.",
     redirectNote:
       "U wordt doorgestuurd naar ons inschrijfformulier. Vult u deze zo volledig mogelijk in. U ontvangt per mail een bevestiging.",
     helpTitle: "Lukt het inschrijven niet?",

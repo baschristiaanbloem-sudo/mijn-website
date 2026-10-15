@@ -22,9 +22,14 @@ export function HomePage() {
           <div className="absolute inset-0 bg-black/35" aria-hidden="true" />
 
           <div className="relative z-10 w-full max-w-xl border border-white/40 bg-white/90 p-8 shadow-xl backdrop-blur-sm md:p-10">
-            <h1 className="sr-only">{t.footer.copyright}</h1>
+            <h1 className="text-center font-heading text-xl font-bold tracking-wide text-foreground md:text-2xl">
+              {t.home.h1}
+            </h1>
+            <p className="mt-3 text-center text-sm leading-relaxed text-muted-foreground md:text-base">
+              {t.home.h1Intro}
+            </p>
 
-            <div className="border border-primary/25 bg-primary/10 px-4 py-5 text-center md:px-6 md:py-6">
+            <div className="mt-6 border border-primary/25 bg-primary/10 px-4 py-5 text-center md:px-6 md:py-6">
               <p className="font-heading text-base font-semibold leading-snug text-foreground md:text-lg">
                 {t.home.openToday}
               </p>

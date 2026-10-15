@@ -4,10 +4,16 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Inschrijven | Bloem Huisartsen Amstelveen",
-  description: "Schrijf u in bij Bloem Huisartsen Amstelveen.",
+  title: "Huisarts inschrijven Amstelveen | Bloem Huisartsen",
+  description:
+    "Schrijf u online in bij huisarts Bloem Huisartsen Amstelveen. Nieuwe patiënten welkom, eenvoudig inschrijven.",
   alternates: {
     canonical: "/inschrijving",
+  },
+  openGraph: {
+    title: "Huisarts inschrijven Amstelveen | Bloem Huisartsen",
+    description:
+      "Schrijf u online in bij huisarts Bloem Huisartsen Amstelveen. Nieuwe patiënten welkom, eenvoudig inschrijven.",
   },
 };
 

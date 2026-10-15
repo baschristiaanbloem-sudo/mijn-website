@@ -4,11 +4,16 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Contact | Bloem Huisartsen Amstelveen",
+  title: "Contact huisarts Amstelveen | Bloem Huisartsen",
   description:
-    "Openingstijden en contactgegevens van Bloem Huisartsen Amstelveen aan de Keizer Karelweg.",
+    "Contactgegevens en openingstijden van huisarts Bloem Huisartsen Amstelveen aan de Keizer Karelweg.",
   alternates: {
     canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact huisarts Amstelveen | Bloem Huisartsen",
+    description:
+      "Contactgegevens en openingstijden van huisarts Bloem Huisartsen Amstelveen aan de Keizer Karelweg.",
   },
 };
 

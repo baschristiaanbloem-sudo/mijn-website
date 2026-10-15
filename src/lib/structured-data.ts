@@ -10,12 +10,14 @@ import {
   practiceName,
   practicePhoneInternational,
   practicePostalCode,
+  practiceSeoKeywords,
   practiceStreetAddress,
   siteUrl,
 } from "@/lib/site";
 
 export function getPracticeJsonLd() {
   const logoUrl = `${siteUrl}/images/logo-bloem-huisartsen.png`;
+  const homeTitle = "Huisarts Amstelveen | Bloem Huisartsen (GP)";
 
   return {
     "@context": "https://schema.org",
@@ -24,8 +26,14 @@ export function getPracticeJsonLd() {
         "@type": "MedicalClinic",
         "@id": `${siteUrl}/#clinic`,
         name: practiceName,
-        alternateName: "Bloem Huisartsen",
+        alternateName: [
+          "Bloem Huisartsen",
+          "Huisarts Amstelveen",
+          "Huisartsenpraktijk Amstelveen",
+          "GP Amstelveen",
+        ],
         description: practiceDescription,
+        knowsAbout: [...practiceSeoKeywords],
         url: siteUrl,
         logo: logoUrl,
         image: [`${siteUrl}/images/hero-praktijk.png`, logoUrl],
@@ -106,7 +114,8 @@ export function getPracticeJsonLd() {
         "@type": "WebPage",
         "@id": `${siteUrl}/#webpage`,
         url: siteUrl,
-        name: practiceName,
+        name: homeTitle,
+        description: practiceDescription,
         isPartOf: { "@id": `${siteUrl}/#website` },
         about: { "@id": `${siteUrl}/#clinic` },
         primaryImageOfPage: {

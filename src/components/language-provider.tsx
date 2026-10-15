@@ -28,6 +28,7 @@ const pageTitles: Record<string, keyof Messages["meta"]> = {
   "/praktijk": "praktijk",
   "/team": "team",
   "/nieuw-in-amstelveen": "nieuwInAmstelveen",
+  "/gp-amstelveen": "gpAmstelveen",
   "/inschrijving": "inschrijving",
 };
 
@@ -39,8 +40,12 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored === "nl" || stored === "en") {
       setLocaleState(stored);
+      return;
     }
-  }, []);
+    if (pathname === "/gp-amstelveen") {
+      setLocaleState("en");
+    }
+  }, [pathname]);
 
   const t = useMemo(() => getMessages(locale), [locale]);
 

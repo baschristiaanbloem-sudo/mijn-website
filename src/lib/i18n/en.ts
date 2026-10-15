@@ -3,32 +3,38 @@ import type { Messages } from "@/lib/i18n/types";
 export const en: Messages = {
   meta: {
     home: {
-      title: "Bloem Huisartsen Amstelveen",
+      title: "Huisarts Amstelveen | Bloem Huisartsen (GP)",
       description:
-        "Your trusted GP practice on Keizer Karelweg in Amstelveen. Personal care, consultations, vaccinations and chronic disease support.",
+        "Looking for a huisarts or GP in Amstelveen? Bloem Huisartsen welcomes new patients. Register online easily.",
     },
     contact: {
-      title: "Contact | Bloem Huisartsen Amstelveen",
+      title: "Contact GP Amstelveen | Bloem Huisartsen",
       description:
-        "Opening hours and contact details for Bloem Huisartsen Amstelveen on Keizer Karelweg.",
+        "Opening hours and contact details for GP practice Bloem Huisartsen Amstelveen on Keizer Karelweg.",
     },
     praktijk: {
-      title: "About the practice | Bloem Huisartsen Amstelveen",
+      title: "GP practice Amstelveen | Bloem Huisartsen",
       description:
-        "Learn more about Bloem Huisartsen Amstelveen: personal care with attention for the whole family.",
+        "General practice in Amstelveen on Keizer Karelweg. Bloem Huisartsen provides personal GP care for the whole family.",
     },
     team: {
-      title: "Our team | Bloem Huisartsen Amstelveen",
-      description: "Meet B.C.Bloem and S.J.Bloem of Bloem Huisartsen Amstelveen.",
+      title: "GPs in Amstelveen | Our team | Bloem Huisartsen",
+      description: "Meet the GPs of Bloem Huisartsen Amstelveen: B.C.Bloem and S.J.Bloem.",
     },
     nieuwInAmstelveen: {
-      title: "New to Amstelveen | Bloem Huisartsen Amstelveen",
+      title: "New to Amstelveen | Find a GP | Bloem Huisartsen",
       description:
-        "New to Amstelveen? Register with a GP before you need one. Registration with Bloem Huisartsen Amstelveen is free.",
+        "New to Amstelveen? Register with a GP in good time. Bloem Huisartsen Amstelveen welcomes new patients.",
+    },
+    gpAmstelveen: {
+      title: "GP Amstelveen | Bloem Huisartsen",
+      description:
+        "Looking for a GP in Amstelveen? Bloem Huisartsen welcomes new patients. Register online with our general practice in Amstelveen.",
     },
     inschrijving: {
-      title: "Register | Bloem Huisartsen Amstelveen",
-      description: "Register with Bloem Huisartsen Amstelveen.",
+      title: "Register with a GP in Amstelveen | Bloem Huisartsen",
+      description:
+        "Register online with GP practice Bloem Huisartsen Amstelveen. New patients welcome.",
     },
   },
   common: {
@@ -62,6 +68,9 @@ export const en: Messages = {
     copyright: "Bloem Huisartsen Amstelveen",
   },
   home: {
+    h1: "GP in Amstelveen – Bloem Huisartsen",
+    h1Intro:
+      "Welcome to Bloem Huisartsen Amstelveen, your GP practice on Keizer Karelweg. Looking for a GP in Amstelveen? We welcome new patients. You can register easily online.",
     heroWelcome: "New patients welcome!",
     heroText: [
       "Are you already a patient of Dr Kieviet?",
@@ -81,9 +90,9 @@ export const en: Messages = {
   },
   praktijk: {
     label: "About the practice",
-    title: "Welcome to Bloem Huisartsen Amstelveen",
+    title: "GP practice in Amstelveen",
     paragraphs: [
-      "As of 1 January 2027, Dr Kieviet will retire and we will take over his GP practice. The practice will continue under the new name Bloem Huisartsen Amstelveen.",
+      "Welcome to Bloem Huisartsen Amstelveen, your GP practice on Keizer Karelweg. As of 1 January 2027, Dr Kieviet will retire and we will take over his GP practice. The practice will continue under the name Bloem Huisartsen Amstelveen.",
       "In the recent period we have already regularly worked as locum GPs in the practice. You may therefore already have met us. From 1 September 2026 we will be present in the practice several days a week. This gives us the opportunity to get to know you and become familiar with the practice.",
       "We look forward to continuing the practice and, together with the existing team, providing good, personal and accessible GP care.",
       "In the coming period we will also actively work on the further development of the practice. Our goal is to improve quality, accessibility and service step by step. We hope that you as a patient will truly experience these improvements.",
@@ -111,7 +120,7 @@ export const en: Messages = {
   },
   team: {
     label: "Our team",
-    title: "Trusted faces who know you",
+    title: "GPs in Amstelveen",
     intro:
       "A small, dedicated team that takes its time. With us you are not a number, but a familiar face.",
     portraitAlt: "Portrait of {name}, {role}",
@@ -128,9 +137,9 @@ export const en: Messages = {
   },
   contact: {
     label: "Contact",
-    title: "Availability & opening hours",
+    title: "Contact GP Amstelveen",
     intro:
-      "Do you have a question or would you like to make an appointment? Here you will find our opening hours and contact details.",
+      "Do you have a question or would you like to make an appointment at our GP practice in Amstelveen? Here you will find opening hours and contact details.",
     hoursTitle: "Opening hours",
     lunchNote: "Call before 10:00 for a same-day appointment.",
     addressTitle: "Address",
@@ -186,9 +195,18 @@ export const en: Messages = {
     moreInfoUrl: "https://www.thuisarts.nl/huisartsenzorg",
     cta: "Register with Bloem Huisartsen",
   },
+  gpAmstelveen: {
+    label: "GP Amstelveen",
+    title: "Looking for a GP in Amstelveen?",
+    paragraphs: [
+      "Bloem Huisartsen welcomes new patients. Register online with our general practice on Keizer Karelweg in Amstelveen.",
+      "Our practice provides personal and accessible GP care for the whole family. There is currently no waiting list.",
+    ],
+    cta: "Register with Bloem Huisartsen",
+  },
   inschrijving: {
-    label: "Register",
-    ctaText: "Click the button below to register straight away.",
+    label: "Register with a GP in Amstelveen",
+    ctaText: "Click the button below to register with our GP practice straight away.",
     redirectNote:
       "You will be redirected to our registration form. Please fill it in as completely as possible. You will receive a confirmation by email.",
     helpTitle: "Having trouble registering?",

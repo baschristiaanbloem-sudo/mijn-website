@@ -4,11 +4,16 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Over de praktijk | Bloem Huisartsen Amstelveen",
+  title: "Huisartsenpraktijk Amstelveen | Bloem Huisartsen",
   description:
-    "Lees meer over Bloem Huisartsen Amstelveen aan de Keizer Karelweg: persoonlijke zorg met aandacht voor het hele gezin.",
+    "Huisartsenpraktijk Amstelveen aan de Keizer Karelweg. Bloem Huisartsen biedt persoonlijke huisartsenzorg voor het hele gezin.",
   alternates: {
     canonical: "/praktijk",
+  },
+  openGraph: {
+    title: "Huisartsenpraktijk Amstelveen | Bloem Huisartsen",
+    description:
+      "Huisartsenpraktijk Amstelveen aan de Keizer Karelweg. Bloem Huisartsen biedt persoonlijke huisartsenzorg voor het hele gezin.",
   },
 };
 
