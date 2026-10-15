@@ -3,9 +3,9 @@ import type { Messages } from "@/lib/i18n/types";
 export const en: Messages = {
   meta: {
     home: {
-      title: "Huisarts Amstelveen | Bloem Huisartsen (GP)",
+      title: "English-speaking GP practice Amstelveen | Bloem Huisartsen",
       description:
-        "Looking for a huisarts or GP in Amstelveen? Bloem Huisartsen welcomes new patients. Register online easily.",
+        "English-speaking GP practice in Amstelveen. Bloem Huisartsen welcomes new patients at Keizer Karelweg. Register online.",
     },
     contact: {
       title: "Contact GP Amstelveen | Bloem Huisartsen",
@@ -68,7 +68,7 @@ export const en: Messages = {
     copyright: "Bloem Huisartsen Amstelveen",
   },
   home: {
-    h1: "GP in Amstelveen – Bloem Huisartsen",
+    h1: "English-speaking GP practice in Amstelveen",
     h1Intro:
       "Welcome to Bloem Huisartsen Amstelveen, your GP practice on Keizer Karelweg. Looking for a GP in Amstelveen? We welcome new patients. You can register easily online.",
     heroWelcome: "New patients welcome!",
@@ -76,7 +76,7 @@ export const en: Messages = {
       "Are you already a patient of Dr Kieviet?",
       "Then you do not need to do anything. You remain a patient of the practice and will automatically transfer to Bloem Huisartsen Amstelveen as of 1 January 2027. Until then we will already be present at the practice regularly and we look forward to meeting you.",
       "Would you like to become a patient with us?",
-      "You are most welcome! You can register quickly and easily. There is currently no waiting list.",
+      "You are most welcome! You can register quickly and easily.",
       "Once your registration has been processed, you can access GP care straight away at Dr Kieviet's current practice. As of 1 January 2027 your registration will automatically continue with Bloem Huisartsen Amstelveen.",
     ],
     openToday:
@@ -143,7 +143,7 @@ export const en: Messages = {
     hoursTitle: "Opening hours",
     lunchNote: "Call before 10:00 for a same-day appointment.",
     addressTitle: "Address",
-    phoneEmailTitle: "Phone & email",
+    phoneEmailTitle: "Phone",
     emergencyTitle: "Emergency outside opening hours",
     emergencyText:
       "In life-threatening situations always call 112. For urgent care in the evening or at weekends, call the GP out-of-hours service: 020 456 2000.",

@@ -20,7 +20,7 @@ function formatRichText(text: string): ReactNode[] {
 }
 
 export function NieuwInAmstelveenSection() {
-  const { t } = useLanguage();
+  const { t, paths } = useLanguage();
   const page = t.nieuwInAmstelveen;
 
   return (
@@ -50,7 +50,7 @@ export function NieuwInAmstelveenSection() {
           </div>
         ))}
 
-        <a href="/inschrijving" className="bk-btn mt-8">
+        <a href={paths.inschrijving} className="bk-btn mt-8">
           {page.cta}
         </a>
 

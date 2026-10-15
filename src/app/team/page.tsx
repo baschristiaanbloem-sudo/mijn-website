@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { TeamSection } from "@/components/team-section";
+import { languageAlternates } from "@/lib/routes";
 
 export const metadata: Metadata = {
   title: "Huisartsen Amstelveen | Ons team | Bloem Huisartsen",
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
     "Maak kennis met de huisartsen van Bloem Huisartsen Amstelveen: B.C.Bloem en S.J.Bloem.",
   alternates: {
     canonical: "/team",
+    ...languageAlternates("team"),
   },
   openGraph: {
     title: "Huisartsen Amstelveen | Ons team | Bloem Huisartsen",

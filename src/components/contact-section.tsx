@@ -5,7 +5,6 @@ import {
   googleMapsUrl,
   hourRows,
   practiceAddress,
-  practiceEmail,
   practicePhone,
   practicePhoneHref,
 } from "@/lib/site";
@@ -67,11 +66,6 @@ export function ContactSection() {
               <a href={practicePhoneHref} className="mt-4 inline-block text-lg font-semibold text-primary">
                 {practicePhone}
               </a>
-              <p className="mt-3">
-                <a href={`mailto:${practiceEmail}`} className="font-medium text-primary hover:underline">
-                  {practiceEmail}
-                </a>
-              </p>
             </div>
 
             <div className="bk-card p-7 md:p-8">

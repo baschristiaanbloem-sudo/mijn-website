@@ -1,8 +1,11 @@
+import type { Locale } from "@/lib/i18n/types";
+import { enPaths, nlPaths } from "@/lib/routes";
 import { team } from "@/lib/team";
 import {
   openingHours,
   practiceCountry,
   practiceDescription,
+  practiceDescriptionEn,
   practiceEmail,
   practiceLatitude,
   practiceLocality,
@@ -11,13 +14,59 @@ import {
   practicePhoneInternational,
   practicePostalCode,
   practiceSeoKeywords,
+  practiceSeoKeywordsEn,
   practiceStreetAddress,
   siteUrl,
 } from "@/lib/site";
 
-export function getPracticeJsonLd() {
+export function getPracticeJsonLd(locale: Locale = "nl") {
+  const isEn = locale === "en";
   const logoUrl = `${siteUrl}/images/logo-bloem-huisartsen.png`;
-  const homeTitle = "Huisarts Amstelveen | Bloem Huisartsen (GP)";
+  const pageUrl = isEn ? `${siteUrl}${enPaths.home}` : siteUrl;
+  const teamUrl = `${siteUrl}${isEn ? enPaths.team : nlPaths.team}`;
+  const description = isEn ? practiceDescriptionEn : practiceDescription;
+  const homeTitle = isEn
+    ? "English-speaking GP practice Amstelveen | Bloem Huisartsen"
+    : "Huisarts Amstelveen | Bloem Huisartsen (GP)";
+  const jobTitle = isEn ? "GP & practice owner" : "Huisarts & praktijkhouder";
+  const region = isEn ? "North Holland" : "Noord-Holland";
+  const inLanguage = isEn ? "en" : "nl-NL";
+
+  const availableService = isEn
+    ? [
+        {
+          "@type": "MedicalProcedure",
+          name: "GP consultation",
+          description: "Consultations for general primary care.",
+        },
+        {
+          "@type": "MedicalProcedure",
+          name: "Vaccinations",
+          description: "Vaccinations via the GP practice.",
+        },
+        {
+          "@type": "MedicalTherapy",
+          name: "Chronic care",
+          description: "Support for chronic conditions.",
+        },
+      ]
+    : [
+        {
+          "@type": "MedicalProcedure",
+          name: "Huisartsconsult",
+          description: "Consulten voor algemene huisartsenzorg.",
+        },
+        {
+          "@type": "MedicalProcedure",
+          name: "Vaccinaties",
+          description: "Vaccinaties via de huisartsenpraktijk.",
+        },
+        {
+          "@type": "MedicalTherapy",
+          name: "Chronische zorg",
+          description: "Begeleiding bij chronische aandoeningen.",
+        },
+      ];
 
   return {
     "@context": "https://schema.org",
@@ -26,15 +75,22 @@ export function getPracticeJsonLd() {
         "@type": "MedicalClinic",
         "@id": `${siteUrl}/#clinic`,
         name: practiceName,
-        alternateName: [
-          "Bloem Huisartsen",
-          "Huisarts Amstelveen",
-          "Huisartsenpraktijk Amstelveen",
-          "GP Amstelveen",
-        ],
-        description: practiceDescription,
-        knowsAbout: [...practiceSeoKeywords],
-        url: siteUrl,
+        alternateName: isEn
+          ? [
+              "Bloem Huisartsen",
+              "GP Amstelveen",
+              "General practitioner Amstelveen",
+              "English speaking GP Amstelveen",
+            ]
+          : [
+              "Bloem Huisartsen",
+              "Huisarts Amstelveen",
+              "Huisartsenpraktijk Amstelveen",
+              "GP Amstelveen",
+            ],
+        description,
+        knowsAbout: [...(isEn ? practiceSeoKeywordsEn : practiceSeoKeywords)],
+        url: pageUrl,
         logo: logoUrl,
         image: [`${siteUrl}/images/hero-praktijk.png`, logoUrl],
         telephone: practicePhoneInternational,
@@ -45,7 +101,7 @@ export function getPracticeJsonLd() {
           streetAddress: practiceStreetAddress,
           addressLocality: practiceLocality,
           postalCode: practicePostalCode,
-          addressRegion: "Noord-Holland",
+          addressRegion: region,
           addressCountry: practiceCountry,
         },
         geo: {
@@ -74,55 +130,39 @@ export function getPracticeJsonLd() {
             availableLanguage: ["Dutch", "English"],
           },
         ],
-        availableService: [
-          {
-            "@type": "MedicalProcedure",
-            name: "Huisartsconsult",
-            description: "Consulten voor algemene huisartsenzorg.",
-          },
-          {
-            "@type": "MedicalProcedure",
-            name: "Vaccinaties",
-            description: "Vaccinaties via de huisartsenpraktijk.",
-          },
-          {
-            "@type": "MedicalTherapy",
-            name: "Chronische zorg",
-            description: "Begeleiding bij chronische aandoeningen.",
-          },
-        ],
+        availableService,
         employee: team.map((member) => ({
           "@type": "Physician",
           name: member.name,
-          jobTitle: "Huisarts & praktijkhouder",
+          jobTitle,
           image: `${siteUrl}${member.image}`,
           worksFor: { "@id": `${siteUrl}/#clinic` },
           medicalSpecialty: "PrimaryCare",
-          url: `${siteUrl}/team`,
+          url: teamUrl,
         })),
       },
       {
         "@type": "WebSite",
-        "@id": `${siteUrl}/#website`,
-        url: siteUrl,
+        "@id": isEn ? `${siteUrl}/en#website` : `${siteUrl}/#website`,
+        url: pageUrl,
         name: practiceName,
-        description: practiceDescription,
+        description,
         publisher: { "@id": `${siteUrl}/#clinic` },
-        inLanguage: ["nl-NL", "en"],
+        inLanguage: isEn ? ["en"] : ["nl-NL", "en"],
       },
       {
         "@type": "WebPage",
-        "@id": `${siteUrl}/#webpage`,
-        url: siteUrl,
+        "@id": isEn ? `${siteUrl}/en#webpage` : `${siteUrl}/#webpage`,
+        url: pageUrl,
         name: homeTitle,
-        description: practiceDescription,
-        isPartOf: { "@id": `${siteUrl}/#website` },
+        description,
+        isPartOf: { "@id": isEn ? `${siteUrl}/en#website` : `${siteUrl}/#website` },
         about: { "@id": `${siteUrl}/#clinic` },
         primaryImageOfPage: {
           "@type": "ImageObject",
           url: `${siteUrl}/images/hero-praktijk.png`,
         },
-        inLanguage: "nl-NL",
+        inLanguage,
       },
     ],
   };

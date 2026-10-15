@@ -1,7 +1,8 @@
+import type { Locale } from "@/lib/i18n/types";
 import { getPracticeJsonLd } from "@/lib/structured-data";
 
-export function PracticeJsonLd() {
-  const jsonLd = getPracticeJsonLd();
+export function PracticeJsonLd({ locale = "nl" }: { locale?: Locale }) {
+  const jsonLd = getPracticeJsonLd(locale);
 
   return (
     <script

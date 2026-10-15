@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PraktijkSection } from "@/components/praktijk-section";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { languageAlternates } from "@/lib/routes";
 
 export const metadata: Metadata = {
   title: "Huisartsenpraktijk Amstelveen | Bloem Huisartsen",
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
     "Huisartsenpraktijk Amstelveen aan de Keizer Karelweg. Bloem Huisartsen biedt persoonlijke huisartsenzorg voor het hele gezin.",
   alternates: {
     canonical: "/praktijk",
+    ...languageAlternates("praktijk"),
   },
   openGraph: {
     title: "Huisartsenpraktijk Amstelveen | Bloem Huisartsen",

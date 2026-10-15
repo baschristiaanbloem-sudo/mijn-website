@@ -5,18 +5,23 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useState,
   type ReactNode,
 } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { getMessages } from "@/lib/i18n";
 import type { Locale, Messages } from "@/lib/i18n/types";
-
-const STORAGE_KEY = "bloem-locale";
+import {
+  counterpartPath,
+  localeFromPathname,
+  pathsForLocale,
+  routeFromPathname,
+  type AppRoute,
+} from "@/lib/routes";
 
 type LanguageContextValue = {
   locale: Locale;
   t: Messages;
+  paths: Record<AppRoute, string>;
   setLocale: (locale: Locale) => void;
 };
 
@@ -24,44 +29,41 @@ const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 const pageTitles: Record<string, keyof Messages["meta"]> = {
   "/": "home",
+  "/en": "home",
   "/contact": "contact",
+  "/en/contact": "contact",
   "/praktijk": "praktijk",
+  "/en/practice": "praktijk",
   "/team": "team",
+  "/en/team": "team",
   "/nieuw-in-amstelveen": "nieuwInAmstelveen",
+  "/en/new-to-amstelveen": "nieuwInAmstelveen",
   "/gp-amstelveen": "gpAmstelveen",
+  "/en/gp-amstelveen": "gpAmstelveen",
   "/inschrijving": "inschrijving",
+  "/en/register": "inschrijving",
 };
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const pathname = usePathname();
-  const [locale, setLocaleState] = useState<Locale>("nl");
-
-  useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored === "nl" || stored === "en") {
-      setLocaleState(stored);
-      return;
-    }
-    if (pathname === "/gp-amstelveen") {
-      setLocaleState("en");
-    }
-  }, [pathname]);
-
+  const router = useRouter();
+  const locale = localeFromPathname(pathname);
   const t = useMemo(() => getMessages(locale), [locale]);
+  const paths = useMemo(() => pathsForLocale(locale), [locale]);
 
   useEffect(() => {
     document.documentElement.lang = locale;
-    const pageKey = pageTitles[pathname] ?? "home";
+    const pageKey = pageTitles[pathname] ?? pageTitles[pathname.replace(/\/$/, "") || "/"] ?? "home";
     document.title = t.meta[pageKey].title;
   }, [locale, pathname, t]);
 
   const setLocale = (nextLocale: Locale) => {
-    setLocaleState(nextLocale);
-    localStorage.setItem(STORAGE_KEY, nextLocale);
+    if (nextLocale === locale) return;
+    router.push(counterpartPath(pathname, nextLocale));
   };
 
   return (
-    <LanguageContext.Provider value={{ locale, t, setLocale }}>
+    <LanguageContext.Provider value={{ locale, t, paths, setLocale }}>
       {children}
     </LanguageContext.Provider>
   );
@@ -73,4 +75,9 @@ export function useLanguage() {
     throw new Error("useLanguage must be used within LanguageProvider");
   }
   return context;
+}
+
+export function useCurrentRoute(): AppRoute {
+  const pathname = usePathname();
+  return routeFromPathname(pathname);
 }

@@ -6,22 +6,22 @@ import { useLanguage } from "@/components/language-provider";
 import { PracticeLogo } from "@/components/practice-logo";
 import { practicePhone, practicePhoneHref } from "@/lib/site";
 
-const navItems = [
-  { key: "praktijk" as const, href: "/praktijk" },
-  { key: "team" as const, href: "/team" },
-  { key: "nieuwInAmstelveen" as const, href: "/nieuw-in-amstelveen" },
-  { key: "contact" as const, href: "/contact" },
-];
+const navKeys = ["praktijk", "team", "nieuwInAmstelveen", "contact"] as const;
 
 export function SiteHeader() {
-  const { t } = useLanguage();
+  const { t, paths } = useLanguage();
   const pathname = usePathname();
-  const showRegisterCta = pathname !== "/inschrijving";
+  const showRegisterCta = pathname !== paths.inschrijving;
+
+  const navItems = navKeys.map((key) => ({
+    key,
+    href: paths[key],
+  }));
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-white shadow-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6 md:py-4">
-        <a href="/" className="flex shrink-0 items-center" aria-label="Bloem Huisartsen Amstelveen">
+        <a href={paths.home} className="flex shrink-0 items-center" aria-label="Bloem Huisartsen Amstelveen">
           <PracticeLogo className="h-14 w-auto sm:h-16 md:h-[4.5rem]" priority />
         </a>
 
@@ -49,7 +49,7 @@ export function SiteHeader() {
           </a>
           <LanguageSwitcher />
           {showRegisterCta ? (
-            <a href="/inschrijving" className="bk-btn">
+            <a href={paths.inschrijving} className="bk-btn">
               {t.common.register}
             </a>
           ) : null}
@@ -77,7 +77,7 @@ export function SiteHeader() {
               </a>
             ))}
             {showRegisterCta ? (
-              <a href="/inschrijving" className="bk-btn mt-2 w-full">
+              <a href={paths.inschrijving} className="bk-btn mt-2 w-full">
                 {t.common.register}
               </a>
             ) : null}

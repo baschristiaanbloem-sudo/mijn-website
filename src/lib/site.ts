@@ -26,12 +26,23 @@ export const googleMapsEmbedUrl =
 export const practiceDescription =
   "Zoekt u een huisarts of GP in Amstelveen? Bloem Huisartsen verwelkomt nieuwe patiënten. Schrijf u eenvoudig online in.";
 
+export const practiceDescriptionEn =
+  "Looking for a GP in Amstelveen? Bloem Huisartsen welcomes new patients. Register online with our general practice in Amstelveen.";
+
 export const practiceSeoKeywords = [
   "Huisarts Amstelveen",
   "Huisartsenpraktijk Amstelveen",
   "GP Amstelveen",
   "GP",
   "General practitioner Amstelveen",
+] as const;
+
+export const practiceSeoKeywordsEn = [
+  "GP Amstelveen",
+  "General practitioner Amstelveen",
+  "English speaking GP Amstelveen",
+  "GP practice Amstelveen",
+  "Huisarts Amstelveen",
 ] as const;
 
 export const openingHours = [

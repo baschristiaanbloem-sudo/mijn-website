@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ContactSection } from "@/components/contact-section";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { languageAlternates } from "@/lib/routes";
 
 export const metadata: Metadata = {
   title: "Contact huisarts Amstelveen | Bloem Huisartsen",
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
     "Contactgegevens en openingstijden van huisarts Bloem Huisartsen Amstelveen aan de Keizer Karelweg.",
   alternates: {
     canonical: "/contact",
+    ...languageAlternates("contact"),
   },
   openGraph: {
     title: "Contact huisarts Amstelveen | Bloem Huisartsen",

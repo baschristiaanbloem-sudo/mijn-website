@@ -1,17 +1,18 @@
 "use client";
 
 import { useLanguage } from "@/components/language-provider";
+import { enPaths } from "@/lib/routes";
 import { googleMapsUrl, practiceAddress, practiceEmail, practicePhone, practicePhoneHref } from "@/lib/site";
 
 export function SiteFooter() {
-  const { t } = useLanguage();
+  const { t, paths } = useLanguage();
 
   const quickLinks = [
-    { label: t.nav.praktijk, href: "/praktijk" },
-    { label: t.nav.team, href: "/team" },
-    { label: t.nav.nieuwInAmstelveen, href: "/nieuw-in-amstelveen" },
-    { label: t.gpAmstelveen.label, href: "/gp-amstelveen" },
-    { label: t.nav.contact, href: "/contact" },
+    { label: t.nav.praktijk, href: paths.praktijk },
+    { label: t.nav.team, href: paths.team },
+    { label: t.nav.nieuwInAmstelveen, href: paths.nieuwInAmstelveen },
+    { label: t.gpAmstelveen.label, href: enPaths.gpAmstelveen },
+    { label: t.nav.contact, href: paths.contact },
   ];
 
   return (

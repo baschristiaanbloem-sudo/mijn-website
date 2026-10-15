@@ -3,7 +3,7 @@
 import { useLanguage } from "@/components/language-provider";
 
 export function GpAmstelveenSection() {
-  const { t } = useLanguage();
+  const { t, paths } = useLanguage();
   const page = t.gpAmstelveen;
 
   return (
@@ -18,7 +18,7 @@ export function GpAmstelveenSection() {
             {paragraph}
           </p>
         ))}
-        <a href="/inschrijving" className="bk-btn mt-8">
+        <a href={paths.inschrijving} className="bk-btn mt-8">
           {page.cta}
         </a>
       </div>

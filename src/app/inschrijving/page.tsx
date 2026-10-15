@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { InschrijvingForm } from "@/components/inschrijving-form";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { languageAlternates } from "@/lib/routes";
 
 export const metadata: Metadata = {
   title: "Huisarts inschrijven Amstelveen | Bloem Huisartsen",
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
     "Schrijf u online in bij huisarts Bloem Huisartsen Amstelveen. Nieuwe patiënten welkom, eenvoudig inschrijven.",
   alternates: {
     canonical: "/inschrijving",
+    ...languageAlternates("inschrijving"),
   },
   openGraph: {
     title: "Huisarts inschrijven Amstelveen | Bloem Huisartsen",

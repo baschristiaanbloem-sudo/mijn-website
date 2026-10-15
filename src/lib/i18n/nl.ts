@@ -77,7 +77,7 @@ export const nl: Messages = {
       "Bent u al patiënt bij dokter Kieviet?",
       "Dan hoeft u niets te doen. U blijft gewoon patiënt van de praktijk en gaat per 1 januari 2027 automatisch over naar Bloem Huisartsen Amstelveen. In de periode daarvoor zijn wij al regelmatig in de praktijk aanwezig en maken we natuurlijk graag kennis met u.",
       "Wilt u patiënt bij ons worden?",
-      "Van harte welkom! U kunt zich snel en eenvoudig inschrijven. Op dit moment is er geen wachtlijst.",
+      "Van harte welkom! U kunt zich snel en eenvoudig inschrijven.",
       "Zodra uw inschrijving is verwerkt kunt u direct voor huisartsenzorg terecht bij de huidige praktijk van dokter Kieviet. Per 1 januari 2027 wordt uw inschrijving automatisch voortgezet bij Bloem Huisartsen Amstelveen.",
     ],
     openToday:
@@ -143,7 +143,7 @@ export const nl: Messages = {
     hoursTitle: "Openingstijden",
     lunchNote: "Bel voor 10:00 uur voor een afspraak op dezelfde dag.",
     addressTitle: "Adres",
-    phoneEmailTitle: "Telefoon & e-mail",
+    phoneEmailTitle: "Telefoon",
     emergencyTitle: "Spoed buiten openingstijden",
     emergencyText:
       "Bij levensbedreigende situaties belt u altijd 112. Voor dringende zorg 's avonds en in het weekend belt u de huisartsenpost: 020 456 2000.",

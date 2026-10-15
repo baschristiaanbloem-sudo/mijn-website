@@ -7,7 +7,7 @@ import { replaceParams } from "@/lib/i18n";
 import { googleMapsEmbedUrl, googleMapsUrl, practiceAddress } from "@/lib/site";
 
 export function HomePage() {
-  const { t } = useLanguage();
+  const { t, paths } = useLanguage();
 
   return (
     <div className="flex flex-col bg-background text-foreground">
@@ -34,7 +34,7 @@ export function HomePage() {
                 {t.home.openToday}
               </p>
               <p className="mt-2 text-base font-semibold text-primary md:text-lg">
-                <a href="/inschrijving" className="underline-offset-2 hover:underline">
+                <a href={paths.inschrijving} className="underline-offset-2 hover:underline">
                   {t.home.openTodayCta}
                 </a>
               </p>
@@ -67,7 +67,7 @@ export function HomePage() {
             </div>
 
             <div className="mt-6 flex justify-center">
-              <a href="/inschrijving" className="bk-btn w-full sm:w-auto">
+              <a href={paths.inschrijving} className="bk-btn w-full sm:w-auto">
                 {t.common.register}
               </a>
             </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Poppins } from "next/font/google";
 import { PracticeJsonLd } from "@/components/practice-json-ld";
 import { Providers } from "@/components/providers";
@@ -15,6 +16,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Huisarts Amstelveen | Bloem Huisartsen (GP)",
   description: practiceDescription,
+  icons: {
+    icon: [{ url: "/favicon.png", type: "image/png" }],
+    apple: [{ url: "/apple-icon.png", type: "image/png" }],
+  },
   openGraph: {
     type: "website",
     locale: "nl_NL",
@@ -33,15 +38,23 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = (await headers()).get("x-pathname") ?? "";
+  const lang = pathname === "/en" || pathname.startsWith("/en/") ? "en" : "nl";
+
   return (
-    <html lang="nl" className={`${poppins.variable} h-full antialiased`}>
+    <html
+      lang={lang}
+      className={`${poppins.variable} h-full antialiased`}
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+    >
       <body className="min-h-full flex flex-col">
-        <PracticeJsonLd />
+        <PracticeJsonLd locale={lang} />
         <Providers>{children}</Providers>
       </body>
     </html>
