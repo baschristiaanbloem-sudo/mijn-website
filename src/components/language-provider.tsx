@@ -38,7 +38,6 @@ const pageTitles: Record<string, keyof Messages["meta"]> = {
   "/en/team": "team",
   "/nieuw-in-amstelveen": "nieuwInAmstelveen",
   "/en/new-to-amstelveen": "nieuwInAmstelveen",
-  "/gp-amstelveen": "gpAmstelveen",
   "/en/gp-amstelveen": "gpAmstelveen",
   "/inschrijving": "inschrijving",
   "/en/register": "inschrijving",

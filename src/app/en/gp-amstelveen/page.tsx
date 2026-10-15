@@ -9,14 +9,16 @@ export const metadata: Metadata = {
   description:
     "Looking for a GP in Amstelveen? Bloem Huisartsen welcomes new patients. Register online with our general practice in Amstelveen.",
   alternates: {
-    canonical: "/en/gp-amstelveen",
-    ...languageAlternates("gpAmstelveen"),
+    // Consolidate SEO signal with the EN home page; avoids hreflang clash with /nieuw-in-amstelveen.
+    canonical: "/en",
+    ...languageAlternates("home"),
   },
   openGraph: {
     title: "GP Amstelveen | Bloem Huisartsen",
     description:
       "Looking for a GP in Amstelveen? Bloem Huisartsen welcomes new patients. Register online with our general practice in Amstelveen.",
     locale: "en_GB",
+    url: "/en",
   },
 };
 

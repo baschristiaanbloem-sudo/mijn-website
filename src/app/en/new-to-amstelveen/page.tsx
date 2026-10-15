@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     description:
       "New to Amstelveen? Register with a GP in good time. Bloem Huisartsen Amstelveen welcomes new patients.",
     locale: "en_GB",
+    url: "/en/new-to-amstelveen",
   },
 };
 

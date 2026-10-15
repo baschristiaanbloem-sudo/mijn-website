@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
-import { practiceName, siteUrl } from "@/lib/site";
+import { practiceName } from "@/lib/site";
 
 const englishHomeDescription =
-  "English-speaking GP practice in Amstelveen. Bloem Huisartsen welcomes new patients at Keizer Karelweg.";
+  "Looking for a GP in Amstelveen? Bloem Huisartsen is taking over Dr Kieviet's practice. New patients welcome — register online.";
 
 export const metadata: Metadata = {
   openGraph: {
     locale: "en_GB",
     siteName: practiceName,
-    url: `${siteUrl}/en`,
     description: englishHomeDescription,
   },
 };

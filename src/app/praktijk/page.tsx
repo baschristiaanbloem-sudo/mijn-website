@@ -7,7 +7,7 @@ import { languageAlternates } from "@/lib/routes";
 export const metadata: Metadata = {
   title: "Huisartsenpraktijk Amstelveen | Bloem Huisartsen",
   description:
-    "Huisartsenpraktijk Amstelveen aan de Keizer Karelweg. Bloem Huisartsen biedt persoonlijke huisartsenzorg voor het hele gezin.",
+    "Bloem Huisartsen neemt de huisartsenpraktijk van dokter Kieviet over aan de Keizer Karelweg in Amstelveen. Persoonlijke huisartsenzorg voor het hele gezin.",
   alternates: {
     canonical: "/praktijk",
     ...languageAlternates("praktijk"),
@@ -15,7 +15,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Huisartsenpraktijk Amstelveen | Bloem Huisartsen",
     description:
-      "Huisartsenpraktijk Amstelveen aan de Keizer Karelweg. Bloem Huisartsen biedt persoonlijke huisartsenzorg voor het hele gezin.",
+      "Bloem Huisartsen neemt de huisartsenpraktijk van dokter Kieviet over aan de Keizer Karelweg in Amstelveen. Persoonlijke huisartsenzorg voor het hele gezin.",
+    url: "/praktijk",
   },
 };
 

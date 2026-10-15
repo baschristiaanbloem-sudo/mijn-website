@@ -5,7 +5,7 @@ export const nl: Messages = {
     home: {
       title: "Huisarts Amstelveen | Bloem Huisartsen (GP)",
       description:
-        "Zoekt u een huisarts of GP in Amstelveen? Bloem Huisartsen verwelkomt nieuwe patiënten. Schrijf u eenvoudig online in.",
+        "Zoekt u een huisarts in Amstelveen? Bloem Huisartsen neemt de praktijk van dokter Kieviet over. Nieuwe patiënten welkom — schrijf u online in.",
     },
     contact: {
       title: "Contact huisarts Amstelveen | Bloem Huisartsen",
@@ -15,7 +15,7 @@ export const nl: Messages = {
     praktijk: {
       title: "Huisartsenpraktijk Amstelveen | Bloem Huisartsen",
       description:
-        "Huisartsenpraktijk Amstelveen aan de Keizer Karelweg. Bloem Huisartsen biedt persoonlijke huisartsenzorg voor het hele gezin.",
+        "Bloem Huisartsen neemt de huisartsenpraktijk van dokter Kieviet over aan de Keizer Karelweg in Amstelveen. Persoonlijke huisartsenzorg voor het hele gezin.",
     },
     team: {
       title: "Huisartsen Amstelveen | Ons team | Bloem Huisartsen",
@@ -28,9 +28,9 @@ export const nl: Messages = {
         "Nieuw in Amstelveen? Schrijf u op tijd in bij een huisarts. Bloem Huisartsen Amstelveen verwelkomt nieuwe patiënten.",
     },
     gpAmstelveen: {
-      title: "GP Amstelveen | Bloem Huisartsen",
+      title: "Huisarts Amstelveen | Bloem Huisartsen (GP)",
       description:
-        "Looking for a GP in Amstelveen? Bloem Huisartsen welcomes new patients. Register online with our general practice in Amstelveen.",
+        "Zoekt u een huisarts in Amstelveen? Bloem Huisartsen neemt de praktijk van dokter Kieviet over. Nieuwe patiënten welkom — schrijf u online in.",
     },
     inschrijving: {
       title: "Huisarts inschrijven Amstelveen | Bloem Huisartsen",
@@ -194,13 +194,13 @@ export const nl: Messages = {
     cta: "Schrijf u nu in",
   },
   gpAmstelveen: {
-    label: "GP Amstelveen",
-    title: "Looking for a GP in Amstelveen?",
+    label: "Huisarts Amstelveen",
+    title: "Zoekt u een huisarts in Amstelveen?",
     paragraphs: [
-      "Bloem Huisartsen welcomes new patients. Register online with our general practice on Keizer Karelweg in Amstelveen.",
-      "Our practice provides personal and accessible GP care for the whole family. There is currently no waiting list.",
+      "Bloem Huisartsen verwelkomt nieuwe patiënten. Schrijf u online in bij onze huisartsenpraktijk aan de Keizer Karelweg in Amstelveen.",
+      "Onze praktijk biedt persoonlijke en toegankelijke huisartsenzorg voor het hele gezin.",
     ],
-    cta: "Register with Bloem Huisartsen",
+    cta: "Inschrijven bij Bloem Huisartsen",
   },
   inschrijving: {
     label: "Huisarts inschrijven Amstelveen",

@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     description:
       "Register online with GP practice Bloem Huisartsen Amstelveen. New patients welcome.",
     locale: "en_GB",
+    url: "/en/register",
   },
 };
 

@@ -5,7 +5,7 @@ export const en: Messages = {
     home: {
       title: "English-speaking GP practice Amstelveen | Bloem Huisartsen",
       description:
-        "English-speaking GP practice in Amstelveen. Bloem Huisartsen welcomes new patients at Keizer Karelweg. Register online.",
+        "Looking for a GP in Amstelveen? Bloem Huisartsen is taking over Dr Kieviet's practice. New patients welcome — register online.",
     },
     contact: {
       title: "Contact GP Amstelveen | Bloem Huisartsen",
@@ -15,7 +15,7 @@ export const en: Messages = {
     praktijk: {
       title: "GP practice Amstelveen | Bloem Huisartsen",
       description:
-        "General practice in Amstelveen on Keizer Karelweg. Bloem Huisartsen provides personal GP care for the whole family.",
+        "Bloem Huisartsen is taking over Dr Kieviet's GP practice on Keizer Karelweg in Amstelveen. Personal GP care for the whole family.",
     },
     team: {
       title: "GPs in Amstelveen | Our team | Bloem Huisartsen",
@@ -80,7 +80,7 @@ export const en: Messages = {
       "Once your registration has been processed, you can access GP care straight away at Dr Kieviet's current practice. As of 1 January 2027 your registration will automatically continue with Bloem Huisartsen Amstelveen.",
     ],
     openToday:
-      "Huisartsenpraktijk Kieviet will transfer to Bloem Huisartsen Amstelveen as of 1 January 2027.",
+      "Dr Kieviet's practice will transfer to Bloem Huisartsen Amstelveen as of 1 January 2027.",
     openTodayCta: "Registration is possible right away!",
     locationLabel: "Location",
     locationText: "You can find us at {address}.",

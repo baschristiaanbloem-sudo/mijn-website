@@ -1,17 +1,18 @@
 "use client";
 
 import { useLanguage } from "@/components/language-provider";
-import { enPaths } from "@/lib/routes";
-import { googleMapsUrl, practiceAddress, practiceEmail, practicePhone, practicePhoneHref } from "@/lib/site";
+import { googleMapsUrl, practiceAddress, practicePhone, practicePhoneHref } from "@/lib/site";
 
 export function SiteFooter() {
-  const { t, paths } = useLanguage();
+  const { t, paths, locale } = useLanguage();
 
   const quickLinks = [
     { label: t.nav.praktijk, href: paths.praktijk },
     { label: t.nav.team, href: paths.team },
     { label: t.nav.nieuwInAmstelveen, href: paths.nieuwInAmstelveen },
-    { label: t.gpAmstelveen.label, href: enPaths.gpAmstelveen },
+    ...(locale === "en"
+      ? [{ label: t.gpAmstelveen.label, href: paths.gpAmstelveen }]
+      : []),
     { label: t.nav.contact, href: paths.contact },
   ];
 
@@ -35,14 +36,6 @@ export function SiteFooter() {
                   <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
                 </svg>
                 <a href={practicePhoneHref} className="hover:underline">{practicePhone}</a>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <svg className="size-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" />
-                </svg>
-                <a href={`mailto:${practiceEmail}`} className="hover:underline">
-                  {practiceEmail}
-                </a>
               </li>
             </ul>
           </div>

@@ -5,7 +5,7 @@ import { languageAlternates } from "@/lib/routes";
 export const metadata: Metadata = {
   title: "English-speaking GP practice Amstelveen | Bloem Huisartsen",
   description:
-    "English-speaking GP practice in Amstelveen. Bloem Huisartsen welcomes new patients at Keizer Karelweg. Register online.",
+    "Looking for a GP in Amstelveen? Bloem Huisartsen is taking over Dr Kieviet's practice. New patients welcome — register online.",
   alternates: {
     canonical: "/en",
     ...languageAlternates("home"),
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "English-speaking GP practice Amstelveen | Bloem Huisartsen",
     description:
-      "English-speaking GP practice in Amstelveen. Bloem Huisartsen welcomes new patients at Keizer Karelweg. Register online.",
+      "Looking for a GP in Amstelveen? Bloem Huisartsen is taking over Dr Kieviet's practice. New patients welcome — register online.",
     locale: "en_GB",
     url: "/en",
   },

@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     title: "GPs in Amstelveen | Our team | Bloem Huisartsen",
     description: "Meet the GPs of Bloem Huisartsen Amstelveen: B.C.Bloem and S.J.Bloem.",
     locale: "en_GB",
+    url: "/en/team",
   },
 };
 

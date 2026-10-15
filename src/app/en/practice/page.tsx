@@ -7,7 +7,7 @@ import { languageAlternates } from "@/lib/routes";
 export const metadata: Metadata = {
   title: "GP practice Amstelveen | Bloem Huisartsen",
   description:
-    "General practice in Amstelveen on Keizer Karelweg. Bloem Huisartsen provides personal GP care for the whole family.",
+    "Bloem Huisartsen is taking over Dr Kieviet's GP practice on Keizer Karelweg in Amstelveen. Personal GP care for the whole family.",
   alternates: {
     canonical: "/en/practice",
     ...languageAlternates("praktijk"),
@@ -15,8 +15,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "GP practice Amstelveen | Bloem Huisartsen",
     description:
-      "General practice in Amstelveen on Keizer Karelweg. Bloem Huisartsen provides personal GP care for the whole family.",
+      "Bloem Huisartsen is taking over Dr Kieviet's GP practice on Keizer Karelweg in Amstelveen. Personal GP care for the whole family.",
     locale: "en_GB",
+    url: "/en/practice",
   },
 };
 

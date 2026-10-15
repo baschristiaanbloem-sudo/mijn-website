@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     title: "Contact huisarts Amstelveen | Bloem Huisartsen",
     description:
       "Contactgegevens en openingstijden van huisarts Bloem Huisartsen Amstelveen aan de Keizer Karelweg.",
+    url: "/contact",
   },
 };
 

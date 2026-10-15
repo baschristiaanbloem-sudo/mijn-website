@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     description:
       "Opening hours and contact details for GP practice Bloem Huisartsen Amstelveen on Keizer Karelweg.",
     locale: "en_GB",
+    url: "/en/contact",
   },
 };
 

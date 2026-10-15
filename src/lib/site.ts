@@ -1,7 +1,7 @@
 export const siteUrl = "https://www.bloemhuisartsen.nl";
 
 export const practiceName = "Bloem Huisartsen Amstelveen";
-export const practiceAddress = "Keizer Karelweg 94C, Amstelveen";
+export const practiceAddress = "Keizer Karelweg 94C, 1185 HX Amstelveen";
 export const practiceStreetAddress = "Keizer Karelweg 94C";
 export const practiceLocality = "Amstelveen";
 export const practicePostalCode = "1185 HX";
@@ -19,15 +19,15 @@ export const registrationFormUrl =
   "https://bloem-huisartsen-amstelveen.mijnpraktijk.nl/register";
 
 export const googleMapsUrl =
-  "https://www.google.com/maps/search/?api=1&query=Keizer+Karelweg+94C,+Amstelveen,+Netherlands";
+  "https://www.google.com/maps/search/?api=1&query=Keizer+Karelweg+94C,+1185+HX+Amstelveen,+Netherlands";
 export const googleMapsEmbedUrl =
-  "https://www.google.com/maps?q=Keizer+Karelweg+94C,+Amstelveen,+Netherlands&output=embed";
+  "https://www.google.com/maps?q=Keizer+Karelweg+94C,+1185+HX+Amstelveen,+Netherlands&output=embed";
 
 export const practiceDescription =
-  "Zoekt u een huisarts of GP in Amstelveen? Bloem Huisartsen verwelkomt nieuwe patiënten. Schrijf u eenvoudig online in.";
+  "Zoekt u een huisarts in Amstelveen? Bloem Huisartsen neemt de praktijk van dokter Kieviet over. Nieuwe patiënten welkom — schrijf u online in.";
 
 export const practiceDescriptionEn =
-  "Looking for a GP in Amstelveen? Bloem Huisartsen welcomes new patients. Register online with our general practice in Amstelveen.";
+  "Looking for a GP in Amstelveen? Bloem Huisartsen is taking over Dr Kieviet's practice. New patients welcome — register online.";
 
 export const practiceSeoKeywords = [
   "Huisarts Amstelveen",

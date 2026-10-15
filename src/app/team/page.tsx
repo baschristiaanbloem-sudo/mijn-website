@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     title: "Huisartsen Amstelveen | Ons team | Bloem Huisartsen",
     description:
       "Maak kennis met de huisartsen van Bloem Huisartsen Amstelveen: B.C.Bloem en S.J.Bloem.",
+    url: "/team",
   },
 };
 

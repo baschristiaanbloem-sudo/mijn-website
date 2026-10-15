@@ -5,7 +5,7 @@ import { languageAlternates } from "@/lib/routes";
 export const metadata: Metadata = {
   title: "Huisarts Amstelveen | Bloem Huisartsen (GP)",
   description:
-    "Zoekt u een huisarts of GP in Amstelveen? Bloem Huisartsen verwelkomt nieuwe patiënten. Schrijf u eenvoudig online in.",
+    "Zoekt u een huisarts in Amstelveen? Bloem Huisartsen neemt de praktijk van dokter Kieviet over. Nieuwe patiënten welkom — schrijf u online in.",
   alternates: {
     canonical: "/",
     ...languageAlternates("home"),
@@ -13,7 +13,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Huisarts Amstelveen | Bloem Huisartsen (GP)",
     description:
-      "Zoekt u een huisarts of GP in Amstelveen? Bloem Huisartsen verwelkomt nieuwe patiënten. Schrijf u eenvoudig online in.",
+      "Zoekt u een huisarts in Amstelveen? Bloem Huisartsen neemt de praktijk van dokter Kieviet over. Nieuwe patiënten welkom — schrijf u online in.",
+    url: "/",
   },
 };
 

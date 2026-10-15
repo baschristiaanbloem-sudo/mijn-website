@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     title: "Huisarts Amstelveen voor nieuwe inwoners | Bloem Huisartsen",
     description:
       "Nieuw in Amstelveen? Schrijf u op tijd in bij een huisarts. Bloem Huisartsen Amstelveen verwelkomt nieuwe patiënten.",
+    url: "/nieuw-in-amstelveen",
   },
 };
 

@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     title: "Huisarts inschrijven Amstelveen | Bloem Huisartsen",
     description:
       "Schrijf u online in bij huisarts Bloem Huisartsen Amstelveen. Nieuwe patiënten welkom, eenvoudig inschrijven.",
+    url: "/inschrijving",
   },
 };
 

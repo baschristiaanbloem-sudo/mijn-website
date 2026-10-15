@@ -14,7 +14,8 @@ export const nlPaths: Record<AppRoute, string> = {
   praktijk: "/praktijk",
   team: "/team",
   nieuwInAmstelveen: "/nieuw-in-amstelveen",
-  gpAmstelveen: "/nieuw-in-amstelveen",
+  /** EN-only landing; NL counterpart is the home page (avoids hreflang collision). */
+  gpAmstelveen: "/",
   contact: "/contact",
   inschrijving: "/inschrijving",
 };
